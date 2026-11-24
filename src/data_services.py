@@ -238,7 +238,7 @@ SERVICES = [
     {
         "slug": "bac-a-graisse-var",
         "image": "bac-a-graisse.jpg",
-        "image_alt": "Illustration : entretien d'un bac à graisse de restaurant",
+        "image_alt": "Technicien ouvrant un bac à graisse dans une cuisine de restaurant",
         "combo": "bac-a-graisse",
         "name": "Bac à graisse & séparateur",
         "short": "Bac à graisse",

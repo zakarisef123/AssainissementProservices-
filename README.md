@@ -14,7 +14,6 @@ src/
   data_guides.py      les guides pratiques (rubrique Conseils)
   assets/             CSS, JS, favicon, images
   make_images.js      régénère les PNG (og-image, logo, favicon) avec Playwright
-  make_illustrations.js visuel du bac à graisse (en attendant une photo)
   make_webp.py        crée les variantes WebP des photos (assets/img/webp/, nécessite Pillow)
 public/               site généré, publié tel quel (ne pas modifier à la main)
 netlify.toml          configuration Netlify (dossier publié, en-têtes)
@@ -110,8 +109,7 @@ sans affirmer que l'entreprise est agréée : ajouter le numéro d'agrément dan
 
 ## Photos
 
-Toutes les prestations ont une photo réelle (src/assets/img/), sauf le bac à graisse (visuel généré par
-`node src/make_illustrations.js`). Pour en changer une, déposer une photo JPG du même nom,
+Toutes les prestations ont une photo réelle (src/assets/img/). Pour en changer une, déposer une photo JPG du même nom,
 puis `python3 src/make_webp.py` et `python3 src/build.py`.
 
 ## Bandeaux de logos
