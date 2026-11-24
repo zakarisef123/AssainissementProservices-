@@ -21,12 +21,12 @@ const items = [
   ['pompage', 'truck', 'Pompage & aspiration', 'Camion aspirateur · cuves · sous-sols inondés'],
 ];
 const html = (ic, t, sub) => `<html><head><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet"></head>
-<body style="margin:0;width:1200px;height:720px;background:radial-gradient(ellipse 700px 500px at 85% 10%,rgba(31,162,255,.16),transparent 60%),#111;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;font-family:'Space Grotesk',sans-serif;position:relative;overflow:hidden">
-<div style="width:250px;height:250px;border-radius:50%;background:#1fa2ff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 18px rgba(31,162,255,.14)">
+<body style="margin:0;width:1200px;height:720px;background:radial-gradient(ellipse 700px 500px at 85% 10%,rgba(34,197,94,.16),transparent 60%),#111;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;font-family:'Space Grotesk',sans-serif;position:relative;overflow:hidden">
+<div style="width:250px;height:250px;border-radius:50%;background:#22c55e;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 18px rgba(34,197,94,.14)">
 <svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${I[ic]}</svg></div>
 <div style="color:#fff;font-size:58px;font-weight:700;letter-spacing:-.02em;text-align:center">${t}</div>
-<div style="color:#1fa2ff;font-family:Inter,sans-serif;font-weight:600;font-size:26px;letter-spacing:.04em">${sub}</div>
-<div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:repeating-linear-gradient(-45deg,#1fa2ff 0 22px,#111 22px 44px)"></div></body></html>`;
+<div style="color:#22c55e;font-family:Inter,sans-serif;font-weight:600;font-size:26px;letter-spacing:.04em">${sub}</div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:26px;background:repeating-linear-gradient(-45deg,#22c55e 0 22px,#111 22px 44px)"></div></body></html>`;
 (async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1200, height: 720 } });
