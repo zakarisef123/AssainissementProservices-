@@ -14,10 +14,10 @@ GUIDES = [
         "body": "<p>Quand une canalisation se bouche, l'eau finit toujours par chercher une sortie : la douche, le WC du rez-de-chaussée ou un regard dans le jardin. Les bons réflexes limitent les dégâts et facilitent l'intervention.</p>"
                 "<h2>1. Arrêtez d'utiliser l'eau</h2><p>Plus de chasse d'eau, de douche, de lave-linge ni de lave-vaisselle tant que le bouchon n'est pas levé. Chaque litre envoyé dans un réseau bouché remonte quelque part.</p>"
                 "<h2>2. Repérez où se situe le bouchon</h2><p>Un seul appareil bouché : le bouchon est proche, dans son siphon ou sa canalisation. Tous les appareils s'écoulent mal, ou l'eau remonte au point le plus bas de la maison : le bouchon est sur la canalisation principale, souvent entre la maison et le regard extérieur ou l'égout.</p>"
-                "<h2>3. Ouvrez le regard extérieur, si vous en avez un</h2><p>Si le regard est plein, le bouchon est en aval (vers l'égout ou la fosse). S'il est vide, il est entre la maison et le regard. Cette information nous aide à préparer le bon matériel.</p>"
+                "<h2>3. Ouvrez le regard extérieur, si vous en avez un</h2><p>Si le regard est plein, le bouchon est en aval (vers l'égout ou la fosse). S'il est vide, il est entre la maison et le regard. Cette information m'aide à préparer le bon matériel.</p>"
                 "<h2>4. Évitez les produits déboucheurs chimiques</h2><p>Ils n'agissent pas sur les bouchons importants, abîment les joints et les tuyaux, et rendent l'intervention dangereuse pour la personne qui doit ensuite ouvrir la canalisation.</p>"
                 "<h2>5. Protégez et photographiez</h2><p>Si des eaux usées ont débordé, éloignez les enfants et les animaux, aérez, coupez l'électricité des pièces touchées et prenez des photos pour votre assurance.</p>"
-                "<h2>6. Appelez pour un dégorgement</h2><p>Au téléphone, décrivez ce que vous observez : appareils concernés, regard plein ou vide, depuis quand. Nous vous annonçons le prix et le délai avant de partir, puis nous intervenons au furet ou à l'hydrocureur selon le cas.</p>",
+                "<h2>6. Appelez pour un dégorgement</h2><p>Au téléphone, décrivez ce que vous observez : appareils concernés, regard plein ou vide, depuis quand. Je vous annonce le prix et le délai avant de partir, puis j'interviens au furet ou à l'hydrocureur selon le cas.</p>",
     },
     {
         "slug": "vidange-fosse-septique-frequence",
@@ -78,7 +78,7 @@ GUIDES = [
         "h1": "Lingettes dans les WC : la première cause de bouchons et de pompes bloquées",
         "excerpt": "Même « biodégradables », les lingettes ne se désagrègent pas assez vite. Ce qu'il ne faut jamais jeter dans les toilettes.",
         "services": ["pompe-de-relevage-var", "degorgement-canalisation-var"],
-        "body": "<p>Une grande partie des bouchons et des pannes de pompe de relevage que nous traitons ont la même cause : les lingettes.</p>"
+        "body": "<p>Une grande partie des bouchons et des pannes de pompe de relevage que je traite ont la même cause : les lingettes.</p>"
                 "<h2>Pourquoi elles posent problème</h2><p>Le papier toilette se désagrège en quelques secondes dans l'eau. Les lingettes, elles, sont conçues pour résister : elles s'accrochent dans les coudes des canalisations, s'enroulent autour des roues des pompes et forment des amas avec les graisses.</p>"
                 "<h2>À ne jamais jeter dans les WC</h2><ul><li>Lingettes, même « biodégradables » ou « jetables dans les toilettes ».</li><li>Serviettes et tampons hygiéniques, cotons, cotons-tiges.</li><li>Huiles et graisses de cuisine.</li><li>Restes alimentaires, litière, médicaments.</li></ul>"
                 "<h2>Si vous avez une pompe de relevage</h2><p>C'est encore plus important : quelques lingettes suffisent à bloquer la pompe et à faire déborder la cuve. Un entretien annuel du poste permet de vérifier la pompe, le flotteur et l'alarme.</p>",
