@@ -219,7 +219,7 @@ def business_schema():
         "foundingDate": str(B.SINCE),
         "address": address,
         "geo": {"@type": "GeoCoordinates", "latitude": B.GEO[0], "longitude": B.GEO[1]},
-        "areaServed": area,
+        "areaServed": area + [{"@type": "AdministrativeArea", "name": "Var (83)"}],
         "openingHoursSpecification": [{
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -435,7 +435,7 @@ def footer(form_anchor="#devis"):
     <div class="foot-cols">
       <div>
         <a class="logo" href="/">{LOGO_SVG.replace('class="logo-mark"', 'class="logo-mark" width="34" height="34"')}<span class="logo-text"><span class="l2" style="display:block">Proservice</span><span class="l1" style="display:block">Assainissement · 24h/24</span></span></a>
-        <p class="foot-about">Entreprise d'assainissement indépendante depuis {B.SINCE}. Intervention <b>24h/24 et 7j/7</b> : dégorgement, hydrocurage, pompage, fosses septiques, inspection caméra.</p>
+        <p class="foot-about">Entreprise d'assainissement indépendante depuis {B.SINCE}. Intervention <b>24h/24 et 7j/7</b> dans le <b>Var (83)</b> : dégorgement, hydrocurage, pompage, fosses septiques, inspection caméra.</p>
         <p class="foot-about"><a href="tel:{B.PHONE_TEL}"><b>{B.PHONE}</b></a><br><a href="mailto:{B.EMAIL}">{B.EMAIL}</a></p>
       </div>
       <div><h2>Prestations</h2><ul>{svc_links}</ul></div>
@@ -1083,7 +1083,7 @@ def trust_list_html():
 HOME_FAQ = [
     ("Combien coûte une intervention ?", "Nos prix TTC en journée : " + prices_summary() + ". Le prix exact dépend de l'intervention et de l'horaire ; il est toujours annoncé au téléphone et confirmé sur place avant les travaux. <a href=\"/tarifs/\">Voir nos tarifs</a>."),
     ("Intervenez-vous la nuit, le week-end et les jours fériés ?", "Oui, nous sommes joignables 24h/24 et 7j/7 au 06 75 93 19 04, jours fériés compris. " + majorations_sentence() + " La majoration est toujours annoncée avant le déplacement."),
-    ("Dans quelles communes intervenez-vous ?", "Dans notre secteur, sur les 153 communes du département. <a href=\"/zones-intervention/\">Voir toutes les communes</a>."),
+    ("Dans quelles communes intervenez-vous ?", "Dans les 153 communes du Var (83). <a href=\"/zones-intervention/\">Voir toutes les communes</a>."),
     ("Faites-vous les grosses interventions ?", "Oui : dégorgement de collecteurs, hydrocurage de réseaux, pompage de sous-sols inondés, de regards, de cuves et de séparateurs, pour les particuliers comme pour les copropriétés, les entreprises et les collectivités."),
     ("Le devis est-il gratuit ?", "Oui, le diagnostic téléphonique et le devis sont gratuits et sans engagement."),
     ("Quelle différence entre dégorgement et curage ?", "Le dégorgement supprime un bouchon pour rétablir l'écoulement. Le curage nettoie toute la paroi de la canalisation à haute pression pour retirer les dépôts et éviter que les bouchons reviennent."),
@@ -1147,7 +1147,7 @@ def build_home():
 <section class="alt">
   <div class="wrap text-block prose">
     <h2>Une entreprise d'assainissement de confiance depuis {B.SINCE}</h2>
-    <p><strong>{B.NAME}</strong> est une entreprise d'assainissement qui intervient 24h/24 et 7j/7. Depuis {B.SINCE}, nous intervenons pour les particuliers, propriétaires, syndics de copropriété, gestionnaires de résidences et de campings, restaurateurs, entreprises et collectivités de tout le département.</p>
+    <p><strong>{B.NAME}</strong> est une entreprise d'assainissement qui intervient dans le Var (83), 24h/24 et 7j/7. Depuis {B.SINCE}, nous intervenons pour les particuliers, propriétaires, syndics de copropriété, gestionnaires de résidences et de campings, restaurateurs, entreprises et collectivités de tout le département.</p>
     <p>Notre métier, ce sont les <strong>interventions d'assainissement, petites et grosses</strong> : un WC bouché un dimanche, une colonne d'immeuble obstruée, un égout qui refoule après un orage, une fosse septique pleine avant une vente. Vous joignez directement l'équipe au <a href="tel:{B.PHONE_TEL}">{B.PHONE}</a>, sans plateforme ni centre d'appel, et le prix vous est annoncé <strong>avant</strong> le déplacement.</p>
     <p>Nos prestations : <a href="/degorgement-canalisation-var/">dégorgement et débouchage</a>, <a href="/curage-canalisation-var/">hydrocurage haute pression</a>, <a href="/pompage-nettoyage-cuves-var/">pompage et aspiration</a>, <a href="/vidange-fosse-septique-var/">vidange de fosse septique</a>, <a href="/inspection-camera-canalisation-var/">inspection caméra</a>, <a href="/travaux-assainissement-var/">travaux et raccordement au tout-à-l'égout</a>, <a href="/pompe-de-relevage-var/">pompes de relevage</a> et <a href="/bac-a-graisse-var/">bacs à graisse</a>. Après un refoulement, nous fournissons les <a href="/{ASSURANCE_PAGE['slug']}/">justificatifs demandés par votre assurance</a>.</p>
     <p>Ce qui nous distingue ? Des engagements simples et tenus : un prix annoncé à l'avance, un devis validé avant les travaux, aucune intervention inutile et une facture détaillée. Des engagements tenus à chaque intervention, de jour comme de nuit.</p>
@@ -1373,7 +1373,7 @@ def build_city(c):
         <li><strong>Pompes de relevage et bacs à graisse</strong> : dépannage, nettoyage, entretien.</li>
       </ul>
       <h2>Pourquoi faire appel à nous {c["a"]} ?</h2>
-      <p>Vous parlez directement à une entreprise locale, pas à une plateforme. Le diagnostic téléphonique est gratuit, le prix est annoncé avant le déplacement puis validé avec vous avant les travaux. Nous ne proposons que les interventions utiles et vous remettons une facture détaillée. Nous intervenons depuis {B.SINCE}.</p>
+      <p>Vous parlez directement à une entreprise locale, pas à une plateforme. Le diagnostic téléphonique est gratuit, le prix est annoncé avant le déplacement puis validé avec vous avant les travaux. Nous ne proposons que les interventions utiles et vous remettons une facture détaillée. Nous intervenons dans le Var depuis {B.SINCE}.</p>
       <h2>Communes voisines {c["de"]}</h2>
       <p>Nous intervenons aussi dans les communes proches :</p>
       <div class="chips">{near_html}</div>
@@ -1510,7 +1510,7 @@ def build_zones():
     {zone_cards(CORE_CITIES)}
     <div class="sec-head" style="margin-top:56px"><h2>Autres communes desservies</h2></div>
     {zone_cards([c for c in CITIES if not c["core"]])}
-    <div class="sec-head" style="margin-top:56px"><h2>Toutes les communes de la région ({len(ALL_CITIES)})</h2><p>Chaque commune a sa page. Délais estimés hors trafic, confirmés au téléphone avant tout déplacement.</p></div>
+    <div class="sec-head" style="margin-top:56px"><h2>Toutes les communes du Var ({len(ALL_CITIES)})</h2><p>Chaque commune a sa page. Délais estimés hors trafic, confirmés au téléphone avant tout déplacement.</p></div>
     {sector_blocks()}
   </div>
 </section>
