@@ -72,8 +72,8 @@ SERVICES = [
     # ------------------------------------------------------------------ CURAGE
     {
         "slug": "curage-canalisation-var",
-        "image": "debouchage-regard.jpg",
-        "image_alt": "Canalisation d'évacuation encrassée avant un curage",
+        "image": "curage-hydrocurage.jpg",
+        "image_alt": "Hydrocurage haute pression d'une canalisation depuis un regard",
         "combo": "curage-canalisation",
         "name": "Hydrocurage & curage de réseaux",
         "short": "Curage haute pression",
@@ -127,7 +127,7 @@ SERVICES = [
     {
         "slug": "vidange-fosse-septique-var",
         "image": "fosse-septique.jpg",
-        "image_alt": "Illustration : vidange d'une fosse septique",
+        "image_alt": "Vidange d'une fosse septique par camion",
         "combo": "vidange-fosse-septique",
         "name": "Vidange de fosse septique & micro-station",
         "short": "Vidange fosse septique",
@@ -183,7 +183,7 @@ SERVICES = [
     {
         "slug": "inspection-camera-canalisation-var",
         "image": "inspection-camera.jpg",
-        "image_alt": "Illustration : inspection caméra d'une canalisation",
+        "image_alt": "Robot caméra d'inspection dans une canalisation",
         "combo": "inspection-camera",
         "name": "Inspection caméra & diagnostic de canalisations",
         "short": "Inspection caméra",
@@ -238,7 +238,7 @@ SERVICES = [
     {
         "slug": "bac-a-graisse-var",
         "image": "bac-a-graisse.jpg",
-        "image_alt": "Illustration : entretien d'un bac à graisse de restaurant",
+        "image_alt": "Technicien ouvrant un bac à graisse dans une cuisine de restaurant",
         "combo": "bac-a-graisse",
         "name": "Bac à graisse & séparateur",
         "short": "Bac à graisse",
@@ -293,7 +293,7 @@ SERVICES = [
     {
         "slug": "pompe-de-relevage-var",
         "image": "pompe-relevage.jpg",
-        "image_alt": "Illustration : poste de relevage des eaux usées",
+        "image_alt": "Pompe de relevage dans une cuve d'eaux usées",
         "combo": "pompe-de-relevage",
         "name": "Pompe & poste de relevage",
         "short": "Pompe de relevage",
@@ -348,7 +348,7 @@ SERVICES = [
     {
         "slug": "travaux-assainissement-var",
         "image": "travaux-assainissement.jpg",
-        "image_alt": "Illustration : travaux de canalisation d'assainissement",
+        "image_alt": "Pelleteuse et tranchée pour la pose de canalisations d'assainissement",
         "combo": "travaux-assainissement",
         "name": "Travaux d'assainissement & raccordement",
         "short": "Travaux d'assainissement",
@@ -404,7 +404,7 @@ SERVICES = [
     {
         "slug": "pompage-nettoyage-cuves-var",
         "image": "pompage.jpg",
-        "image_alt": "Illustration : pompage d'eaux usées par camion aspirateur",
+        "image_alt": "Camion aspirateur en train de pomper un regard",
         "combo": "pompage",
         "name": "Pompage & nettoyage de cuves, regards, puisards",
         "short": "Pompage & aspiration",
