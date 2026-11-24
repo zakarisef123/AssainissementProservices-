@@ -113,3 +113,7 @@ sans affirmer que l'entreprise est agréée : ajouter le numéro d'agrément dan
 Les prestations sans photo réelle utilisent des visuels générés par `node src/make_illustrations.js`.
 Pour les remplacer, déposer une photo JPG du même nom dans `src/assets/img/` (ex. `pompage.jpg`),
 puis `python3 src/make_webp.py` et `python3 src/build.py`.
+
+## Bandeaux de logos
+
+Bandeau défilant des logos d'assureurs (`INSURERS` dans `src/data_business.py`, images dans `src/assets/assurances/`), avec une mention « logos cités à titre d'information, sans partenariat ».
