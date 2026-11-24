@@ -4,9 +4,9 @@
 Les champs laissés vides ne sont pas affichés sur le site ; la liste de ceux qui manquent
 est rappelée à la fin de chaque build (« À compléter »)."""
 
-# Adresse publique du site (sans slash final). PROVISOIRE : à remplacer par l'adresse définitive : sert aux balises canonical, og:url, JSON-LD,
+# Adresse publique du site (sans slash final) : sert aux balises canonical, og:url, JSON-LD,
 # sitemap.xml, robots.txt et llms.txt.
-SITE_URL = "https://pro-service83assainissement.netlify.app"
+SITE_URL = "https://assainissement.pro-service83.com"
 
 # ---------------------------------------------------------------- identité (Kbis)
 # NAME : nom affiché partout (titres, textes, JSON-LD « name »).
