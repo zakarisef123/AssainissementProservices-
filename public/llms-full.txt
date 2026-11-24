@@ -2,7 +2,7 @@
 
 > PROSERVICE 83 est une entreprise d'assainissement indépendante, en activité depuis 2013 (siège à Vidauban). Elle intervient 24h/24 et 7j/7 pour les urgences et les grosses interventions : dégorgement et débouchage de canalisations, hydrocurage, pompage, vidange de fosses septiques, inspection caméra, pompes de relevage, bacs à graisse et travaux d'assainissement. Téléphone : 06 75 93 19 04.
 
-Site : https://pro-service83assainissement.netlify.app/
+Site : https://assainissement.pro-service83.com/
 
 ## Charte de confiance
 
@@ -17,7 +17,7 @@ Site : https://pro-service83assainissement.netlify.app/
 
 ## Dégorgement et débouchage de canalisations 24h/24
 
-URL : https://pro-service83assainissement.netlify.app/degorgement-canalisation-var/
+URL : https://assainissement.pro-service83.com/degorgement-canalisation-var/
 Tarif : à partir de 99 €
 
 Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond jour et nuit, week-end et jours fériés compris.
@@ -50,7 +50,7 @@ R : Si le bouchon est dans les canalisations privatives d'un logement, c'est en 
 
 ## Curage et hydrocurage de canalisations
 
-URL : https://pro-service83assainissement.netlify.app/curage-canalisation-var/
+URL : https://assainissement.pro-service83.com/curage-canalisation-var/
 Tarif : à partir de 190 €
 
 Graisses, calcaire, racines, sable, boues : notre hydrocureur haute pression nettoie l'intérieur des canalisations sur toute leur longueur et redonne un écoulement normal, durablement.
@@ -83,7 +83,7 @@ R : Une buse spéciale coupe et évacue les racines fines. Si les racines ont ca
 
 ## Pompage, aspiration et nettoyage de cuves
 
-URL : https://pro-service83assainissement.netlify.app/pompage-nettoyage-cuves-var/
+URL : https://assainissement.pro-service83.com/pompage-nettoyage-cuves-var/
 Tarif : à partir de 220 €
 
 Sous-sol inondé, regard plein, puisard saturé, cuve à vider : nos grosses interventions de pompage sont réalisées avec un camion aspirateur, pour les particuliers, les copropriétés, les entreprises et les collectivités.
@@ -116,7 +116,7 @@ R : Oui, nous intervenons pour les syndics, les gestionnaires de résidences, le
 
 ## Vidange de fosse septique, fosse toutes eaux et micro-station
 
-URL : https://pro-service83assainissement.netlify.app/vidange-fosse-septique-var/
+URL : https://assainissement.pro-service83.com/vidange-fosse-septique-var/
 Tarif : à partir de 230 €
 
 Dans les communes de la région non raccordées au tout-à-l'égout, la fosse doit être vidangée régulièrement. Nous intervenons pour la vidange, le nettoyage et l'entretien de votre installation d'assainissement individuel.
@@ -149,7 +149,7 @@ R : Ils ne sont pas indispensables pour une fosse bien dimensionnée et bien uti
 
 ## Inspection caméra des canalisations
 
-URL : https://pro-service83assainissement.netlify.app/inspection-camera-canalisation-var/
+URL : https://assainissement.pro-service83.com/inspection-camera-canalisation-var/
 Tarif : à partir de 150 €
 
 Une caméra introduite dans la canalisation montre son état réel, sans rien casser : bouchon, racines, tuyau écrasé, déboîté ou en contre-pente. Le bon diagnostic avant de décider des travaux.
@@ -182,7 +182,7 @@ R : Oui, nous vous remettons un compte rendu avec les observations et des images
 
 ## Travaux d'assainissement et raccordement au tout-à-l'égout
 
-URL : https://pro-service83assainissement.netlify.app/travaux-assainissement-var/
+URL : https://assainissement.pro-service83.com/travaux-assainissement-var/
 Tarif : à partir de 390 €
 
 Canalisation cassée ou envahie par les racines, raccordement au réseau public, fosse non conforme : nous réalisons les travaux d'assainissement après un diagnostic précis, avec un devis détaillé.
@@ -215,7 +215,7 @@ R : Elle doit être vidangée, nettoyée, puis comblée ou retirée. Nous pouvon
 
 ## Dépannage et entretien de pompes de relevage
 
-URL : https://pro-service83assainissement.netlify.app/pompe-de-relevage-var/
+URL : https://assainissement.pro-service83.com/pompe-de-relevage-var/
 Tarif : à partir de 120 €
 
 Quand la maison ou le sous-sol est plus bas que l'égout, une pompe de relevage remonte les eaux usées. Si elle s'arrête, tout déborde : nous intervenons en urgence, et pour l'entretien qui évite les pannes.
@@ -248,7 +248,7 @@ R : Oui, pour les maisons comme pour les postes collectifs des copropriétés et
 
 ## Vidange et entretien de bacs à graisse
 
-URL : https://pro-service83assainissement.netlify.app/bac-a-graisse-var/
+URL : https://assainissement.pro-service83.com/bac-a-graisse-var/
 Tarif : à partir de 150 €
 
 Restaurants, snacks, boulangeries, cuisines collectives : un bac à graisse bien entretenu évite les bouchons, les odeurs et les problèmes avec le service des eaux. Nous intervenons ponctuellement ou dans le cadre d'un entretien régulier.
@@ -492,42 +492,42 @@ Comptez environ 55 minutes pour notre arrivée à Ollioules, hors trafic. Le dé
 
 ## Canalisation bouchée ou égout qui refoule : les bons réflexes
 
-URL : https://pro-service83assainissement.netlify.app/conseils/canalisation-bouchee-que-faire/
+URL : https://assainissement.pro-service83.com/conseils/canalisation-bouchee-que-faire/
 
 Quand une canalisation se bouche, l'eau finit toujours par chercher une sortie : la douche, le WC du rez-de-chaussée ou un regard dans le jardin. Les bons réflexes limitent les dégâts et facilitent l'intervention. 1. Arrêtez d'utiliser l'eau Plus de chasse d'eau, de douche, de lave-linge ni de lave-vaisselle tant que le bouchon n'est pas levé. Chaque litre envoyé dans un réseau bouché remonte quelque part. 2. Repérez où se situe le bouchon Un seul appareil bouché : le bouchon est proche, dans son siphon ou sa canalisation. Tous les appareils s'écoulent mal, ou l'eau remonte au point le plus bas de la maison : le bouchon est sur la canalisation principale, souvent entre la maison et le regard extérieur ou l'égout. 3. Ouvrez le regard extérieur, si vous en avez un Si le regard est plein, le bouchon est en aval (vers l'égout ou la fosse). S'il est vide, il est entre la maison et le regard. Cette information nous aide à préparer le bon matériel. 4. Évitez les produits déboucheurs chimiques Ils n'agissent pas sur les bouchons importants, abîment les joints et les tuyaux, et rendent l'intervention dangereuse pour la personne qui doit ensuite ouvrir la canalisation. 5. Protégez et photographiez Si des eaux usées ont débordé, éloignez les enfants et les animaux, aérez, coupez l'électricité des pièces touchées et prenez des photos pour votre assurance. 6. Appelez pour un dégorgement Au téléphone, décrivez ce que vous observez : appareils concernés, regard plein ou vide, depuis quand. Nous vous annonçons le prix et le délai avant de partir, puis nous intervenons au furet ou à l'hydrocureur selon le cas.
 
 ## Vidange de fosse septique : quelle fréquence et quels signes d'alerte ?
 
-URL : https://pro-service83assainissement.netlify.app/conseils/vidange-fosse-septique-frequence/
+URL : https://assainissement.pro-service83.com/conseils/vidange-fosse-septique-frequence/
 
 Dans de nombreuses communes de la région, surtout dans l'arrière-pays et autour des villages, les maisons ne sont pas raccordées au tout-à-l'égout et disposent d'une fosse. Son entretien est obligatoire et conditionne son bon fonctionnement. La règle : vidanger à 50 % de boues La réglementation demande de vidanger la fosse lorsque la hauteur des boues atteint 50 % du volume utile. Pour une fosse toutes eaux de taille courante occupée par une famille, cela correspond souvent à une vidange tous les 4 ans environ. Une résidence secondaire peut attendre plus longtemps. Les signes d'alerte Des odeurs autour de la fosse ou dans la maison. Un écoulement lent de tous les appareils. Des regards qui débordent après une forte utilisation. Une zone d'herbe très verte ou humide au-dessus de l'épandage. Le bordereau de suivi La vidange doit être faite par une personne agréée par la préfecture, qui vous remet un bordereau de suivi des matières de vidange. Gardez-le : le SPANC peut le demander lors de son contrôle. Bien utiliser sa fosse Pas de lingettes, de serviettes hygiéniques ni de graisses dans les évacuations. Pas de produits chimiques agressifs en grande quantité (javel, déboucheurs). Raccorder les eaux de pluie ailleurs que dans la fosse. Garder les tampons accessibles pour l'entretien.
 
 ## Vendre une maison avec fosse : le contrôle SPANC expliqué
 
-URL : https://pro-service83assainissement.netlify.app/conseils/controle-spanc-vente-maison/
+URL : https://assainissement.pro-service83.com/conseils/controle-spanc-vente-maison/
 
 Le SPANC (service public d'assainissement non collectif) contrôle les installations des maisons non raccordées au réseau public. Ce contrôle prend une importance particulière lors d'une vente. Un diagnostic de moins de 3 ans Le rapport de contrôle de l'installation d'assainissement non collectif doit être joint au dossier de diagnostic technique remis à l'acheteur. Il doit dater de moins de 3 ans au moment de la signature de l'acte de vente. Si l'installation n'est pas conforme Lorsque le rapport demande des travaux, l'acheteur dispose en principe d'un an après la vente pour les réaliser. Le coût de ces travaux est souvent pris en compte dans la négociation du prix. Préparer le contrôle Faites vidanger la fosse si elle en a besoin et gardez le bordereau. Dégagez tous les tampons et regards. Rassemblez les plans et factures de l'installation. Côté acheteur En complément du rapport SPANC, une inspection caméra des canalisations entre la maison et la fosse ou l'égout permet de connaître leur état réel avant de signer.
 
 ## Raccordement au tout-à-l'égout : obligations et étapes
 
-URL : https://pro-service83assainissement.netlify.app/conseils/raccordement-tout-a-l-egout/
+URL : https://assainissement.pro-service83.com/conseils/raccordement-tout-a-l-egout/
 
 Lorsque la commune crée un réseau public d'assainissement dans votre rue, les maisons qui en ont l'accès doivent en principe s'y raccorder. Un délai de deux ans Le raccordement est en principe obligatoire dans un délai de deux ans après la mise en service du réseau. Renseignez-vous auprès du service d'assainissement de votre commune ou de votre intercommunalité : il précise les conditions et peut appliquer une pénalité en cas de retard. Partie publique et partie privée La partie sous la voie publique, jusqu'à la boîte de branchement, est réalisée ou encadrée par le service d'assainissement. La partie privée, de la maison jusqu'à cette boîte, est à la charge du propriétaire, qui choisit l'entreprise. L'ancienne fosse Une fois le raccordement fait, l'ancienne fosse doit être vidangée, nettoyée puis comblée ou retirée, pour éviter tout risque d'effondrement ou de pollution. Préparer les travaux Une inspection caméra des évacuations existantes et un repérage du réseau permettent de prévoir le tracé le plus court et d'éviter les mauvaises surprises une fois la tranchée ouverte.
 
 ## Refoulement d'égout ou inondation : comment être bien remboursé
 
-URL : https://pro-service83assainissement.netlify.app/conseils/refoulement-egout-assurance/
+URL : https://assainissement.pro-service83.com/conseils/refoulement-egout-assurance/
 
 Un refoulement d'égout ou un débordement d'eaux usées cause des dégâts importants et pose des questions d'hygiène. Voici comment réagir et préparer votre dossier d'assurance. Sur le moment Coupez l'électricité des pièces touchées. Arrêtez d'utiliser l'eau pour ne pas aggraver le refoulement. Prenez des photos et des vidéos avant de nettoyer. Appelez pour un pompage et un dégorgement. La déclaration Déclarez le sinistre à votre assureur habitation dans le délai prévu par votre contrat, souvent 5 jours ouvrés. Joignez les photos, la facture détaillée de l'intervention et, si possible, la cause indiquée par l'entreprise (bouchon sur la partie privée, réseau public saturé, orage…). Ce que couvre le contrat Selon les contrats, les dommages causés par un refoulement peuvent relever de la garantie dégât des eaux ou d'une garantie spécifique ; les frais de dégorgement eux-mêmes ne sont pas toujours pris en charge. Lisez vos conditions générales ou interrogez votre assureur. En cas de catastrophe naturelle Si un arrêté de catastrophe naturelle est publié pour votre commune après de fortes pluies, vous disposez d'un délai spécifique pour déclarer les dommages. Conservez toutes les factures.
 
 ## Lingettes dans les WC : la première cause de bouchons et de pompes bloquées
 
-URL : https://pro-service83assainissement.netlify.app/conseils/lingettes-canalisations-pompe-relevage/
+URL : https://assainissement.pro-service83.com/conseils/lingettes-canalisations-pompe-relevage/
 
 Une grande partie des bouchons et des pannes de pompe de relevage que nous traitons ont la même cause : les lingettes. Pourquoi elles posent problème Le papier toilette se désagrège en quelques secondes dans l'eau. Les lingettes, elles, sont conçues pour résister : elles s'accrochent dans les coudes des canalisations, s'enroulent autour des roues des pompes et forment des amas avec les graisses. À ne jamais jeter dans les WC Lingettes, même « biodégradables » ou « jetables dans les toilettes ». Serviettes et tampons hygiéniques, cotons, cotons-tiges. Huiles et graisses de cuisine. Restes alimentaires, litière, médicaments. Si vous avez une pompe de relevage C'est encore plus important : quelques lingettes suffisent à bloquer la pompe et à faire déborder la cuve. Un entretien annuel du poste permet de vérifier la pompe, le flotteur et l'alarme.
 
 ## Débouchage, dégorgement : comment éviter les arnaques
 
-URL : https://pro-service83assainissement.netlify.app/conseils/choisir-entreprise-debouchage-eviter-arnaques/
+URL : https://assainissement.pro-service83.com/conseils/choisir-entreprise-debouchage-eviter-arnaques/
 
 Le dépannage d'urgence attire des intermédiaires peu scrupuleux. Quelques règles simples permettent de les éviter. Demandez un prix avant le déplacement Une entreprise sérieuse vous annonce au téléphone une fourchette de prix et les éventuelles majorations de nuit ou de week-end, avant de partir. Exigez un devis avant les travaux Sur place, le prix doit être confirmé avant de commencer. Pour des travaux importants (remplacement de canalisation, gros curage), un devis écrit détaillé doit vous être remis. Méfiez-vous des diagnostics alarmistes Un bouchon simple ne justifie pas le remplacement de toute la canalisation. En cas de doute, demandez à voir les images de l'inspection caméra. Vérifiez l'entreprise Nom, adresse, numéro SIRET, avis réels : une entreprise locale est identifiable et reste votre interlocutrice après l'intervention. PROSERVICE 83 vous répond directement, sans plateforme.
