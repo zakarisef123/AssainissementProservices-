@@ -185,7 +185,7 @@ def svc_icon(key, size=24):
     return '<svg width="%d" height="%d" viewBox="0 0 24 24" fill="none" aria-hidden="true">%s</svg>' % (size, size, SERVICE_ICONS[key])
 
 
-LOGO_SVG = '<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#ffd400"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#111" stroke-width="2.2"/><g transform="translate(20 9.5)"><circle cx="12" cy="12" r="7.6" fill="#111"/><path d="M7.2 9.3h9.6M5.9 12h12.2M7.2 14.7h9.6" stroke="#ffd400" stroke-width="1.3"/></g><text x="32" y="47" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-weight="700" font-size="12.5" fill="#111">24/7</text></svg>'
+LOGO_SVG = '<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#1fa2ff"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#111" stroke-width="2.2"/><g transform="translate(20 9.5)"><circle cx="12" cy="12" r="7.6" fill="#111"/><path d="M7.2 9.3h9.6M5.9 12h12.2M7.2 14.7h9.6" stroke="#1fa2ff" stroke-width="1.3"/></g><text x="32" y="47" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-weight="700" font-size="12.5" fill="#111">24/7</text></svg>'
 
 
 # ---------------------------------------------------------------- données structurées
@@ -343,10 +343,10 @@ def head(title, desc, path, schemas, og_type="website", noindex=False):
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#111111">
-<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png?v=2" sizes="32x32" type="image/png">
-<link rel="shortcut icon" href="/favicon.ico?v=2">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=3" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
 <link rel="manifest" href="/site.webmanifest">
 
 <!-- Google tag (gtag.js) + Consent Mode v2 -->
