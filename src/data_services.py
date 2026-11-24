@@ -20,43 +20,43 @@ SERVICES = [
         "title": "Dégorgement et débouchage de canalisations 24h/24",
         "meta": "Dégorgement et débouchage de canalisations, égouts, colonnes et WC, 24h/24 et 7j/7. Furet, hydrocureur haute pression. Prix annoncé avant déplacement. ☎ 06 75 93 19 04",
         "h1": "Dégorgement et débouchage de canalisations 24h/24",
-        "lead": "Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond <b>jour et nuit, week-end et jours fériés compris</b>.",
+        "lead": "Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : je dégorge tous les réseaux, du simple évier au collecteur. Je vous réponds <b>jour et nuit, week-end et jours fériés compris</b>.",
         "checks": ["Réponse immédiate au téléphone", "Prix annoncé avant de partir", "Matériel professionnel"],
         "card_desc": "Dégorgement de canalisations, égouts, colonnes et WC, jour et nuit, au furet ou à l'hydrocureur.",
         "card_checks": ["Disponible 7j/7", "Du WC au collecteur"],
         "sections": [
-            ("Dégorgement : quels réseaux traitons-nous ?",
-             "<p>Un bouchon peut se former à n'importe quel endroit du réseau d'évacuation. Nous intervenons sur :</p>"
+            ("Dégorgement : quels réseaux est-ce que je traite ?",
+             "<p>Un bouchon peut se former à n'importe quel endroit du réseau d'évacuation. J'interviens sur :</p>"
              "<ul><li><strong>Les WC bouchés</strong>, y compris les WC suspendus et les sanibroyeurs.</li>"
              "<li><strong>Les éviers, lavabos, douches et baignoires</strong> qui s'écoulent mal ou plus du tout.</li>"
              "<li><strong>Les colonnes d'immeuble</strong> et chutes d'eaux usées communes.</li>"
              "<li><strong>Les canalisations enterrées</strong> entre la maison et le tout-à-l'égout ou la fosse.</li>"
              "<li><strong>Les regards et siphons de sol</strong> qui débordent, les eaux pluviales et caniveaux.</li>"
              "<li><strong>Les collecteurs et réseaux privés</strong> de copropriétés, lotissements, campings, hôtels et zones d'activité.</li></ul>"
-             "<p>Pour les gros bouchons et les réseaux de grand diamètre, nous intervenons avec un <strong>camion hydrocureur</strong> (haute pression et aspiration).</p>"),
+             "<p>Pour les gros bouchons et les réseaux de grand diamètre, j'interviens avec un <strong>camion hydrocureur</strong> (haute pression et aspiration).</p>"),
             ("Les bonnes techniques selon le bouchon",
-             "<p>Nous choisissons la méthode la moins agressive pour vos canalisations :</p>"
+             "<p>Je choisis la méthode la moins agressive pour vos canalisations :</p>"
              "<ol><li><strong>Pompe et ventouse professionnelles</strong> pour les bouchons proches de l'appareil.</li>"
              "<li><strong>Furet électrique</strong> pour atteindre un bouchon situé plus loin dans la canalisation.</li>"
              "<li><strong>Hydrocurage haute pression</strong> pour les canalisations encrassées, les racines et les dépôts de graisse ou de calcaire.</li>"
              "<li><strong>Inspection caméra</strong> si le bouchon revient : elle montre s'il s'agit d'une contre-pente, d'un tuyau écrasé ou de racines.</li></ol>"
-             "<p>Nous déconseillons les produits déboucheurs corrosifs : ils abîment les joints et les tuyaux en PVC ou en fonte, et sont dangereux pour la personne qui intervient ensuite.</p>"),
+             "<p>Je déconseille les produits déboucheurs corrosifs : ils abîment les joints et les tuyaux en PVC ou en fonte, et sont dangereux pour la personne qui intervient ensuite.</p>"),
             ("Débouchage la nuit, le dimanche et les jours fériés",
              "<p>Un WC bouché quand il n'y en a qu'un dans le logement, ou des eaux usées qui remontent dans la douche, ne peuvent pas attendre lundi. La ligne <strong>06 75 93 19 04</strong> est ouverte 24h/24. Les majorations de nuit, de week-end et de jour férié sont <strong>toujours annoncées avant le déplacement</strong>.</p>"
              "<p>À la fin de l'intervention, vous recevez une facture détaillée et, si le problème risque de revenir, une explication claire de sa cause et des solutions possibles.</p>"),
         ],
         "faq": [
             ("Combien coûte un dégorgement ?", "Un dégorgement simple démarre à 99 € TTC en journée. Le prix dépend de l'emplacement du bouchon, de la méthode (pompe, furet, haute pression) et de l'horaire ; il est annoncé au téléphone avant le départ et confirmé sur place."),
-            ("Mon WC est bouché, que faire en attendant ?", "Ne tirez plus la chasse d'eau, coupez l'arrivée d'eau du réservoir et n'utilisez pas de produit corrosif. Une ventouse peut suffire pour un bouchon léger ; sinon, appelez-nous."),
+            ("Mon WC est bouché, que faire en attendant ?", "Ne tirez plus la chasse d'eau, coupez l'arrivée d'eau du réservoir et n'utilisez pas de produit corrosif. Une ventouse peut suffire pour un bouchon léger ; sinon, appelez-moi."),
             ("Le bouchon revient régulièrement, pourquoi ?", "Un bouchon récurrent signale souvent un défaut de la canalisation : contre-pente, racines, tuyau affaissé ou encrassement important. Une inspection caméra permet d'en trouver la cause avant de décider d'un curage ou d'une réparation."),
-            ("Qui paie le débouchage dans un immeuble ?", "Si le bouchon est dans les canalisations privatives d'un logement, c'est en principe l'occupant. S'il est dans une colonne commune, c'est la copropriété, via le syndic. Nous indiquons sur la facture où se trouvait le bouchon."),
+            ("Qui paie le débouchage dans un immeuble ?", "Si le bouchon est dans les canalisations privatives d'un logement, c'est en principe l'occupant. S'il est dans une colonne commune, c'est la copropriété, via le syndic. J'indique sur la facture où se trouvait le bouchon."),
         ],
         "combo_h1": "Dégorgement de canalisations 24h/24",
         "combo_title": "Dégorgement {city} ({cp}) — canalisation, égout, WC 24h/24",
         "combo_meta": "Dégorgement et débouchage {a} 24h/24 et 7j/7 : canalisation, égout, colonne, WC. {delay_txt}. Prix annoncé avant déplacement. ☎ 06 75 93 19 04",
         "combo_intros": [
-            "WC bouché, évier qui déborde, canalisation qui refoule : {a}, un technicien vous répond à toute heure au <b>06 75 93 19 04</b> et part avec le matériel adapté. Le délai et le prix vous sont donnés dès l'appel.",
-            "Besoin d'un dégorgement tout de suite {a} ? Notre ligne est ouverte jour et nuit, dimanches et jours fériés compris. Pompe, furet ou haute pression : nous choisissons la méthode la moins agressive pour vos canalisations.",
+            "WC bouché, évier qui déborde, canalisation qui refoule : {a}, je vous réponds à toute heure au <b>06 75 93 19 04</b> et je pars avec le matériel adapté. Le délai et le prix vous sont donnés dès l'appel.",
+            "Besoin d'un dégorgement tout de suite {a} ? Ma ligne est ouverte jour et nuit, dimanches et jours fériés compris. Pompe, furet ou haute pression : je choisis la méthode la moins agressive pour vos canalisations.",
             "Habitants {de}, gardez ce numéro : <b>06 75 93 19 04</b>. Pour un WC bouché ou une canalisation qui refoule, un artisan du secteur vous répond directement, sans plateforme, avec un prix annoncé à l'avance.",
         ],
         "combo_points": [
@@ -67,7 +67,7 @@ SERVICES = [
             "Odeurs d'égout et écoulement lent",
             "Bouchon récurrent à diagnostiquer",
         ],
-        "combo_tip": "En attendant notre arrivée, n'utilisez plus l'évacuation bouchée, coupez l'arrivée d'eau du WC si besoin et évitez les produits déboucheurs chimiques : ils n'agissent pas sur les vrais bouchons et abîment les tuyaux.",
+        "combo_tip": "En attendant mon arrivée, n'utilisez plus l'évacuation bouchée, coupez l'arrivée d'eau du WC si besoin et évitez les produits déboucheurs chimiques : ils n'agissent pas sur les vrais bouchons et abîment les tuyaux.",
     },
     # ------------------------------------------------------------------ CURAGE
     {
@@ -84,7 +84,7 @@ SERVICES = [
         "title": "Curage et hydrocurage de canalisations — haute pression",
         "meta": "Curage et hydrocurage haute pression des canalisations : graisses, calcaire, racines, sable. Particuliers, copropriétés, restaurants. Devis gratuit. ☎ 06 75 93 19 04",
         "h1": "Curage et hydrocurage de canalisations",
-        "lead": "Graisses, calcaire, racines, sable, boues : notre <b>hydrocureur haute pression</b> nettoie l'intérieur des canalisations sur toute leur longueur et redonne un écoulement normal, durablement.",
+        "lead": "Graisses, calcaire, racines, sable, boues : mon <b>hydrocureur haute pression</b> nettoie l'intérieur des canalisations sur toute leur longueur et redonne un écoulement normal, durablement.",
         "checks": ["Haute pression adaptée au tuyau", "Particuliers et professionnels", "Devis gratuit"],
         "card_desc": "Nettoyage complet des canalisations à l'eau sous haute pression : graisses, calcaire, racines, sable.",
         "card_checks": ["Prévient les bouchons", "Contrôle caméra possible"],
@@ -97,11 +97,11 @@ SERVICES = [
              "<li><strong>Évacuation des dépôts</strong> vers le réseau ou par aspiration.</li>"
              "<li><strong>Contrôle</strong> de l'écoulement et, si besoin, inspection caméra pour vérifier l'état de la canalisation.</li></ol>"),
             ("Pour qui ?",
-             "<p>Maisons individuelles, <strong>copropriétés</strong> (colonnes et réseaux enterrés), <strong>restaurants et commerces</strong> (canalisations chargées en graisses), campings, résidences de tourisme et locaux professionnels. Pour les sites qui en ont besoin, nous proposons un curage préventif à intervalles réguliers.</p>"),
+             "<p>Maisons individuelles, <strong>copropriétés</strong> (colonnes et réseaux enterrés), <strong>restaurants et commerces</strong> (canalisations chargées en graisses), campings, résidences de tourisme et locaux professionnels. Pour les sites qui en ont besoin, je propose un curage préventif à intervalles réguliers.</p>"),
         ],
         "faq": [
             ("À quelle fréquence faut-il curer ses canalisations ?", "Pour une maison, un curage est utile en cas de ralentissements répétés ou tous les 5 à 10 ans selon l'usage. Pour un restaurant ou une copropriété, un curage préventif annuel ou semestriel évite les bouchons."),
-            ("Le curage haute pression peut-il abîmer mes tuyaux ?", "Non si la pression et la buse sont adaptées au tuyau. Sur une canalisation très ancienne ou fragile, nous contrôlons d'abord son état à la caméra."),
+            ("Le curage haute pression peut-il abîmer mes tuyaux ?", "Non si la pression et la buse sont adaptées au tuyau. Sur une canalisation très ancienne ou fragile, je contrôle d'abord son état à la caméra."),
             ("Combien coûte un curage ?", "Le prix dépend de la longueur du réseau, de son accessibilité et du niveau d'encrassement. Il est établi sur devis gratuit, après un échange au téléphone ou une visite."),
             ("Le curage élimine-t-il les racines ?", "Une buse spéciale coupe et évacue les racines fines. Si les racines ont cassé ou déboîté le tuyau, une réparation est nécessaire : l'inspection caméra permet de le vérifier."),
         ],
@@ -110,8 +110,8 @@ SERVICES = [
         "combo_meta": "Curage et hydrocurage de canalisations {a} : graisses, calcaire, racines. {delay_txt}. Devis gratuit. ☎ 06 75 93 19 04",
         "combo_intros": [
             "Des bouchons qui reviennent, un écoulement qui ralentit, des odeurs : {a}, le curage haute pression nettoie vos canalisations sur toute leur longueur et règle le problème à la source.",
-            "Nous réalisons le curage et l'hydrocurage des canalisations {a}, pour les maisons, les copropriétés et les professionnels. Devis gratuit, intervention planifiée ou en urgence.",
-            "Canalisations encrassées par les graisses, le calcaire ou les racines ? Nous intervenons {a} avec du matériel haute pression adapté à chaque diamètre de tuyau.",
+            "Je réalise le curage et l'hydrocurage des canalisations {a}, pour les maisons, les copropriétés et les professionnels. Devis gratuit, intervention planifiée ou en urgence.",
+            "Canalisations encrassées par les graisses, le calcaire ou les racines ? J'interviens {a} avec du matériel haute pression adapté à chaque diamètre de tuyau.",
         ],
         "combo_points": [
             "Hydrocurage haute pression des canalisations",
@@ -138,7 +138,7 @@ SERVICES = [
         "title": "Vidange de fosse septique et fosse toutes eaux",
         "meta": "Vidange de fosse septique, fosse toutes eaux et micro-station. Bac dégraisseur, préfiltre, contrôle SPANC, vente immobilière. Devis gratuit. ☎ 06 75 93 19 04",
         "h1": "Vidange de fosse septique, fosse toutes eaux et micro-station",
-        "lead": "Dans les communes de la région non raccordées au tout-à-l'égout, la fosse doit être vidangée régulièrement. Nous intervenons pour la <b>vidange, le nettoyage et l'entretien</b> de votre installation d'assainissement individuel.",
+        "lead": "Dans les communes de la région non raccordées au tout-à-l'égout, la fosse doit être vidangée régulièrement. J'interviens pour la <b>vidange, le nettoyage et l'entretien</b> de votre installation d'assainissement individuel.",
         "checks": ["Fosse septique et toutes eaux", "Micro-station et bac dégraisseur", "Justificatif de vidange"],
         "card_desc": "Vidange et entretien des fosses septiques, fosses toutes eaux, micro-stations et bacs dégraisseurs.",
         "card_checks": ["Entretien et urgence", "Utile pour le SPANC"],
@@ -146,27 +146,27 @@ SERVICES = [
             ("Quand faut-il vidanger sa fosse ?",
              "<p>La réglementation impose de vidanger une fosse lorsque la hauteur des boues atteint <strong>50 % du volume utile</strong>. En pratique, cela représente souvent une vidange tous les <strong>4 ans environ</strong> pour une fosse toutes eaux, selon sa taille et le nombre d'occupants. Les micro-stations demandent un entretien plus fréquent, selon la notice du fabricant.</p>"
              "<p>Certains signes doivent alerter : <strong>odeurs</strong> autour de la fosse ou dans la maison, <strong>écoulement lent</strong> dans toute la maison, regards qui débordent, herbe anormalement verte au-dessus de l'épandage.</p>"),
-            ("Ce que comprend notre intervention",
+            ("Ce que comprend mon intervention",
              "<ul><li><strong>Vidange de la fosse</strong> (septique ou toutes eaux) et du <strong>bac dégraisseur</strong> s'il existe.</li>"
              "<li><strong>Nettoyage du préfiltre</strong> (pouzzolane ou cassette) et contrôle des regards.</li>"
              "<li><strong>Remise en eau</strong> de la fosse pour la remettre en fonctionnement.</li>"
              "<li><strong>Contrôle visuel</strong> de l'état de la fosse, des tés et de la ventilation.</li></ul>"
              "<p>La vidange doit être réalisée par une personne agréée par la préfecture, qui remet un <strong>bordereau de suivi des matières de vidange</strong>. Conservez ce document : le SPANC peut vous le demander lors de son contrôle.</p>"),
             ("Vente immobilière et contrôle SPANC",
-             "<p>Lors de la vente d'une maison non raccordée au tout-à-l'égout, un diagnostic de l'assainissement non collectif de moins de 3 ans, réalisé par le SPANC, doit être joint au dossier. Une fosse vidangée, propre et accessible facilite ce contrôle. Si des travaux de mise en conformité sont demandés, nous pouvons vous accompagner (voir nos <a href=\"/travaux-assainissement-var/\">travaux d'assainissement</a>).</p>"),
+             "<p>Lors de la vente d'une maison non raccordée au tout-à-l'égout, un diagnostic de l'assainissement non collectif de moins de 3 ans, réalisé par le SPANC, doit être joint au dossier. Une fosse vidangée, propre et accessible facilite ce contrôle. Si des travaux de mise en conformité sont demandés, je peux vous accompagner (voir mes <a href=\"/travaux-assainissement-var/\">travaux d'assainissement</a>).</p>"),
         ],
         "faq": [
             ("Tous les combien faut-il vidanger une fosse septique ?", "Dès que les boues atteignent 50 % du volume utile, soit souvent tous les 4 ans environ pour une fosse toutes eaux. Une résidence secondaire peu occupée peut attendre plus longtemps ; une famille nombreuse moins."),
             ("Combien coûte une vidange de fosse ?", "Le prix dépend du volume de la fosse, de la présence d'un bac dégraisseur, de la distance entre le camion et la fosse et de l'accessibilité. Il est établi sur devis gratuit."),
-            ("Faut-il remplir la fosse après la vidange ?", "Oui, une fosse doit être remise en eau après la vidange pour garder sa stabilité et redémarrer son fonctionnement. Nous le faisons à la fin de l'intervention."),
+            ("Faut-il remplir la fosse après la vidange ?", "Oui, une fosse doit être remise en eau après la vidange pour garder sa stabilité et redémarrer son fonctionnement. Je le fais à la fin de l'intervention."),
             ("Faut-il utiliser des activateurs biologiques ?", "Ils ne sont pas indispensables pour une fosse bien dimensionnée et bien utilisée. Le plus important est d'éviter les produits chimiques agressifs, les lingettes et les graisses."),
         ],
         "combo_h1": "Vidange de fosse septique",
         "combo_title": "Vidange fosse septique {city} ({cp}) — fosse toutes eaux, micro-station",
         "combo_meta": "Vidange de fosse septique {a} : fosse toutes eaux, micro-station, bac dégraisseur, préfiltre. {delay_txt}. Devis gratuit. ☎ 06 75 93 19 04",
         "combo_intros": [
-            "Votre maison {a} n'est pas raccordée au tout-à-l'égout ? Nous intervenons pour la vidange et l'entretien de votre fosse septique, fosse toutes eaux ou micro-station.",
-            "Odeurs, écoulement lent, contrôle SPANC ou vente de la maison : {a}, nous vidangeons et nettoyons votre installation d'assainissement individuel, avec un prix annoncé à l'avance.",
+            "Votre maison {a} n'est pas raccordée au tout-à-l'égout ? J'interviens pour la vidange et l'entretien de votre fosse septique, fosse toutes eaux ou micro-station.",
+            "Odeurs, écoulement lent, contrôle SPANC ou vente de la maison : {a}, je vidange et nettoie votre installation d'assainissement individuel, avec un prix annoncé à l'avance.",
             "Vidange de fosse, nettoyage du bac dégraisseur et du préfiltre : un artisan de la région intervient {a} sur rendez-vous ou en urgence si la fosse déborde.",
         ],
         "combo_points": [
@@ -177,7 +177,7 @@ SERVICES = [
             "Remise en eau après vidange",
             "Intervention avant contrôle SPANC ou vente",
         ],
-        "combo_tip": "Avant notre venue, dégagez l'accès aux tampons de la fosse et du bac dégraisseur et indiquez-nous la distance entre la route et la fosse : elle conditionne le matériel à prévoir.",
+        "combo_tip": "Avant ma venue, dégagez l'accès aux tampons de la fosse et du bac dégraisseur et indiquez-moi la distance entre la route et la fosse : elle conditionne le matériel à prévoir.",
     },
     # ------------------------------------------------------------------ INSPECTION CAMÉRA
     {
@@ -206,15 +206,15 @@ SERVICES = [
              "<li><strong>Avant l'achat d'une maison</strong>, pour vérifier l'état du réseau d'évacuation.</li>"
              "<li><strong>Après un curage</strong>, pour contrôler le résultat, ou avant des travaux de réparation.</li></ul>"),
             ("Ce que montre la caméra",
-             "<p>La caméra parcourt la canalisation et filme sa paroi. Elle révèle les <strong>racines</strong>, les <strong>fissures et casses</strong>, les <strong>déboîtements</strong> de joints, les <strong>contre-pentes</strong> où l'eau stagne, les <strong>dépôts</strong> de graisse ou de calcaire et les objets coincés. Un localisateur permet de repérer depuis la surface l'endroit exact du défaut : si une réparation est nécessaire, on ne creuse qu'au bon endroit.</p>"),
+             "<p>La caméra parcourt la canalisation et filme sa paroi. Elle révèle les <strong>racines</strong>, les <strong>fissures et casses</strong>, les <strong>déboîtements</strong> de joints, les <strong>contre-pentes</strong> où l'eau stagne, les <strong>dépôts</strong> de graisse ou de calcaire et les objets coincés. Un localisateur permet de repérer depuis la surface l'endroit exact du défaut : si une réparation est nécessaire, je ne creuse qu'au bon endroit.</p>"),
             ("Un diagnostic utile pour la suite",
-             "<p>Après l'inspection, nous vous expliquons ce que nous avons vu et les solutions possibles : simple curage, réparation localisée ou remplacement d'un tronçon. Les images et le compte rendu vous servent aussi pour votre assurance, votre syndic ou une négociation lors d'un achat.</p>"),
+             "<p>Après l'inspection, je vous explique ce que j'ai vu et les solutions possibles : simple curage, réparation localisée ou remplacement d'un tronçon. Les images et le compte rendu vous servent aussi pour votre assurance, votre syndic ou une négociation lors d'un achat.</p>"),
         ],
         "faq": [
             ("L'inspection caméra nécessite-t-elle de casser ?", "Non. La caméra passe par un regard, un té de visite ou parfois par le WC démonté. Aucune ouverture n'est nécessaire pour le diagnostic."),
             ("Faut-il déboucher avant l'inspection ?", "Si la canalisation est complètement bouchée ou très encrassée, un débouchage ou un curage est fait d'abord : la caméra a besoin d'un tuyau dégagé pour voir la paroi."),
             ("Combien coûte une inspection caméra ?", "Le prix dépend de la longueur à inspecter, de l'accès et du besoin de compte rendu détaillé. Il est établi sur devis gratuit."),
-            ("Recevrai-je les images ?", "Oui, nous vous remettons un compte rendu avec les observations et des images des points importants."),
+            ("Recevrai-je les images ?", "Oui, je vous remets un compte rendu avec les observations et des images des points importants."),
         ],
         "combo_h1": "Inspection caméra des canalisations",
         "combo_title": "Inspection caméra canalisation {city} ({cp}) — diagnostic sans casse",
@@ -222,7 +222,7 @@ SERVICES = [
         "combo_intros": [
             "Bouchons qui reviennent, odeurs, sol qui s'affaisse : {a}, l'inspection caméra montre l'état réel de vos canalisations sans rien casser, et localise précisément le défaut.",
             "Avant d'acheter une maison {a} ou de lancer des travaux, faites contrôler les canalisations à la caméra : vous savez exactement ce qu'il faut réparer, et où.",
-            "Nous réalisons l'inspection caméra des canalisations {a} pour les particuliers, les copropriétés et les professionnels, avec un compte rendu clair.",
+            "Je réalise l'inspection caméra des canalisations {a} pour les particuliers, les copropriétés et les professionnels, avec un compte rendu clair.",
         ],
         "combo_points": [
             "Recherche de la cause d'un bouchon récurrent",
@@ -232,7 +232,7 @@ SERVICES = [
             "Contrôle avant achat immobilier",
             "Compte rendu avec images",
         ],
-        "combo_tip": "Notez quand le problème apparaît (après une douche, une forte pluie, l'utilisation du lave-linge) : ces indices nous aident à cibler la zone à inspecter.",
+        "combo_tip": "Notez quand le problème apparaît (après une douche, une forte pluie, l'utilisation du lave-linge) : ces indices m'aident à cibler la zone à inspecter.",
     },
     # ------------------------------------------------------------------ BAC À GRAISSE
     {
@@ -249,35 +249,35 @@ SERVICES = [
         "title": "Vidange et entretien de bac à graisse — restaurants, commerces",
         "meta": "Vidange, nettoyage et entretien de bacs à graisse et séparateurs : restaurants, snacks, boulangeries, cantines, campings. Contrat d'entretien possible. ☎ 06 75 93 19 04",
         "h1": "Vidange et entretien de bacs à graisse",
-        "lead": "Restaurants, snacks, boulangeries, cuisines collectives : un bac à graisse bien entretenu évite les <b>bouchons, les odeurs et les problèmes avec le service des eaux</b>. Nous intervenons ponctuellement ou dans le cadre d'un entretien régulier.",
+        "lead": "Restaurants, snacks, boulangeries, cuisines collectives : un bac à graisse bien entretenu évite les <b>bouchons, les odeurs et les problèmes avec le service des eaux</b>. J'interviens ponctuellement ou dans le cadre d'un entretien régulier.",
         "checks": ["Restaurants et collectivités", "Intervention hors service possible", "Entretien régulier"],
         "card_desc": "Vidange, nettoyage et entretien des bacs à graisse des restaurants, commerces et collectivités.",
         "card_checks": ["Hors heures de service", "Entretien planifié"],
         "sections": [
             ("Pourquoi entretenir un bac à graisse ?",
              "<p>Le bac à graisse retient les graisses et les huiles des eaux de cuisine avant qu'elles n'atteignent le réseau. Quand il est plein, les graisses passent dans les canalisations, figent et provoquent <strong>bouchons, refoulements et odeurs</strong>, parfois en plein service. Le règlement d'assainissement de la commune peut aussi exiger un entretien régulier et des justificatifs.</p>"),
-            ("Notre intervention",
+            ("Mon intervention",
              "<ul><li><strong>Pompage</strong> des graisses et des boues.</li>"
              "<li><strong>Nettoyage</strong> des parois et des cloisons du bac.</li>"
              "<li><strong>Curage</strong> des canalisations d'arrivée et de sortie si besoin.</li>"
              "<li><strong>Remise en eau</strong> et contrôle du bon fonctionnement.</li></ul>"
-             "<p>Nous pouvons intervenir <strong>avant ou après le service</strong>, le matin tôt ou en fin de soirée, pour ne pas gêner votre activité.</p>"),
+             "<p>Je peux intervenir <strong>avant ou après le service</strong>, le matin tôt ou en fin de soirée, pour ne pas gêner votre activité.</p>"),
             ("Quelle fréquence ?",
-             "<p>Elle dépend de la taille du bac et du nombre de couverts : souvent tous les 1 à 3 mois pour un restaurant, davantage en pleine saison touristique sur le littoral provençal. Nous vous proposons un rythme adapté et un rappel avant chaque passage.</p>"),
+             "<p>Elle dépend de la taille du bac et du nombre de couverts : souvent tous les 1 à 3 mois pour un restaurant, davantage en pleine saison touristique sur le littoral provençal. Je vous propose un rythme adapté et un rappel avant chaque passage.</p>"),
         ],
         "faq": [
             ("À quelle fréquence vidanger un bac à graisse ?", "En général tous les 1 à 3 mois pour un restaurant, selon la taille du bac et l'activité. Un contrôle régulier du niveau de graisse permet d'ajuster."),
-            ("Pouvez-vous intervenir en dehors des heures d'ouverture ?", "Oui, nous planifions l'intervention avant ou après le service pour ne pas perturber votre activité."),
+            ("Pouvez-vous intervenir en dehors des heures d'ouverture ?", "Oui, je planifie l'intervention avant ou après le service pour ne pas perturber votre activité."),
             ("Combien coûte l'entretien d'un bac à graisse ?", "Le prix dépend du volume du bac, de son accessibilité et de la fréquence d'entretien. Il est établi sur devis gratuit."),
-            ("Mon bac à graisse déborde, intervenez-vous en urgence ?", "Oui, nous intervenons en urgence 24h/24 et 7j/7, y compris le week-end."),
+            ("Mon bac à graisse déborde, intervenez-vous en urgence ?", "Oui, j'interviens en urgence 24h/24 et 7j/7, y compris le week-end."),
         ],
         "combo_h1": "Entretien de bac à graisse",
         "combo_title": "Bac à graisse {city} ({cp}) — vidange et entretien",
         "combo_meta": "Vidange et entretien de bac à graisse {a} : restaurants, snacks, boulangeries, cantines. {delay_txt}. Devis gratuit. ☎ 06 75 93 19 04",
         "combo_intros": [
-            "Restaurant, snack ou boulangerie {a} : nous vidangeons et nettoyons votre bac à graisse, avant ou après le service, pour éviter bouchons et odeurs.",
-            "Un bac à graisse plein, c'est le risque d'un refoulement en plein service. {a}, nous assurons la vidange, le nettoyage et l'entretien régulier de vos installations.",
-            "Nous entretenons les bacs à graisse et séparateurs des professionnels {de} et des environs, ponctuellement ou selon un calendrier fixé avec vous.",
+            "Restaurant, snack ou boulangerie {a} : je vidange et nettoie votre bac à graisse, avant ou après le service, pour éviter bouchons et odeurs.",
+            "Un bac à graisse plein, c'est le risque d'un refoulement en plein service. {a}, j'assure la vidange, le nettoyage et l'entretien régulier de vos installations.",
+            "J'entretiens les bacs à graisse et séparateurs des professionnels {de} et des environs, ponctuellement ou selon un calendrier fixé avec vous.",
         ],
         "combo_points": [
             "Vidange et pompage des graisses",
@@ -304,7 +304,7 @@ SERVICES = [
         "title": "Pompe de relevage et poste de relevage — dépannage, entretien",
         "meta": "Dépannage, entretien et remplacement de pompes et postes de relevage des eaux usées. Alarme, débordement, pompe bloquée. 24h/24. ☎ 06 75 93 19 04",
         "h1": "Dépannage et entretien de pompes de relevage",
-        "lead": "Quand la maison ou le sous-sol est plus bas que l'égout, une <b>pompe de relevage</b> remonte les eaux usées. Si elle s'arrête, tout déborde : nous intervenons en urgence, et pour l'entretien qui évite les pannes.",
+        "lead": "Quand la maison ou le sous-sol est plus bas que l'égout, une <b>pompe de relevage</b> remonte les eaux usées. Si elle s'arrête, tout déborde : j'interviens en urgence, et pour l'entretien qui évite les pannes.",
         "checks": ["Dépannage 24h/24", "Nettoyage du poste", "Remplacement de pompe"],
         "card_desc": "Dépannage, nettoyage, entretien et remplacement des pompes et postes de relevage des eaux usées.",
         "card_checks": ["Alarme ou débordement", "Entretien annuel"],
@@ -315,23 +315,23 @@ SERVICES = [
              "<li><strong>Clapet anti-retour</strong> défaillant : l'eau redescend dans la cuve.</li>"
              "<li><strong>Moteur hors service</strong> après des années de fonctionnement ou un orage.</li>"
              "<li><strong>Alarme de niveau haut</strong> qui sonne : la cuve est sur le point de déborder.</li></ul>"),
-            ("Notre intervention",
-             "<p>Nous <strong>vidangeons la cuve</strong>, nettoyons la pompe et le flotteur, contrôlons le clapet et l'alimentation électrique. Si la pompe est à remplacer, nous vous proposons un modèle adapté au débit et à la hauteur de relevage, avec un devis avant la pose.</p>"),
+            ("Mon intervention",
+             "<p>Je <strong>vidange la cuve</strong>, nettoie la pompe et le flotteur, contrôle le clapet et l'alimentation électrique. Si la pompe est à remplacer, je vous propose un modèle adapté au débit et à la hauteur de relevage, avec un devis avant la pose.</p>"),
             ("Prévenir les pannes",
              "<p>Un <strong>entretien annuel</strong> (nettoyage de la cuve, test du flotteur et de l'alarme) prolonge nettement la vie de la pompe. Et surtout : pas de lingettes dans les WC, même si l'emballage les dit « biodégradables ».</p>"),
         ],
         "faq": [
-            ("Mon alarme de poste de relevage sonne, que faire ?", "Limitez immédiatement l'utilisation de l'eau (WC, douche, lave-linge) pour éviter le débordement, vérifiez que le disjoncteur de la pompe n'a pas sauté, puis appelez-nous."),
+            ("Mon alarme de poste de relevage sonne, que faire ?", "Limitez immédiatement l'utilisation de l'eau (WC, douche, lave-linge) pour éviter le débordement, vérifiez que le disjoncteur de la pompe n'a pas sauté, puis appelez-moi."),
             ("Pourquoi ma pompe de relevage tourne en continu ?", "Le plus souvent, le flotteur est coincé ou le clapet anti-retour ne ferme plus. Un nettoyage ou le remplacement du clapet suffit souvent."),
-            ("Combien coûte le remplacement d'une pompe de relevage ?", "Il dépend du modèle, du débit et de la hauteur de relevage nécessaires, et de l'accès au poste. Nous établissons un devis avant toute pose."),
+            ("Combien coûte le remplacement d'une pompe de relevage ?", "Il dépend du modèle, du débit et de la hauteur de relevage nécessaires, et de l'accès au poste. J'établis un devis avant toute pose."),
             ("Intervenez-vous pour les postes de relevage de copropriété ?", "Oui, pour les maisons comme pour les postes collectifs des copropriétés et des locaux professionnels."),
         ],
         "combo_h1": "Pompe de relevage",
         "combo_title": "Pompe de relevage {city} ({cp}) — dépannage et entretien",
         "combo_meta": "Dépannage et entretien de pompe et poste de relevage {a} : alarme, débordement, pompe bloquée. {delay_txt}. 24h/24. ☎ 06 75 93 19 04",
         "combo_intros": [
-            "L'alarme de votre poste de relevage sonne ou la cuve déborde ? {a}, un technicien intervient 24h/24 pour dépanner, nettoyer ou remplacer la pompe.",
-            "Nous dépannons et entretenons les pompes de relevage des eaux usées {a}, pour les maisons en contrebas, les sous-sols et les copropriétés.",
+            "L'alarme de votre poste de relevage sonne ou la cuve déborde ? {a}, j'interviens 24h/24 pour dépanner, nettoyer ou remplacer la pompe.",
+            "Je dépanne et entretiens les pompes de relevage des eaux usées {a}, pour les maisons en contrebas, les sous-sols et les copropriétés.",
             "Pompe bloquée, flotteur coincé, clapet défaillant : un artisan de la région intervient {a} avec un prix annoncé avant de commencer.",
         ],
         "combo_points": [
@@ -342,7 +342,7 @@ SERVICES = [
             "Contrôle de l'alarme de niveau",
             "Entretien annuel du poste",
         ],
-        "combo_tip": "Si l'alarme sonne, réduisez au maximum l'utilisation de l'eau et vérifiez le disjoncteur de la pompe : souvent, cela suffit à éviter le débordement en attendant notre arrivée.",
+        "combo_tip": "Si l'alarme sonne, réduisez au maximum l'utilisation de l'eau et vérifiez le disjoncteur de la pompe : souvent, cela suffit à éviter le débordement en attendant mon arrivée.",
     },
     # ------------------------------------------------------------------ TRAVAUX
     {
@@ -359,36 +359,36 @@ SERVICES = [
         "title": "Travaux d'assainissement — réparation, raccordement au tout-à-l'égout",
         "meta": "Travaux d'assainissement : réparation de canalisation enterrée, raccordement au tout-à-l'égout, réhabilitation de fosse, mise en conformité SPANC. Devis gratuit. ☎ 06 75 93 19 04",
         "h1": "Travaux d'assainissement et raccordement au tout-à-l'égout",
-        "lead": "Canalisation cassée ou envahie par les racines, raccordement au réseau public, fosse non conforme : nous réalisons les <b>travaux d'assainissement</b> après un diagnostic précis, avec un devis détaillé.",
+        "lead": "Canalisation cassée ou envahie par les racines, raccordement au réseau public, fosse non conforme : je réalise les <b>travaux d'assainissement</b> après un diagnostic précis, avec un devis détaillé.",
         "checks": ["Diagnostic avant travaux", "Devis détaillé gratuit", "Travaux soignés"],
         "card_desc": "Réparation de canalisations enterrées, raccordement au tout-à-l'égout, réhabilitation et mise en conformité.",
         "card_checks": ["Devis détaillé", "Après inspection caméra"],
         "sections": [
-            ("Nos travaux d'assainissement",
+            ("Mes travaux d'assainissement",
              "<ul><li><strong>Réparation ou remplacement</strong> d'un tronçon de canalisation enterrée cassée, écrasée ou déboîtée.</li>"
              "<li><strong>Raccordement au tout-à-l'égout</strong> lorsque le réseau public arrive dans votre rue, et mise hors service de l'ancienne fosse.</li>"
              "<li><strong>Création ou remplacement de regards</strong> de visite.</li>"
              "<li><strong>Mise en conformité</strong> d'une installation d'assainissement individuel après un contrôle SPANC.</li>"
              "<li><strong>Séparation eaux usées / eaux pluviales</strong> quand le règlement de la commune l'impose.</li></ul>"),
             ("Un diagnostic avant de creuser",
-             "<p>Nous commençons toujours par comprendre le problème : <a href=\"/inspection-camera-canalisation-var/\">inspection caméra</a>, repérage du réseau et localisation précise du défaut. Vous savez exactement ce qui est à refaire et pourquoi, et nous n'ouvrons qu'à l'endroit nécessaire.</p>"),
+             "<p>Je commence toujours par comprendre le problème : <a href=\"/inspection-camera-canalisation-var/\">inspection caméra</a>, repérage du réseau et localisation précise du défaut. Vous savez exactement ce qui est à refaire et pourquoi, et je n'ouvre qu'à l'endroit nécessaire.</p>"),
             ("Raccordement au tout-à-l'égout",
-             "<p>Lorsque le réseau public d'assainissement est créé dans votre rue, le raccordement est en principe obligatoire dans un délai de deux ans. La partie publique (sous la voirie) est réalisée ou encadrée par le service d'assainissement de la commune ; la partie privée, de la maison jusqu'à la boîte de branchement, est à la charge du propriétaire. Nous réalisons cette partie privée, après accord du service compétent, et la mise hors service de l'ancienne fosse.</p>"
-             "<p>Pour la création ou la réhabilitation d'une installation d'assainissement individuel, le projet doit d'abord être validé par le SPANC, souvent sur la base d'une étude de sol. Nous vous expliquons les étapes et travaillons à partir du projet validé.</p>"),
+             "<p>Lorsque le réseau public d'assainissement est créé dans votre rue, le raccordement est en principe obligatoire dans un délai de deux ans. La partie publique (sous la voirie) est réalisée ou encadrée par le service d'assainissement de la commune ; la partie privée, de la maison jusqu'à la boîte de branchement, est à la charge du propriétaire. Je réalise cette partie privée, après accord du service compétent, et la mise hors service de l'ancienne fosse.</p>"
+             "<p>Pour la création ou la réhabilitation d'une installation d'assainissement individuel, le projet doit d'abord être validé par le SPANC, souvent sur la base d'une étude de sol. Je vous explique les étapes et travaille à partir du projet validé.</p>"),
         ],
         "faq": [
-            ("Combien coûte un raccordement au tout-à-l'égout ?", "Il dépend de la distance entre la maison et la boîte de branchement, de la profondeur, de la nature du terrain et des revêtements à refaire. Nous établissons un devis détaillé après visite."),
-            ("Faut-il une autorisation pour refaire une installation d'assainissement individuel ?", "Oui, le projet doit être validé par le SPANC avant les travaux, puis contrôlé à la fin du chantier. Nous travaillons à partir du projet validé."),
-            ("Pouvez-vous réparer une canalisation sans tout casser ?", "Après une inspection caméra qui localise précisément le défaut, nous n'ouvrons qu'à l'endroit nécessaire pour remplacer le tronçon abîmé."),
-            ("Que faire de l'ancienne fosse après le raccordement ?", "Elle doit être vidangée, nettoyée, puis comblée ou retirée. Nous pouvons nous en charger lors du raccordement."),
+            ("Combien coûte un raccordement au tout-à-l'égout ?", "Il dépend de la distance entre la maison et la boîte de branchement, de la profondeur, de la nature du terrain et des revêtements à refaire. J'établis un devis détaillé après visite."),
+            ("Faut-il une autorisation pour refaire une installation d'assainissement individuel ?", "Oui, le projet doit être validé par le SPANC avant les travaux, puis contrôlé à la fin du chantier. Je travaille à partir du projet validé."),
+            ("Pouvez-vous réparer une canalisation sans tout casser ?", "Après une inspection caméra qui localise précisément le défaut, je n'ouvre qu'à l'endroit nécessaire pour remplacer le tronçon abîmé."),
+            ("Que faire de l'ancienne fosse après le raccordement ?", "Elle doit être vidangée, nettoyée, puis comblée ou retirée. Je peux m'en charger lors du raccordement."),
         ],
         "combo_h1": "Travaux d'assainissement",
         "combo_title": "Travaux d'assainissement {city} ({cp}) — raccordement, réparation",
         "combo_meta": "Travaux d'assainissement {a} : réparation de canalisation enterrée, raccordement au tout-à-l'égout, mise en conformité. {delay_txt}. Devis gratuit. ☎ 06 75 93 19 04",
         "combo_intros": [
-            "Canalisation cassée, raccordement au tout-à-l'égout, mise en conformité après un contrôle SPANC : nous réalisons vos travaux d'assainissement {a}, après un diagnostic précis.",
-            "{a}, nous réparons les canalisations enterrées et réalisons les raccordements au réseau public, avec un devis détaillé et des travaux soignés.",
-            "Avant de creuser, nous localisons le problème à la caméra : vos travaux d'assainissement {a} se limitent à ce qui est vraiment nécessaire.",
+            "Canalisation cassée, raccordement au tout-à-l'égout, mise en conformité après un contrôle SPANC : je réalise vos travaux d'assainissement {a}, après un diagnostic précis.",
+            "{a}, je répare les canalisations enterrées et réalise les raccordements au réseau public, avec un devis détaillé et des travaux soignés.",
+            "Avant de creuser, je localise le problème à la caméra : vos travaux d'assainissement {a} se limitent à ce qui est vraiment nécessaire.",
         ],
         "combo_points": [
             "Réparation de canalisation enterrée",
@@ -398,7 +398,7 @@ SERVICES = [
             "Mise en conformité après contrôle SPANC",
             "Séparation eaux usées et eaux pluviales",
         ],
-        "combo_tip": "Rassemblez les documents dont vous disposez (plan de la maison, rapport SPANC, courrier de la mairie pour le raccordement) : ils nous permettent d'établir un devis plus précis dès la première visite.",
+        "combo_tip": "Rassemblez les documents dont vous disposez (plan de la maison, rapport SPANC, courrier de la mairie pour le raccordement) : ils me permettent d'établir un devis plus précis dès la première visite.",
     },
     # ------------------------------------------------------------------ POMPAGE
     {
@@ -415,34 +415,34 @@ SERVICES = [
         "title": "Pompage et aspiration — cuves, regards, puisards, inondations",
         "meta": "Pompage et aspiration par camion : cuves, regards, puisards, vide sanitaire et sous-sol inondés, séparateurs, eaux usées. 24h/24. ☎ 06 75 93 19 04",
         "h1": "Pompage, aspiration et nettoyage de cuves",
-        "lead": "Sous-sol inondé, regard plein, puisard saturé, cuve à vider : nos <b>grosses interventions de pompage</b> sont réalisées avec un camion aspirateur, pour les particuliers, les copropriétés, les entreprises et les collectivités.",
+        "lead": "Sous-sol inondé, regard plein, puisard saturé, cuve à vider : mes <b>grosses interventions de pompage</b> sont réalisées avec un camion aspirateur, pour les particuliers, les copropriétés, les entreprises et les collectivités.",
         "checks": ["Camion aspirateur", "Urgence 24h/24", "Particuliers et professionnels"],
         "card_desc": "Pompage par camion des regards, puisards, cuves, vides sanitaires et sous-sols inondés.",
         "card_checks": ["Gros volumes", "Urgence après orage"],
         "sections": [
-            ("Nos interventions de pompage",
+            ("Mes interventions de pompage",
              "<ul><li><strong>Sous-sols, garages et vides sanitaires inondés</strong> après un orage ou un refoulement.</li>"
              "<li><strong>Regards, puisards et fosses</strong> saturés.</li>"
              "<li><strong>Cuves</strong> d'eaux usées, de récupération d'eau de pluie ou de rétention.</li>"
              "<li><strong>Séparateurs à hydrocarbures</strong> et débourbeurs des parkings, garages et stations de lavage.</li>"
              "<li><strong>Réseaux et postes de relevage</strong> de copropriétés, campings et zones d'activité.</li></ul>"),
             ("Après un épisode cévenol ou un orage",
-             "<p>Dans notre secteur, les fortes pluies d'automne saturent vite les réseaux. Nous pompons l'eau, nettoyons les regards et contrôlons les canalisations pour remettre l'installation en service, et nous vous remettons une facture détaillée pour votre assurance.</p>"),
+             "<p>Dans mon secteur, les fortes pluies d'automne saturent vite les réseaux. Je pompe l'eau, nettoie les regards et contrôle les canalisations pour remettre l'installation en service, et je vous remets une facture détaillée pour votre assurance.</p>"),
             ("Professionnels et collectivités",
-             "<p>Syndics, gestionnaires de résidences, campings, hôtels, restaurants, entreprises et communes : nous intervenons sur devis ou en urgence, avec un compte rendu d'intervention. Les déchets pompés sont évacués vers une filière de traitement adaptée.</p>"),
+             "<p>Syndics, gestionnaires de résidences, campings, hôtels, restaurants, entreprises et communes : j'interviens sur devis ou en urgence, avec un compte rendu d'intervention. Les déchets pompés sont évacués vers une filière de traitement adaptée.</p>"),
         ],
         "faq": [
-            ("Intervenez-vous après une inondation ?", "Oui, nous pompons les sous-sols, garages, vides sanitaires et regards inondés, 24h/24 et 7j/7, puis contrôlons les canalisations."),
+            ("Intervenez-vous après une inondation ?", "Oui, je pompe les sous-sols, garages, vides sanitaires et regards inondés, 24h/24 et 7j/7, puis contrôle les canalisations."),
             ("Pompez-vous les séparateurs à hydrocarbures ?", "Oui, pour les parkings, garages, stations de lavage et zones d'activité. Les déchets sont évacués vers une filière agréée."),
             ("Combien coûte un pompage ?", "Il dépend du volume, de la nature des effluents, de l'accès pour le camion et de la distance de tuyau nécessaire. Il est établi sur devis, ou annoncé au téléphone en urgence."),
-            ("Travaillez-vous pour les copropriétés et les communes ?", "Oui, nous intervenons pour les syndics, les gestionnaires de résidences, les entreprises et les collectivités, ponctuellement ou dans le cadre d'un entretien régulier."),
+            ("Travaillez-vous pour les copropriétés et les communes ?", "Oui, j'interviens pour les syndics, les gestionnaires de résidences, les entreprises et les collectivités, ponctuellement ou dans le cadre d'un entretien régulier."),
         ],
         "combo_h1": "Pompage et aspiration",
         "combo_title": "Pompage {city} ({cp}) — cuves, regards, sous-sols inondés",
         "combo_meta": "Pompage et aspiration par camion {a} : regards, puisards, cuves, sous-sols inondés, séparateurs. {delay_txt}. 24h/24. ☎ 06 75 93 19 04",
         "combo_intros": [
-            "Sous-sol inondé, regard qui déborde, cuve à vider : {a}, nous intervenons avec un camion aspirateur, jour et nuit, pour les particuliers comme pour les professionnels.",
-            "Après un orage, les réseaux saturent vite. {a}, nous pompons l'eau, nettoyons les regards et remettons votre installation en service.",
+            "Sous-sol inondé, regard qui déborde, cuve à vider : {a}, j'interviens avec un camion aspirateur, jour et nuit, pour les particuliers comme pour les professionnels.",
+            "Après un orage, les réseaux saturent vite. {a}, je pompe l'eau, nettoie les regards et remets votre installation en service.",
             "Grosses interventions de pompage {a} : puisards, séparateurs, cuves et postes de relevage, pour les copropriétés, les entreprises et les collectivités.",
         ],
         "combo_points": [
@@ -453,7 +453,7 @@ SERVICES = [
             "Intervention après orage",
             "Évacuation vers une filière agréée",
         ],
-        "combo_tip": "Avant notre arrivée, coupez l'électricité des pièces inondées et dégagez l'accès pour le camion : nous pouvons tirer des tuyaux sur une bonne distance, mais un accès proche fait gagner du temps.",
+        "combo_tip": "Avant mon arrivée, coupez l'électricité des pièces inondées et dégagez l'accès pour le camion : je peux tirer des tuyaux sur une bonne distance, mais un accès proche fait gagner du temps.",
     },
 ]
 
@@ -482,3 +482,6 @@ _ORDER = ["degorgement-canalisation-var", "curage-canalisation-var", "pompage-ne
           "vidange-fosse-septique-var", "inspection-camera-canalisation-var", "travaux-assainissement-var",
           "pompe-de-relevage-var", "bac-a-graisse-var"]
 SERVICES = sorted(SERVICES, key=lambda s: _ORDER.index(s["slug"]))
+
+# Texte des cartes de services (ton de l'artisan) : (phrase, petit conseil)
+CARD_VOICE = {'plombier-urgence-24h-var': ("Fuite, dégât des eaux, WC qui déborde : je décroche jour et nuit et j'arrive avec le matériel.", "Coupez l'eau au compteur en m'attendant."), 'recherche-de-fuite-var': ('Une fuite ? Je la trouve sans tout casser, et je vous dis le prix avant.', "Notez l'index du compteur, il m'aide à confirmer la fuite."), 'debouchage-canalisation-var': ('WC, évier ou douche bouché : je débouche sans produit agressif pour vos tuyaux.', "Évitez les déboucheurs chimiques en m'attendant."), 'chauffe-eau-var': ("Plus d'eau chaude ? Je répare si c'est possible, je remplace seulement si c'est utile.", "S'il fuit, coupez le disjoncteur du ballon."), 'installation-sanitaire-var': ('WC, lavabo, douche, mitigeur : je pose proprement, avec du matériel qui dure.', "Une photo de l'existant m'aide pour le devis."), 'reparation-canalisation-var': ('Tuyau percé, odeurs, évacuation fatiguée : je répare là où il faut, sans casse inutile.', "Une odeur d'égout ? Remettez de l'eau dans les siphons peu utilisés."), 'renovation-salle-de-bain-var': ("Douche à l'italienne, baignoire remplacée : je m'occupe de tout, avec un devis détaillé.", 'Notez vos mesures et vos envies, je vous conseille.'), 'serrurier-urgence-24h-var': ("Porte claquée, clés perdues, effraction : je décroche jour et nuit et j'arrive vite.", 'Après une effraction, prenez des photos avant de toucher à quoi que ce soit.'), 'ouverture-de-porte-var': ("Porte claquée ou fermée à clé : j'ouvre sans casse dans la plupart des cas.", "Porte juste claquée ? Dites-le-moi, c'est souvent plus rapide."), 'changement-serrure-var': ("Serrure usée ou clés perdues : je change le cylindre, en A2P si votre assurance l'exige.", "Gardez une clé, elle m'aide à choisir le bon cylindre."), 'porte-blindee-var': ('Je blinde votre porte ou je pose une porte blindée adaptée à votre logement.', "Regardez ce qu'exige votre assurance avant de choisir."), 'cle-cassee-serrure-var': ("Clé cassée dans la serrure : je l'extrais sans abîmer le cylindre.", 'Gardez le morceau de clé et ne forcez pas.'), 'serrure-connectee-var': ("Code, badge ou téléphone : je pose votre serrure connectée et je vous l'explique.", 'Gardez toujours une clé de secours.'), 'rideau-metallique-var': ('Rideau ou volet métallique bloqué : je le débloque et je le répare.', 'Ne forcez pas le moteur, coupez son alimentation.'), 'degorgement-canalisation-var': ("Canalisation, égout ou WC bouché : je dégorge au furet ou à l'hydrocureur, jour et nuit.", "N'utilisez plus l'eau en m'attendant."), 'curage-canalisation-var': ('Graisses, calcaire, racines : je nettoie vos canalisations à haute pression sur toute la longueur.', "Jamais d'huile de friture dans l'évier."), 'pompage-nettoyage-cuves-var': ('Sous-sol inondé, regard plein, cuve à vider : je pompe avec le camion, même les gros volumes.', "Coupez l'électricité des pièces inondées."), 'vidange-fosse-septique-var': ("Je vidange votre fosse septique ou votre micro-station et je vérifie qu'elle est en bon état.", "Dégagez l'accès aux tampons avant mon passage."), 'inspection-camera-canalisation-var': ('Une caméra dans le tuyau : je trouve la cause du problème sans rien casser.', "Notez quand le problème apparaît, ça m'aide."), 'travaux-assainissement-var': ("Canalisation cassée, raccordement au tout-à-l'égout : je fais les travaux après un vrai diagnostic.", 'Gardez le rapport SPANC ou le courrier de la mairie.'), 'pompe-de-relevage-var': ('Alarme qui sonne, pompe bloquée : je dépanne, je nettoie ou je remplace votre pompe.', "Si l'alarme sonne, limitez l'eau et vérifiez le disjoncteur."), 'bac-a-graisse-var': ('Je vide et je nettoie votre bac à graisse avant ou après votre service.', 'Des paniers-filtres sur les éviers changent tout.')}

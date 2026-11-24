@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 import data_business as B  # noqa: E402
 from data_cities import CITIES, CITY_BY_SLUG, ALL_CITIES, EXTRA_CITIES, SECTORS  # noqa: E402
 from data_guides import GUIDES  # noqa: E402
-from data_services import SERVICES, SERVICE_ICONS, ASSURANCE_PAGE  # noqa: E402
+from data_services import SERVICES, SERVICE_ICONS, ASSURANCE_PAGE, CARD_VOICE  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "public")
@@ -75,18 +75,19 @@ def guide_path(g):
     return "/conseils/%s/" % g["slug"]
 
 
+DELAY_RANGE = "15-40 min"  # délai d'arrivée affiché pour toutes les communes
+
+
 def delay_label(c):
-    return "sur place" if c["delay"] == 0 else "~%d min" % c["delay"]
+    return DELAY_RANGE
 
 
 def delay_sentence(c):
-    if c["delay"] == 0:
-        return "Notre base est à Vidauban : nous y intervenons sans délai de route, souvent dans l'heure."
-    return "Comptez environ %d minutes pour notre arrivée %s, hors trafic. Le délai précis vous est donné au moment de l'appel." % (c["delay"], c["a"])
+    return "Comptez 15 à 40 minutes pour mon arrivée %s, selon l'heure et la circulation. Le délai précis vous est donné au moment de l'appel." % c["a"]
 
 
 def delay_txt(c):
-    return "Intervention rapide" if c["delay"] == 0 else "Arrivée estimée ~%d min" % c["delay"]
+    return "Arrivée en " + DELAY_RANGE
 
 
 def picture(name, alt, width, height, sizes, cls="", attrs=""):
@@ -158,19 +159,9 @@ def price_conditions_html(cls="price-conds"):
 
 
 def delay_faq():
-    """Réponse « En combien de temps arrivez-vous ? » construite à partir des délais de data_cities.py."""
-    groups = {}
-    for slug in ["le-muy", "les-arcs-sur-argens", "le-cannet-des-maures", "le-luc", "la-garde-freinet", "gonfaron",
-                 "draguignan", "frejus", "saint-raphael", "hyeres", "toulon"]:
-        c = CITY_BY_SLUG.get(slug)
-        if c:
-            groups.setdefault(c["delay"], []).append(c["name"])
-    parts = []
-    for d in sorted(groups):
-        ns = groups[d]
-        parts.append("%d minutes pour %s" % (d, ns[0] if len(ns) == 1 else ", ".join(ns[:-1]) + " ou " + ns[-1]))
-    return ("Selon votre commune, comptez environ %s, hors trafic. Ces délais sont indicatifs : "
-            "le délai précis vous est donné au moment de l'appel, avant tout déplacement." % ", ".join(parts))
+    """Réponse « En combien de temps arrivez-vous ? »."""
+    return ("Comptez 15 à 40 minutes selon votre commune, l'heure et la circulation. "
+            "Le délai précis vous est donné au moment de l'appel, avant tout déplacement.")
 
 
 # ---------------------------------------------------------------- icônes
@@ -192,7 +183,7 @@ LOGO_SVG = '<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circl
 # ---------------------------------------------------------------- données structurées
 def business_schema():
     area = [{"@type": "City", "name": c["name"], "postalCode": c["cp"]} for c in CITIES]
-    area.append({"@type": "AdministrativeArea", "name": "Provence"})
+    area.append({"@type": "AdministrativeArea", "name": "Var (83)"})
     address = {
         "@type": "PostalAddress",
         "addressLocality": B.ADDRESS_CITY,
@@ -277,7 +268,7 @@ def service_schema(name, desc, path, area_name, price_min=None):
         "description": desc,
         "url": abs_url(path),
         "provider": {"@id": SITE + "/#entreprise"},
-        "areaServed": {"@type": "City" if area_name != "Provence" else "AdministrativeArea", "name": area_name},
+        "areaServed": {"@type": "City" if area_name != "Var (83)" else "AdministrativeArea", "name": area_name},
         "availableChannel": {"@type": "ServiceChannel", "servicePhone": B.PHONE_TEL},
     }
     if price_min:
@@ -373,7 +364,7 @@ def head(title, desc, path, schemas, og_type="website", noindex=False):
 {gtm_tag}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Caveat:wght@600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css?v={ASSET_VERSION}">
 {schema_tags}
 </head>
@@ -386,7 +377,7 @@ def header(path):
     def cur(href):
         return ' aria-current="page"' if path.startswith(href) and href != "/" else ""
     svc_items = [(s["short"], service_path(s)) for s in SERVICES] + [(ASSURANCE_PAGE["name"], "/%s/" % ASSURANCE_PAGE["slug"]), ("Toutes les prestations", "/prestations/")]
-    zone_items = [("Assainissement %s" % c["name"], city_path(c)) for c in MENU_CITIES] + [("Toutes nos zones (%d communes)" % len(ALL_CITIES), "/zones-intervention/")]
+    zone_items = [("Assainissement %s" % c["name"], city_path(c)) for c in MENU_CITIES] + [("Toutes mes zones (%d communes)" % len(ALL_CITIES), "/zones-intervention/")]
 
     def dropdown(label, href, items):
         sub = "".join('<a href="%s">%s</a>' % (h, esc(t)) for t, h in items)
@@ -435,7 +426,7 @@ def footer(form_anchor="#devis"):
     <div class="foot-cols">
       <div>
         <a class="logo" href="/">{LOGO_SVG.replace('class="logo-mark"', 'class="logo-mark" width="34" height="34"')}<span class="logo-text"><span class="l2" style="display:block">Proservice</span><span class="l1" style="display:block">Assainissement · 24h/24</span></span></a>
-        <p class="foot-about">Entreprise d'assainissement indépendante depuis {B.SINCE}. Intervention <b>24h/24 et 7j/7</b> dans le <b>Var (83)</b> : dégorgement, hydrocurage, pompage, fosses septiques, inspection caméra.</p>
+        <p class="foot-about">Artisan du coin depuis {B.SINCE}. Je décroche moi-même, <b>24h/24 et 7j/7</b>, dans le <b>Var (83)</b>. Un souci ? Appelez, je vous dis tout de suite ce que je peux faire.</p>
         <p class="foot-about"><a href="tel:{B.PHONE_TEL}"><b>{B.PHONE}</b></a><br><a href="mailto:{B.EMAIL}">{B.EMAIL}</a></p>
       </div>
       <div><h2>Prestations</h2><ul>{svc_links}</ul></div>
@@ -443,7 +434,7 @@ def footer(form_anchor="#devis"):
       <div><h2>Informations</h2><ul>
         <li><a href="/degorgement-canalisation-var/">Dégorgement urgence 24h/24</a></li>
         <li><a href="/tarifs/">Tarifs</a></li>
-        <li><a href="/a-propos/">À propos &amp; engagements</a></li>{'<li><a href="/realisations/">Nos chantiers en images</a></li>' if B.REALISATIONS else ""}
+        <li><a href="/a-propos/">À propos &amp; engagements</a></li>{'<li><a href="/realisations/">Mes chantiers en images</a></li>' if B.REALISATIONS else ""}
         <li><a href="/conseils/">Conseils assainissement</a></li>
         <li><a href="/faq/">Questions fréquentes</a></li>
         <li><a href="/contact/">Contact &amp; devis</a></li>
@@ -466,7 +457,7 @@ def footer(form_anchor="#devis"):
 
 <div class="consent" id="consent" role="dialog" aria-labelledby="consent-title">
   <h2 id="consent-title">Vos choix en matière de cookies</h2>
-  <p>Avec votre accord, nous utilisons des cookies Google Ads pour mesurer l'efficacité de nos annonces. Le site fonctionne dans tous les cas. <a href="/politique-confidentialite/">En savoir plus</a></p>
+  <p>Avec votre accord, j'utilise des cookies Google Ads pour mesurer l'efficacité de mes annonces. Le site fonctionne dans tous les cas. <a href="/politique-confidentialite/">En savoir plus</a></p>
   <div class="consent-prefs" id="consent-prefs" hidden>
     <label class="toggle"><input type="checkbox" checked disabled><span><b>Cookies nécessaires</b> — mémorisation de votre choix. Toujours actifs.</span></label>
     <label class="toggle"><input type="checkbox" id="c-ads"><span><b>Mesure publicitaire (Google Ads)</b> — savoir quelles annonces génèrent des appels et des demandes de devis.</span></label>
@@ -541,8 +532,8 @@ def page_hero(crumbs, h1, lead, checks=None, badge=None, image=None, image_alt="
 def trust_items_short():
     items = ["Plus de %s ans d'expérience en assainissement" % B.YEARS.rstrip("+"), "Disponible 24h/24 et 7j/7",
              "Prix annoncé avant toute intervention", "Devis gratuit, sans engagement",
-             "Facture détaillée acceptée par votre assureur", "Artisan local,",
-             "Intervention", "Travaux garantis"]
+             "Facture détaillée acceptée par votre assureur", "Artisan du coin, joignable en direct",
+             "Sur place en 15 à 40 min", "Travaux garantis"]
     if B.ASSURANCE_DECENNALE:
         items.insert(1, "Assurance décennale & RC professionnelle")
     return items
@@ -550,7 +541,7 @@ def trust_items_short():
 
 def trust_marquee():
     one = "".join('<li><span class="check-circle gr">✓</span>%s</li>' % esc(t) for t in trust_items_short())
-    return ('<div class="trust-band"><div class="marquee" aria-label="Nos engagements"><ul class="marquee-track">%s%s</ul></div></div>\n'
+    return ('<div class="trust-band"><div class="marquee" aria-label="Mes engagements"><ul class="marquee-track">%s%s</ul></div></div>\n'
             % (one, one.replace("<li>", '<li aria-hidden="true">')))
 
 
@@ -579,10 +570,10 @@ def cta_band(title="Une canalisation bouchée, une fosse pleine ?", text="Une en
 
 def guarantees_section(cls="alt"):
     cards = [
-        ("Plus de %s ans d'expérience" % B.YEARS.rstrip("+"), "Un professionnel de l'assainissement, en activité depuis %d, qui a déjà rencontré à peu près tous les réseaux." % B.SINCE),
+        ("Plus de %s ans d'expérience" % B.YEARS.rstrip("+"), "Je travaille dans l'assainissement depuis %d : j'ai déjà rencontré à peu près tous les réseaux." % B.SINCE),
         ("Prix annoncé avant travaux", "Diagnostic d'abord, prix ensuite, intervention seulement avec votre accord. Aucune mauvaise surprise."),
         ("Facture pour l'assurance", "Facture détaillée remise systématiquement, reconnue par les assureurs habitation en cas de sinistre."),
-        ("Artisan local, 24h/24", "Un seul numéro, une équipe qui connaît notre secteur et reste votre interlocutrice après l'intervention."),
+        ("Artisan local, 24h/24", "Un seul numéro, une équipe qui connaît mon secteur et reste votre interlocutrice après l'intervention."),
     ]
     if B.ASSURANCE_DECENNALE:
         cards[3] = ("Artisan assuré", "Assurance décennale et responsabilité civile professionnelle, garantie sur la prestation réalisée.")
@@ -590,8 +581,8 @@ def guarantees_section(cls="alt"):
     return f"""<section class="{cls}">
   <div class="wrap">
     <div class="sec-head">
-      <div class="pill pill-green sec-badge">Nos garanties</div>
-      <h2>Pourquoi nous faire confiance</h2>
+      <div class="pill pill-green sec-badge">Mes garanties</div>
+      <h2>Pourquoi me faire confiance</h2>
       <p>Les mêmes engagements pour chaque intervention, du simple débouchage au chantier de raccordement.</p>
     </div>
     <div class="g-grid">{items}</div>
@@ -614,8 +605,8 @@ def other_services_section(current=None, city=None):
     return f"""<section>
   <div class="wrap">
     <div class="sec-head">
-      <div class="pill pill-lav sec-badge">Nos autres prestations</div>
-      <h2>Nous pouvons aussi vous aider pour</h2>
+      <div class="pill pill-lav sec-badge">Mes autres prestations</div>
+      <h2>Je peux aussi vous aider pour</h2>
     </div>
     <div class="os-grid">{"".join(items)}</div>
   </div>
@@ -629,12 +620,12 @@ def realisations_section(limit=6, cls=""):
     cards = "".join(
         '<figure class="ch-card"><a href="/assets/chantiers/%s" data-lightbox data-caption="%s"><img src="/assets/chantiers/%s" alt="%s" loading="lazy"></a><figcaption><b>%s</b><span>%s</span></figcaption></figure>'
         % (r["image"], esc(r["title"]), r["image"], esc(r["title"]), esc(r["title"]), esc(r.get("text", ""))) for r in B.REALISATIONS[:limit])
-    more = '<div class="center" style="margin-top:28px"><a class="btn btn-outline" href="/realisations/">Voir tous nos chantiers</a></div>' if len(B.REALISATIONS) > limit else ""
+    more = '<div class="center" style="margin-top:28px"><a class="btn btn-outline" href="/realisations/">Voir tous mes chantiers</a></div>' if len(B.REALISATIONS) > limit else ""
     return f"""<section class="{cls}" id="realisations">
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-lav sec-badge">Réalisations</div>
-      <h2>Nos chantiers en images</h2>
+      <h2>Mes chantiers en images</h2>
       <p>Quelques interventions réalisées.</p>
     </div>
     <div class="ch-grid">{cards}</div>
@@ -718,14 +709,14 @@ def quote_modal():
 """
 
 
-def contact_section(path, title="Besoin d'une intervention maintenant ?", service=None, city=None):
+def contact_section(path, title="Racontez-moi votre souci", service=None, city=None):
     """Formulaire de devis complet (FormSubmit : « devis »), présent en bas de chaque page."""
     return f"""<section class="contact" id="devis">
   <div class="wrap contact-grid">
     <div>
       <div class="pill pill-orange">Contact &amp; devis gratuit</div>
       <h2>{title}</h2>
-      <p class="lead">Pour une urgence, l'appel reste le plus rapide : un technicien vous répond directement. Pour une demande de devis, remplissez le formulaire, nous vous rappelons rapidement (sous 1 h en journée).</p>
+      <p class="lead">Le plus simple, c'est de m'appeler : c'est moi qui décroche, même la nuit et le week-end. Vous préférez écrire ? Expliquez-moi la situation ci-contre, je vous rappelle moi-même, en général dans l'heure en journée.</p>
       <div class="contact-info">
         <div class="cinfo">
           <div class="icon-sq">{phone_icon(18)}</div>
@@ -737,7 +728,7 @@ def contact_section(path, title="Besoin d'une intervention maintenant ?", servic
         </div>
         <div class="cinfo">
           <div class="icon-sq">{svc_icon("shield", 18)}</div>
-          <div><b>Provence</b><span>Diagnostic téléphonique et devis gratuits</span></div>
+          <div><b>Var (83) · 153 communes</b><span>Diagnostic téléphonique et devis gratuits</span></div>
         </div>
       </div>
     </div>
@@ -797,7 +788,7 @@ def quick_form(path, service=None, city=None, title="Rappel rapide"):
     """Formulaire court (FormSubmit : « rappel »), dans la colonne latérale des pages de service."""
     return f"""<div class="side-card" id="rappel">
   <h2>{title}</h2>
-  <p style="color:var(--gray-600)">Laissez votre numéro, un technicien vous rappelle au plus vite.</p>
+  <p style="color:var(--gray-600)">Laissez votre numéro, je vous rappelle au plus vite.</p>
   <form class="quote" name="rappel" method="POST" action="{FORM_ACTION}" data-netlify="true" netlify-honeypot="_honey" style="padding:0">
     {form_hidden("rappel")}
     <input type="hidden" name="page" value="{esc(path)}">
@@ -819,7 +810,7 @@ def call_card(price=None, extra=""):
     return f"""<div class="side-card dark">
   <h2>Urgence ? Appelez</h2>
   {price_html}
-  <p>Un technicien vous répond directement, 24h/24 et 7j/7. Prix annoncé avant le déplacement.</p>
+  <p>Je vous réponds directement, 24h/24 et 7j/7. Prix annoncé avant le déplacement.</p>
   <a href="tel:{B.PHONE_TEL}" class="btn btn-orange">{phone_icon(18, True)} {B.PHONE}</a>
   {extra}
 </div>
@@ -844,20 +835,20 @@ def faq_block(faq, title="Questions fréquentes", sub=None, cls="alt", anchor="f
 """
 
 
-def process_section(title="De l'appel à la réparation"):
+def process_section(title="Comment ça se passe"):
     steps = [
-        ("Appel &amp; diagnostic", "Vous décrivez le problème, nous estimons le type d'intervention et vous annonçons une fourchette de prix, gratuitement."),
-        ("Départ", "Un technicien part avec le matériel adapté (furet, hydrocureur, camion). Vous connaissez l'heure d'arrivée estimée."),
-        ("Devis sur place", "Le prix est confirmé et validé avec vous avant de commencer. Vous restez libre de refuser."),
-        ("Intervention &amp; garantie", "Réparation propre, facture détaillée remise, utile pour votre assurance. Travaux garantis."),
+        ("Vous m'appelez", "C'est un artisan qui décroche, pas un standard. Vous expliquez le souci, je vous donne tout de suite une idée du prix, gratuitement."),
+        ("J'arrive", "Je pars avec le bon matériel et je vous dis quand j'arrive : en général 15 à 40 minutes."),
+        ("On regarde ensemble", "Sur place, je vous montre le problème et je confirme le prix avant de toucher à quoi que ce soit. Vous restez libre de dire non."),
+        ("Je répare et je reste joignable", "Travail propre, facture détaillée pour l'assurance. Un souci après ? Vous gardez mon numéro, je reviens."),
     ]
     items = "".join('<div class="proc-item"><div class="n">%d</div><h3>%s</h3><p>%s</p></div>' % (i + 1, t, d) for i, (t, d) in enumerate(steps))
     return f"""<section class="process">
   <div class="wrap">
     <div class="sec-head">
-      <div class="pill pill-orange sec-badge">Déroulé</div>
+      <div class="pill pill-orange sec-badge">Sans surprise</div>
       <h2>{title}</h2>
-      <p>Quatre étapes claires, pour un tarif annoncé avant toute intervention.</p>
+      <p>Simplement, comme j'aimerais qu'on travaille chez moi.</p>
     </div>
     <div class="proc-list">{items}</div>
   </div>
@@ -879,12 +870,33 @@ def brands_section(cls=""):
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-lav sec-badge">{svc_icon("key", 15)}Toutes marques</div>
-      <h2>Les marques sur lesquelles nous intervenons</h2>
-      <p>Ouverture, dépannage, changement de cylindre ou de serrure : nous intervenons sur les grandes marques de serrurerie, y compris les serrures multipoints et certifiées A2P.</p>
+      <h2>Les marques sur lesquelles j'interviens</h2>
+      <p>Ouverture, dépannage, changement de cylindre ou de serrure : j'interviens sur les grandes marques de serrurerie, y compris les serrures multipoints et certifiées A2P.</p>
     </div>
   </div>
   {logo_marquee(B.BRANDS, "marques", "Marques de serrures")}
   <div class="wrap"><p class="logos-legal">Marques et logos cités à titre d'information ; ils appartiennent à leurs propriétaires respectifs.</p></div>
+</section>
+"""
+
+
+def artisan_word(city=None):
+    """« Le mot de l'artisan » : ton personnel, signature manuscrite (aucun fait inventé)."""
+    return f"""<section class="artisan-word">
+  <div class="wrap aw-grid">
+    <div class="aw-text">
+      <div class="pill pill-lav sec-badge">Le mot de l'artisan</div>
+      <h2>Ici, c'est un artisan du coin qui vous répond</h2>
+      <blockquote>
+        <p>Quand vous m'appelez, vous ne tombez pas sur un centre d'appel à l'autre bout de la France. Vous tombez sur moi, un artisan du coin{' qui intervient ' + city['a'] if city else ''}.</p>
+        <p>Je connais les réseaux du coin, des fosses des maisons isolées aux colonnes des immeubles. Je vous dis franchement ce qui doit être fait, je travaille proprement et je laisse les lieux nets.</p>
+        <p>Un client content, c'est un voisin qui me recommande. Alors je prends le temps d'expliquer, j'annonce le prix avant de commencer, et je fais le travail comme si c'était chez moi.</p>
+      </blockquote>
+      <p class="aw-sign">À bientôt,<span>votre artisan Proservice</span></p>
+      <a href="tel:{B.PHONE_TEL}" class="btn btn-orange">{phone_icon(18, True)} {B.PHONE}</a>
+    </div>
+    <div class="aw-photo">{picture("technicien-devis-client.jpg", "Artisan expliquant le devis à un client", 452, 452, "(max-width: 900px) 100vw, 452px", attrs=' loading="lazy"')}</div>
+  </div>
 </section>
 """
 
@@ -901,8 +913,8 @@ def insurers_section(cls=""):
   {logo_marquee(B.INSURERS, "assurances", "Assureurs habitation")}
   <div class="wrap">
     <p class="ins-count">{len(B.INSURERS)} assureurs, mutuelles et banques-assureurs, parmi d'autres</p>
-    <p class="ins-note">Nous remettons une facture détaillée et un descriptif de la cause du sinistre, les justificatifs demandés par les assureurs. Remboursement selon les garanties et franchises de votre contrat. <a href="/{ASSURANCE_PAGE['slug']}/" style="color:var(--purple-700);font-weight:600;text-decoration:underline">Refoulement d'égout : comment ça marche ?</a></p>
-    <p class="logos-legal">Logos cités à titre d'information : notre facture détaillée est le justificatif demandé par les assureurs habitation, sans partenariat avec ces compagnies. Les marques appartiennent à leurs propriétaires respectifs.</p>
+    <p class="ins-note">Je remets une facture détaillée et un descriptif de la cause du sinistre, les justificatifs demandés par les assureurs. Remboursement selon les garanties et franchises de votre contrat. <a href="/{ASSURANCE_PAGE['slug']}/" style="color:var(--purple-700);font-weight:600;text-decoration:underline">Refoulement d'égout : comment ça marche ?</a></p>
+    <p class="logos-legal">Logos cités à titre d'information : ma facture détaillée est le justificatif demandé par les assureurs habitation, sans partenariat avec ces compagnies. Les marques appartiennent à leurs propriétaires respectifs.</p>
   </div>
 </section>
 """
@@ -931,7 +943,7 @@ def reviews_section(cls="", city=None):
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-lav sec-badge">Avis clients</div>
-      <h2>Ce que disent nos clients</h2>
+      <h2>Ce que disent mes clients</h2>
     </div>
     <div class="testi-grid">{"".join(cards)}</div>
     {links}
@@ -945,15 +957,20 @@ def services_grid(city=None):
     for s in SERVICES:
         href = combo_path(s, city) if city and not city.get("extra") else service_path(s)
         title = s["short"] + (" " + city["a"] if city else "")
+        voice, tip = CARD_VOICE.get(s["slug"], (s["card_desc"], ""))
+        badge = "Urgence 24h/24" if "urgence" in s["slug"] else "Sur place en 15-40 min"
         checks = "".join('<div class="check-row"><span class="check-circle la">✓</span>%s</div>' % esc(c) for c in s["card_checks"])
+        tip_html = '<p class="svc-tip">%s</p>' % esc(tip) if tip else ""
         cards.append(f"""<article class="svc-card has-img">
-  <a class="svc-img" href="{href}" tabindex="-1" aria-hidden="true">{picture(s["image"], "", 400, 240, "(max-width: 700px) 100vw, 400px", attrs=' loading="lazy"')}<span class="pill {'pill-orange' if 'Urgence' in s['badge'] or s['badge'] == 'Dépannage' else 'pill-lav'}">{esc(s["badge"])}</span></a>
+  <a class="svc-img" href="{href}" tabindex="-1" aria-hidden="true">{picture(s["image"], "", 400, 240, "(max-width: 700px) 100vw, 400px", attrs=' loading="lazy"')}<span class="pill {'pill-orange' if 'urgence' in s['slug'] else 'pill-lav'}">{badge}</span></a>
   <div class="svc-body">
     <h3><a href="{href}">{esc(title)}</a></h3>
-    <p class="desc">{esc(s["card_desc"])}</p>
+    <p class="desc">{esc(voice)}</p>
     <div class="svc-checks">{checks}</div>
-    <div class="svc-foot"><span class="svc-price">{esc(s["price_label"])}</span><a class="more" href="{href}">En savoir plus →</a></div>
-    <div class="svc-actions"><a href="tel:{B.PHONE_TEL}" class="btn btn-orange">{phone_icon(16, True)} Appeler</a><button type="button" class="btn btn-outline svc-quote" data-service="{esc(s["short"])}">Demander un devis</button></div>
+    {tip_html}
+    <div class="svc-foot"><span class="svc-price">{esc(s["price_label"])}</span><a class="more" href="{href}">Voir le détail →</a></div>
+    <div class="svc-actions"><a href="tel:{B.PHONE_TEL}" class="btn btn-orange">{phone_icon(16, True)} Appeler l'artisan</a><button type="button" class="btn btn-outline svc-quote" data-service="{esc(s["short"])}">Devis gratuit</button></div>
+    <p class="svc-reassure">Prix annoncé avant de venir · Sans engagement</p>
   </div>
 </article>""")
     return '<div class="svc-grid">%s</div>' % "".join(cards)
@@ -992,8 +1009,24 @@ def pricing_section():
       <ul class="rate-list">{rows}</ul>
       <p class="rate-now" data-price-now>Dimanches et jours fériés : tarif de nuit toute la journée.</p>
       {price_conditions_html("rate-conds")}
-      <p class="rate-legal">Devis écrit remis avant tout travail estimé à plus de 150&nbsp;€ TTC. <a href="/tarifs/">Détail de nos tarifs</a></p>
+      <p class="rate-legal">Devis écrit remis avant tout travail estimé à plus de 150&nbsp;€ TTC. <a href="/tarifs/">Détail de mes tarifs</a></p>
     </div>
+  </div>
+</section>
+"""
+
+
+def promises_block():
+    """Quatre promesses écrites à la main (à la place des chiffres clés)."""
+    notes = [("Je décroche moi-même", "Pas de standard, pas de plateforme : c'est l'artisan qui répond."),
+             ("Le prix avant de venir", "Et confirmé sur place, avant de toucher à quoi que ce soit."),
+             ("Je laisse propre", "Protection des sols, nettoyage, et je remporte les vieilles pièces."),
+             ("Je reste joignable", "Un souci après mon passage ? Vous rappelez, je reviens.")]
+    cards = "".join('<li class="note"><b>%s</b><span>%s</span></li>' % (esc(a), esc(b)) for a, b in notes)
+    return f"""<section class="promises alt">
+  <div class="wrap">
+    <div class="sec-head"><h2>Ce que je vous promets</h2><p>Pas de grands discours : quatre choses que je tiens à chaque intervention.</p></div>
+    <ul class="notes">{cards}</ul>
   </div>
 </section>
 """
@@ -1017,7 +1050,7 @@ def zones_section(current=None, service=None, cls=""):
         pool += [current] + [CITY_BY_SLUG[n] for n in current["near"] if n in CITY_BY_SLUG and CITY_BY_SLUG[n].get("extra")]
     seen = set()
     pool = [c for c in pool if not (c["slug"] in seen or seen.add(c["slug"]))]
-    cities = sorted(pool, key=lambda c: (c["delay"], c["name"]))
+    cities = sorted(pool, key=lambda c: c["name"])
     items = []
     for c in cities:
         href = combo_path(service, c) if service else city_path(c)
@@ -1034,10 +1067,10 @@ def zones_section(current=None, service=None, cls=""):
     </div>
     <div class="zone-note">
       <span class="pill pill-orange">Hors zone ?</span>
-      <h3>Nous couvrons notre secteur</h3>
+      <h3>Je couvre mon secteur</h3>
       <p>Les délais ci-contre sont indicatifs, hors trafic. Pour une commune qui n'y figure pas, le délai précis est donné au téléphone, avant tout déplacement.</p>
       <a href="tel:{B.PHONE_TEL}" class="btn btn-purple">{phone_icon(18, True)} Vérifier mon secteur</a>
-      <a href="/zones-intervention/" class="btn btn-outline">Toutes nos zones d'intervention</a>
+      <a href="/zones-intervention/" class="btn btn-outline">Toutes mes zones d'intervention</a>
     </div>
   </div>
 </section>
@@ -1060,7 +1093,7 @@ def zone_cards(cities, link_fn=city_path):
         % (link_fn(c), esc(c["name"]), c["cp"], delay_label(c)) for c in cities)
 
 
-def guides_teaser(guides, title="Nos conseils en assainissement", cls=""):
+def guides_teaser(guides, title="Mes conseils en assainissement", cls=""):
     cards = "".join(
         '<article class="post-card"><span class="pill pill-lav" style="align-self:flex-start">Guide pratique</span><h3><a href="%s">%s</a></h3><p>%s</p><a class="more" href="%s">Lire le guide →</a></article>'
         % (guide_path(g), esc(g["h1"]), esc(g["excerpt"]), guide_path(g)) for g in guides)
@@ -1079,13 +1112,13 @@ def guides_teaser(guides, title="Nos conseils en assainissement", cls=""):
 def trust_items():
     return [
         ("Prix annoncé avant de partir", "Diagnostic téléphonique gratuit et fourchette de prix avant tout déplacement, suppléments de nuit ou de week-end compris."),
-        ("Devis validé avant les travaux", "Le prix est confirmé sur place et vous le validez avant que nous commencions. Vous restez libre de refuser."),
-        ("Pas de travaux inutiles", "Si une réparation suffit, nous ne remplaçons pas. Si l'intervention peut attendre, nous vous le disons."),
+        ("Devis validé avant les travaux", "Le prix est confirmé sur place et vous le validez avant que je commence. Vous restez libre de refuser."),
+        ("Pas de travaux inutiles", "Si une réparation suffit, je ne remplace pas. Si l'intervention peut attendre, me vous le dis."),
         ("Facture détaillée", "Déplacement, main-d'œuvre et pièces détaillés : un document clair, accepté par les assureurs habitation."),
         ("Un artisan local, joignable en direct", "Pas de plateforme ni de centre d'appel : vous parlez directement à un professionnel de la région."),
-        ("Travaux garantis", "Nos interventions sont garanties. En cas de souci, nous revenons."),
+        ("Travaux garantis", "Mes interventions sont garanties. En cas de souci, je reviens."),
         ("Chantier propre", "Protection des sols, nettoyage en fin d'intervention et évacuation des anciennes pièces."),
-        ("Ponctualité et transparence", "Un imprévu ? Nous vous prévenons à l'avance, avec un nouvel horaire."),
+        ("Ponctualité et transparence", "Un imprévu ? Je vous préviens à l'avance, avec un nouvel horaire."),
     ]
 
 
@@ -1096,17 +1129,17 @@ def trust_list_html():
 
 # ---------------------------------------------------------------- pages
 HOME_FAQ = [
-    ("Combien coûte une intervention ?", "Nos prix TTC en journée : " + prices_summary() + ". Le prix exact dépend de l'intervention et de l'horaire ; il est toujours annoncé au téléphone et confirmé sur place avant les travaux. <a href=\"/tarifs/\">Voir nos tarifs</a>."),
-    ("Intervenez-vous la nuit, le week-end et les jours fériés ?", "Oui, nous sommes joignables 24h/24 et 7j/7 au 06 75 93 19 04, jours fériés compris. " + majorations_sentence() + " La majoration est toujours annoncée avant le déplacement."),
+    ("Combien coûte une intervention ?", "Mes prix TTC en journée : " + prices_summary() + ". Le prix exact dépend de l'intervention et de l'horaire ; il est toujours annoncé au téléphone et confirmé sur place avant les travaux. <a href=\"/tarifs/\">Voir mes tarifs</a>."),
+    ("Intervenez-vous la nuit, le week-end et les jours fériés ?", "Oui, je suis joignable 24h/24 et 7j/7 au 06 75 93 19 04, jours fériés compris. " + majorations_sentence() + " La majoration est toujours annoncée avant le déplacement."),
     ("Dans quelles communes intervenez-vous ?", "Dans les 153 communes du Var (83). <a href=\"/zones-intervention/\">Voir toutes les communes</a>."),
     ("Faites-vous les grosses interventions ?", "Oui : dégorgement de collecteurs, hydrocurage de réseaux, pompage de sous-sols inondés, de regards, de cuves et de séparateurs, pour les particuliers comme pour les copropriétés, les entreprises et les collectivités."),
     ("Le devis est-il gratuit ?", "Oui, le diagnostic téléphonique et le devis sont gratuits et sans engagement."),
     ("Quelle différence entre dégorgement et curage ?", "Le dégorgement supprime un bouchon pour rétablir l'écoulement. Le curage nettoie toute la paroi de la canalisation à haute pression pour retirer les dépôts et éviter que les bouchons reviennent."),
-    ("En combien de temps arrivez-vous ?", "Le délai dépend de votre commune et de l'heure de l'appel : il vous est annoncé au téléphone, avant le déplacement. <a href=\"/zones-intervention/\">Voir nos zones d'intervention</a>."),
-    ("Vidangez-vous les fosses septiques ?", "Oui, nous intervenons pour la vidange et l'entretien des fosses septiques, fosses toutes eaux, micro-stations et bacs dégraisseurs. <a href=\"/vidange-fosse-septique-var/\">En savoir plus</a>."),
-    ("Faut-il casser pour réparer une canalisation enterrée ?", "Nous commençons par une inspection caméra qui localise précisément le défaut : nous n'ouvrons qu'à cet endroit, et seulement si une réparation est nécessaire."),
-    ("Vos factures sont-elles acceptées par les assurances ?", "Nous remettons une facture détaillée et un descriptif de la cause du sinistre (refoulement, inondation). Le remboursement dépend des garanties de votre contrat."),
-    ("Comment éviter les arnaques au débouchage ?", "Exigez un prix avant le déplacement et un devis avant les travaux, méfiez-vous des diagnostics alarmistes et préférez une entreprise réellement locale. <a href=\"/conseils/choisir-entreprise-debouchage-eviter-arnaques/\">Lire notre guide</a>."),
+    ("En combien de temps arrivez-vous ?", "Le délai dépend de votre commune et de l'heure de l'appel : il vous est annoncé au téléphone, avant le déplacement. <a href=\"/zones-intervention/\">Voir mes zones d'intervention</a>."),
+    ("Vidangez-vous les fosses septiques ?", "Oui, j'interviens pour la vidange et l'entretien des fosses septiques, fosses toutes eaux, micro-stations et bacs dégraisseurs. <a href=\"/vidange-fosse-septique-var/\">En savoir plus</a>."),
+    ("Faut-il casser pour réparer une canalisation enterrée ?", "Je commence par une inspection caméra qui localise précisément le défaut : je n'ouvre qu'à cet endroit, et seulement si une réparation est nécessaire."),
+    ("Vos factures sont-elles acceptées par les assurances ?", "Je remets une facture détaillée et un descriptif de la cause du sinistre (refoulement, inondation). Le remboursement dépend des garanties de votre contrat."),
+    ("Comment éviter les arnaques au débouchage ?", "Exigez un prix avant le déplacement et un devis avant les travaux, méfiez-vous des diagnostics alarmistes et préférez une entreprise réellement locale. <a href=\"/conseils/choisir-entreprise-debouchage-eviter-arnaques/\">Lire mon guide</a>."),
 ]
 
 
@@ -1123,12 +1156,13 @@ def build_home():
     <div class="hero-text">
     <div class="pill avail-badge"><span class="dot dot-pulse"></span><span>Artisan en assainissement</span></div>
     <h1>Artisan en assainissement<br><span class="accent">24h/24 et 7j/7</span></h1>
-    <p class="lead">Canalisation bouchée, égout qui refoule, fosse pleine, sous-sol inondé ? <b>Une entreprise locale vous répond en direct, jour et nuit, 7j/7</b>, et intervient avec un prix annoncé avant de commencer. Plus de {B.YEARS.rstrip("+")} ans d'expérience, travail soigné, facture détaillée acceptée par votre assureur.</p>
+    <p class="lead">Canalisation bouchée, fosse pleine, sous-sol inondé ? Vous appelez, c'est <b>un artisan du coin qui décroche</b>, pas un standard. Je vous dis le prix avant de venir, je fais le travail proprement, et je reste joignable après. C'est comme ça que je travaille depuis {B.SINCE}.</p>
     <a href="tel:{B.PHONE_TEL}" class="hero-cta">
       <span class="num">{phone_icon(24, True)} {B.PHONE}</span>
       <span class="sub">Appel direct, disponible 24/7</span>
     </a>
     <button type="button" class="hero-devis svc-quote" data-service="Demande de devis">Ou demandez un devis gratuit</button>
+    <p class="hero-note">Je décroche moi-même, promis !</p>
     <div class="hero-checks">
       <div class="check-row"><span class="check-circle gr">✓</span>Diagnostic gratuit</div>
       <div class="check-row"><span class="check-circle gr">✓</span>Prix annoncé à l'avance</div>
@@ -1144,13 +1178,14 @@ def build_home():
 </section>
 """
     out += insurers_section("ins-top")
+    out += artisan_word()
     out += trust_marquee()
     out += urgent_band()
     out += f"""<section id="services">
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-purple sec-badge">{svc_icon("shield", 15)}Services professionnels</div>
-      <h2>Nos services d'assainissement</h2>
+      <h2>Ce que je fais pour vous</h2>
       <p>Du WC bouché au collecteur de copropriété, des interventions d'urgence aux gros chantiers, 24h/24 et 7j/7.</p>
     </div>
     {services_grid()}
@@ -1158,34 +1193,34 @@ def build_home():
 </section>
 """
     out += pricing_section()
-    out += f"""<div class="alt" style="padding:0 0 10px"><div class="wrap">{stats_block()}</div></div>
+    out += f"""{promises_block()}
 <section class="alt">
   <div class="wrap text-block prose">
-    <h2>Une entreprise d'assainissement de confiance depuis {B.SINCE}</h2>
-    <p><strong>{B.NAME}</strong> est une entreprise d'assainissement qui intervient dans le Var (83), 24h/24 et 7j/7. Depuis {B.SINCE}, nous intervenons pour les particuliers, propriétaires, syndics de copropriété, gestionnaires de résidences et de campings, restaurateurs, entreprises et collectivités de tout le département.</p>
-    <p>Notre métier, ce sont les <strong>interventions d'assainissement, petites et grosses</strong> : un WC bouché un dimanche, une colonne d'immeuble obstruée, un égout qui refoule après un orage, une fosse septique pleine avant une vente. Vous joignez directement l'équipe au <a href="tel:{B.PHONE_TEL}">{B.PHONE}</a>, sans plateforme ni centre d'appel, et le prix vous est annoncé <strong>avant</strong> le déplacement.</p>
-    <p>Nos prestations : <a href="/degorgement-canalisation-var/">dégorgement et débouchage</a>, <a href="/curage-canalisation-var/">hydrocurage haute pression</a>, <a href="/pompage-nettoyage-cuves-var/">pompage et aspiration</a>, <a href="/vidange-fosse-septique-var/">vidange de fosse septique</a>, <a href="/inspection-camera-canalisation-var/">inspection caméra</a>, <a href="/travaux-assainissement-var/">travaux et raccordement au tout-à-l'égout</a>, <a href="/pompe-de-relevage-var/">pompes de relevage</a> et <a href="/bac-a-graisse-var/">bacs à graisse</a>. Après un refoulement, nous fournissons les <a href="/{ASSURANCE_PAGE['slug']}/">justificatifs demandés par votre assurance</a>.</p>
-    <p>Ce qui nous distingue ? Des engagements simples et tenus : un prix annoncé à l'avance, un devis validé avant les travaux, aucune intervention inutile et une facture détaillée. Des engagements tenus à chaque intervention, de jour comme de nuit.</p>
+    <h2>Pourquoi je travaille comme ça</h2>
+    <p><strong>{B.NAME}</strong>, c'est mon entreprise d'assainissement : j'interviens dans le Var (83) depuis {B.SINCE}. Pas de standard, pas de sous-traitance : quand vous appelez le <a href="tel:{B.PHONE_TEL}">{B.PHONE}</a>, c'est moi qui décroche.</p>
+    <p>Une canalisation bouchée ou une fosse qui déborde, c'est stressant et ça n'attend pas. Je vous écoute, je vous dis franchement si c'est urgent ou si ça peut attendre, et je vous annonce le prix avant de déplacer le camion.</p>
+    <p>Mes prestations : <a href="/degorgement-canalisation-var/">dégorgement et débouchage</a>, <a href="/curage-canalisation-var/">hydrocurage haute pression</a>, <a href="/pompage-nettoyage-cuves-var/">pompage et aspiration</a>, <a href="/vidange-fosse-septique-var/">vidange de fosse septique</a>, <a href="/inspection-camera-canalisation-var/">inspection caméra</a>, <a href="/travaux-assainissement-var/">travaux et raccordement au tout-à-l'égout</a>, <a href="/pompe-de-relevage-var/">pompes de relevage</a> et <a href="/bac-a-graisse-var/">bacs à graisse</a>. Après un refoulement, je fournis les <a href="/{ASSURANCE_PAGE['slug']}/">justificatifs demandés par votre assurance</a>.</p>
+    <p>Et si quelque chose ne va pas après mon passage, vous me rappelez : je reviens. C'est ça, être l'artisan du coin.</p>
   </div>
 </section>
 <section id="pourquoi">
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-lav sec-badge">{svc_icon("shield", 15)}Entreprise de confiance</div>
-      <h2>Notre charte de confiance</h2>
-      <p>Le dépannage d'urgence a mauvaise réputation. Nous avons choisi de faire l'inverse, et de l'écrire noir sur blanc.</p>
+      <h2>Mes engagements, noir sur blanc</h2>
+      <p>Le dépannage a parfois mauvaise réputation. Moi, je préfère que vous sachiez exactement à quoi vous attendre.</p>
     </div>
     {trust_list_html()}
-    <div class="center" style="margin-top:34px"><a class="btn btn-outline" href="/a-propos/">En savoir plus sur nous</a></div>
+    <div class="center" style="margin-top:34px"><a class="btn btn-outline" href="/a-propos/">En savoir plus sur moi</a></div>
   </div>
 </section>
 """
-    out += process_section("Simple, clair, sans surprise")
-    out += cta_band("Canalisation bouchée, égout qui refoule ?", "Nous intervenons tous les jours, 24h/24.")
+    out += process_section()
+    out += cta_band("Canalisation bouchée, égout qui refoule ?", "J'interviens tous les jours, 24h/24.")
     out += realisations_section(cls="alt")
     out += reviews_section("alt" if not B.REALISATIONS else "")
     out += guides_teaser(GUIDES[:3])
-    out += faq_block(HOME_FAQ, "Avant d'appeler : vos questions", cls="alt")
+    out += faq_block(HOME_FAQ, "Les questions qu'on me pose souvent", cls="alt")
     out += contact_section(path)
     out += footer()
     write_page(path, out, "1.0")
@@ -1195,7 +1230,7 @@ def build_service(s, idx):
     path = service_path(s)
     crumbs = [("Accueil", "/"), ("Prestations", "/prestations/"), (s["name"], path)]
     schemas = [business_schema(), breadcrumb_schema(crumbs),
-               service_schema(s["name"], strip_tags(s["lead"]), path, "Provence", s["price_min"]),
+               service_schema(s["name"], strip_tags(s["lead"]), path, "Var (83)", s["price_min"]),
                faq_schema(s["faq"])]
     out = head(s["title"], s["meta"], path, schemas)
     out += header(path)
@@ -1208,22 +1243,22 @@ def build_service(s, idx):
     related_guides = [g for g in GUIDES if s["slug"] in g["services"]]
     guides_html = ""
     if related_guides:
-        guides_html = "<h2>Nos guides sur le sujet</h2><ul>%s</ul>" % "".join('<li><a href="%s">%s</a></li>' % (guide_path(g), esc(g["h1"])) for g in related_guides)
+        guides_html = "<h2>Mes guides sur le sujet</h2><ul>%s</ul>" % "".join('<li><a href="%s">%s</a></li>' % (guide_path(g), esc(g["h1"])) for g in related_guides)
     out += f"""<section>
   <div class="wrap layout">
     <article class="prose">
       {sections}
-      <h2>{esc(s["short"])} : où intervenons-nous ?</h2>
-      <p>Nous intervenons dans 153 communes. Retrouvez le détail de notre intervention dans votre commune :</p>
+      <h2>{esc(s["short"])}  : où est-ce que j'interviens ?</h2>
+      <p>J'interviens dans 153 communes. Retrouvez le détail de mon intervention dans votre commune :</p>
       <div class="chips" style="margin-bottom:14px">{city_chips}</div>
-      <p>Nous intervenons aussi dans les communes voisines : </p>
+      <p>J'interviens aussi dans les communes voisines : </p>
       <div class="chips">{other_chips}</div>
       {guides_html}
     </article>
     <aside class="side">
       {quick_form(path, service=s["short"], title="Rappel rapide : " + s["short"].lower())}
       {call_card(s["price_label"])}
-      <div class="side-card"><h2>Nos autres prestations</h2><ul class="side-links">{others}</ul></div>
+      <div class="side-card"><h2>Mes autres prestations</h2><ul class="side-links">{others}</ul></div>
     </aside>
   </div>
 </section>
@@ -1255,7 +1290,7 @@ def build_combo(s, c, si, ci):
         ("En combien de temps intervenez-vous %s ?" % c["a"], delay_sentence(c) + " Pour une urgence, appelez le 06 75 93 19 04."),
         sf[v % len(sf)],
         sf[(v + 1) % len(sf)],
-        ("Intervenez-vous aussi autour %s ?" % c["de"], "Oui, nous intervenons également à %s et. <a href=\"/zones-intervention/\">Voir toutes nos zones</a>." % near_names),
+        ("Intervenez-vous aussi autour %s ?" % c["de"], "Oui, j'interviens également à %s et dans les communes voisines. <a href=\"/zones-intervention/\">Voir toutes mes zones</a>." % near_names),
     ]
     schemas = [business_schema(), breadcrumb_schema(crumbs),
                service_schema("%s %s" % (s["combo_h1"], c["a"]), strip_tags(lead), path, c["name"], s["price_min"]),
@@ -1273,18 +1308,18 @@ def build_combo(s, c, si, ci):
     out += f"""<section>
   <div class="wrap layout">
     <article class="prose">
-      <h2>{esc(s["short"])} {c["a"]} : nos interventions</h2>
+      <h2>{esc(s["short"])} {c["a"]} : mes interventions</h2>
       <ul>{points_html}</ul>
       <h2>Une équipe proche de chez vous {c["a"]}</h2>
       <p>{esc(c["context"])}</p>
       <p>{delay_sentence(c)}</p>
-      <div class="callout info"><strong>Notre conseil :</strong> {esc(s["combo_tip"])}</div>
+      <div class="callout info"><strong>Mon conseil :</strong> {esc(s["combo_tip"])}</div>
       <h2>Prix et engagements</h2>
       <p>{"" if s["price_label"].lower().startswith("tarif") else "Tarif : "}<strong>{esc(s["price_label"])}</strong>. Le diagnostic téléphonique est gratuit, le prix est annoncé avant le déplacement et confirmé sur place avant les travaux. En fin d'intervention, vous recevez une facture détaillée, acceptée par les assureurs habitation pour vos démarches de remboursement. Prix TTC en journée ; déplacement : {deplacement_txt()}. Majorations : {', '.join('%s %s' % (l[0].lower() + l[1:], v) for l, v in majorations())}, toujours annoncées à l'avance.</p>
       <h2>{first_section[0]}</h2>
       {first_section[1]}
-      <p>Pour tout savoir sur cette prestation, consultez notre page <a href="{service_path(s)}">{esc(s["name"].lower())}</a>, ou découvrez <a href="{city_path(c)}">toutes nos interventions d'assainissement {c["a"]}</a>.</p>
-      <h2>Nous intervenons aussi autour {c["de"]}</h2>
+      <p>Pour tout savoir sur cette prestation, consultez ma page <a href="{service_path(s)}">{esc(s["name"].lower())}</a>, ou découvrez <a href="{city_path(c)}">toutes mes interventions d'assainissement {c["a"]}</a>.</p>
+      <h2>J'interviens aussi autour {c["de"]}</h2>
       <div class="chips">{near_chips}</div>
     </article>
     <aside class="side">
@@ -1299,7 +1334,7 @@ def build_combo(s, c, si, ci):
     out += zones_section(current=c, service=s)
     out += faq_block(faq, "%s %s : vos questions" % (s["short"], c["a"]), cls="")
     out += other_services_section(s, c)
-    out += contact_section(path, "%s %s : contactez-nous" % (s["short"], c["a"]), service=s["short"], city=c["name"])
+    out += contact_section(path, "%s %s : contactez-moi" % (s["short"], c["a"]), service=s["short"], city=c["name"])
     out += footer()
     write_page(path, out, "0.7" if c["core"] else "0.6")
 
@@ -1309,11 +1344,11 @@ def charter_section(cls=""):
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-lav sec-badge">{svc_icon("shield", 15)}Entreprise de confiance</div>
-      <h2>Notre charte de confiance</h2>
-      <p>Le dépannage d'urgence a mauvaise réputation. Nous avons choisi de faire l'inverse, et de l'écrire noir sur blanc.</p>
+      <h2>Mes engagements, noir sur blanc</h2>
+      <p>Le dépannage a parfois mauvaise réputation. Moi, je préfère que vous sachiez exactement à quoi vous attendre.</p>
     </div>
     {trust_list_html()}
-    <div class="center" style="margin-top:34px"><a class="btn btn-outline" href="/a-propos/">En savoir plus sur nous</a></div>
+    <div class="center" style="margin-top:34px"><a class="btn btn-outline" href="/a-propos/">En savoir plus sur moi</a></div>
   </div>
 </section>
 """
@@ -1327,12 +1362,13 @@ def city_hero(c, crumbs):
     {crumbs_html(crumbs)}
     <div class="pill avail-badge"><span class="dot dot-pulse"></span><span>{esc(delay_txt(c))} · {c["cp"]}</span></div>
     <h1>Assainissement<br><span class="accent">{c["a"]}, 24h/24</span></h1>
-    <p class="lead">Canalisation bouchée, égout qui refoule, fosse pleine, sous-sol inondé ? <b>Un technicien vous répond en direct, jour et nuit, 7j/7</b>, et intervient {c["a"]} avec un prix annoncé avant de commencer. Plus de {B.YEARS.rstrip("+")} ans d'expérience, facture détaillée acceptée par votre assureur.</p>
+    <p class="lead">Canalisation bouchée, fosse pleine, sous-sol inondé ? Vous appelez, c'est <b>un artisan du coin qui décroche</b>, pas un standard. Je vous dis le prix avant de venir, j'arrive {c["a"]} en 15 à 40 minutes, et je fais le travail proprement.</p>
     <a href="tel:{B.PHONE_TEL}" class="hero-cta">
       <span class="num">{phone_icon(24, True)} {B.PHONE}</span>
       <span class="sub">Appel direct, disponible 24/7</span>
     </a>
     <button type="button" class="hero-devis svc-quote" data-service="Assainissement {esc(c["a"])}">Ou demandez un devis gratuit</button>
+    <p class="hero-note">Je décroche moi-même, promis !</p>
     <div class="hero-checks">
       <div class="check-row"><span class="check-circle gr">✓</span>Diagnostic gratuit</div>
       <div class="check-row"><span class="check-circle gr">✓</span>Prix annoncé à l'avance</div>
@@ -1357,17 +1393,18 @@ def build_city(c):
     near = [CITY_BY_SLUG[n] for n in c["near"] if n in CITY_BY_SLUG]
     faq = [
         ("Quel est votre délai d'intervention %s ?" % c["a"], delay_sentence(c)),
-        ("Intervenez-vous %s la nuit et le week-end ?" % c["a"], "Oui, nous intervenons 24h/24 et 7j/7, jours fériés compris. " + majorations_sentence() + " La majoration vous est annoncée avant le déplacement."),
-        ("Combien coûte une intervention %s ?" % c["a"], "Nos prix TTC en journée : " + prices_summary() + ". Le prix exact dépend de l'intervention et de l'horaire ; il est toujours annoncé au téléphone et confirmé sur place avant les travaux. <a href=\"/tarifs/\">Voir nos tarifs</a>."),
-        ("Faites-vous la vidange des fosses septiques %s ?" % c["a"], "Oui, nous intervenons pour la vidange et l'entretien des fosses septiques, fosses toutes eaux et micro-stations, ainsi que pour le dégorgement et le pompage."),
-        ("Quelles communes desservez-vous autour %s ?" % c["de"], "Nous intervenons notamment à %s, et." % ", ".join(n["name"] for n in near)),
+        ("Intervenez-vous %s la nuit et le week-end ?" % c["a"], "Oui, j'interviens 24h/24 et 7j/7, jours fériés compris. " + majorations_sentence() + " La majoration vous est annoncée avant le déplacement."),
+        ("Combien coûte une intervention %s ?" % c["a"], "Mes prix TTC en journée : " + prices_summary() + ". Le prix exact dépend de l'intervention et de l'horaire ; il est toujours annoncé au téléphone et confirmé sur place avant les travaux. <a href=\"/tarifs/\">Voir mes tarifs</a>."),
+        ("Faites-vous la vidange des fosses septiques %s ?" % c["a"], "Oui, j'interviens pour la vidange et l'entretien des fosses septiques, fosses toutes eaux et micro-stations, ainsi que pour le dégorgement et le pompage."),
+        ("Quelles communes desservez-vous autour %s ?" % c["de"], "J'interviens notamment à %s, et dans les communes voisines." % ", ".join(n["name"] for n in near)),
     ]
     schemas = [business_schema(), breadcrumb_schema(crumbs), faq_schema(faq)]
     out = head(title, desc, path, schemas)
     out += header(path)
-    lead = "Dégorgement, hydrocurage, pompage, fosse septique : nous intervenons <b>%s 24h/24 et 7j/7</b>, avec un prix annoncé avant de partir." % c["a"]
+    lead = "Dégorgement, hydrocurage, pompage, fosse septique : j'interviens <b>%s 24h/24 et 7j/7</b>, avec un prix annoncé avant de partir." % c["a"]
     out += city_hero(c, crumbs)
     out += insurers_section("ins-top")
+    out += artisan_word(c)
     out += trust_marquee()
     out += urgent_band()
     near_html = "".join('<a class="chip" href="%s">Assainissement %s <span class="d">%s</span></a>' % (city_path(n), esc(n["name"]), delay_label(n)) for n in near)
@@ -1377,7 +1414,7 @@ def build_city(c):
       <h2>Votre entreprise d'assainissement {c["a"]}</h2>
       <p>{esc(c["intro"])}</p>
       <p>{esc(c["context"])}</p>
-      <h2>Nos prestations d'assainissement {c["a"]}</h2>
+      <h2>Mes prestations d'assainissement {c["a"]}</h2>
       <ul>
         <li><strong>Dégorgement 24h/24</strong> : canalisation, égout, colonne ou WC bouché, au furet ou à l'hydrocureur.</li>
         <li><strong>Hydrocurage haute pression</strong> des canalisations et réseaux : graisses, calcaire, racines.</li>
@@ -1387,10 +1424,10 @@ def build_city(c):
         <li><strong>Travaux d'assainissement</strong> : réparation de canalisation enterrée, raccordement au tout-à-l'égout.</li>
         <li><strong>Pompes de relevage et bacs à graisse</strong> : dépannage, nettoyage, entretien.</li>
       </ul>
-      <h2>Pourquoi faire appel à nous {c["a"]} ?</h2>
-      <p>Vous parlez directement à une entreprise locale, pas à une plateforme. Le diagnostic téléphonique est gratuit, le prix est annoncé avant le déplacement puis validé avec vous avant les travaux. Nous ne proposons que les interventions utiles et vous remettons une facture détaillée. Nous intervenons dans le Var depuis {B.SINCE}.</p>
+      <h2>Pourquoi faire appel à moi {c["a"]} ?</h2>
+      <p>Vous parlez directement à une entreprise locale, pas à une plateforme. Le diagnostic téléphonique est gratuit, le prix est annoncé avant le déplacement puis validé avec vous avant les travaux. Je ne propose que les interventions utiles et vous remets une facture détaillée. J'interviens dans le Var depuis {B.SINCE}.</p>
       <h2>Communes voisines {c["de"]}</h2>
-      <p>Nous intervenons aussi dans les communes proches :</p>
+      <p>J'interviens aussi dans les communes proches :</p>
       <div class="chips">{near_html}</div>
     </article>
     <aside class="side">
@@ -1403,24 +1440,24 @@ def build_city(c):
   <div class="wrap">
     <div class="sec-head">
       <div class="pill pill-purple sec-badge">Prestations</div>
-      <h2>Nos services d'assainissement {c["a"]}</h2>
+      <h2>Ce que je fais pour vous {c["a"]}</h2>
     </div>
     {services_grid(c)}
   </div>
 </section>
 """
     out += pricing_section()
-    out += '<div class="alt" style="padding:0 0 10px"><div class="wrap">%s</div></div>' % stats_block()
+    out += promises_block()
     out += charter_section()
     out += guarantees_section("alt")
-    out += process_section("Simple, clair, sans surprise")
-    out += cta_band("Canalisation bouchée, égout qui refoule ?", "Nous intervenons %s et dans les communes voisines, tous les jours, 24h/24." % c["a"])
+    out += process_section()
+    out += cta_band("Canalisation bouchée, égout qui refoule ?", "J'interviens %s et dans les communes voisines, tous les jours, 24h/24." % c["a"])
     out += zones_section(current=c)
     out += realisations_section(cls="alt")
     out += reviews_section("alt" if not B.REALISATIONS else "", city=c)
     out += guides_teaser(GUIDES[:3])
     out += faq_block(faq, "Assainissement %s : vos questions" % c["a"], cls="alt")
-    out += contact_section(path, "Une intervention %s ? Contactez-nous" % c["a"], city=c["name"])
+    out += contact_section(path, "Une intervention %s ? Contactez-moi" % c["a"], city=c["name"])
     out += footer()
     write_page(path, out, "0.8" if c["core"] else "0.7")
 
@@ -1429,15 +1466,15 @@ def build_prestations():
     path = "/prestations/"
     crumbs = [("Accueil", "/"), ("Prestations", path)]
     out = head("Prestations d'assainissement — " + B.NAME,
-               "Toutes nos prestations d'assainissement : dégorgement 24h/24, hydrocurage, pompage, vidange de fosse septique, inspection caméra, pompes de relevage, bacs à graisse, travaux.",
+               "Toutes mes prestations d'assainissement : dégorgement 24h/24, hydrocurage, pompage, vidange de fosse septique, inspection caméra, pompes de relevage, bacs à graisse, travaux.",
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Nos prestations d'assainissement", "Du débouchage d'urgence aux <b>grosses interventions</b> (dégorgement de collecteurs, hydrocurage, pompage), une seule entreprise pour tout l'assainissement.", ["Devis gratuit", "Prix annoncé à l'avance", "Particuliers et professionnels"], image="technicien-devis-client.jpg", image_alt="Technicien présentant le devis à un client")
+    out += page_hero(crumbs, "Mes prestations d'assainissement", "Du débouchage d'urgence aux <b>grosses interventions</b> (dégorgement de collecteurs, hydrocurage, pompage), une seule entreprise pour tout l'assainissement.", ["Devis gratuit", "Prix annoncé à l'avance", "Particuliers et professionnels"], image="technicien-devis-client.jpg", image_alt="Technicien présentant le devis à un client")
     out += trust_marquee()
     out += f"""<section><div class="wrap">{services_grid()}</div></section>
 <section class="alt"><div class="wrap text-block prose">
-  <h2>Refoulement d'égout : nous gérons aussi le volet assurance</h2>
-  <p>Après un refoulement ou une inondation, nous pompons, dégorgeons, identifions la cause et vous remettons les justificatifs attendus par votre assureur. <a href="/{ASSURANCE_PAGE['slug']}/">Découvrir notre accompagnement</a>.</p>
+  <h2>Refoulement d'égout : je gère aussi le volet assurance</h2>
+  <p>Après un refoulement ou une inondation, je pompe, dégorge, identifions la cause et vous remets les justificatifs attendus par votre assureur. <a href="/{ASSURANCE_PAGE['slug']}/">Découvrir mon accompagnement</a>.</p>
 </div></section>
 """
     out += zones_section()
@@ -1451,20 +1488,20 @@ def build_assurance():
     path = "/%s/" % ASSURANCE_PAGE["slug"]
     crumbs = [("Accueil", "/"), ("Prestations", "/prestations/"), (ASSURANCE_PAGE["name"], path)]
     faq = [
-        ("Votre facture est-elle remboursée par mon assurance ?", "Nous remettons une facture détaillée et un descriptif de la cause. Le remboursement dépend des garanties, plafonds et franchises de votre contrat : les dommages causés par un refoulement sont souvent couverts, les frais de dégorgement pas toujours."),
+        ("Votre facture est-elle remboursée par mon assurance ?", "Je remets une facture détaillée et un descriptif de la cause. Le remboursement dépend des garanties, plafonds et franchises de votre contrat : les dommages causés par un refoulement sont souvent couverts, les frais de dégorgement pas toujours."),
         ("Quels documents me remettez-vous ?", "Une facture détaillée (déplacement, pompage, dégorgement, nettoyage) et un descriptif de la cause et de l'endroit du bouchon ou de la saturation, avec photos si besoin."),
         ("Dans quel délai dois-je déclarer le sinistre ?", "Sauf délai plus long prévu par votre contrat, vous disposez généralement de 5 jours ouvrés après la découverte du sinistre. En cas d'arrêté de catastrophe naturelle, un délai spécifique s'applique à partir de sa publication."),
-        ("Qui est responsable d'un refoulement d'égout ?", "Si le bouchon est sur votre canalisation privée, c'est en principe vous (et votre assurance). Si le réseau public est saturé ou bouché, le service d'assainissement de la commune peut être concerné. Notre compte rendu indique où se situait le problème."),
+        ("Qui est responsable d'un refoulement d'égout ?", "Si le bouchon est sur votre canalisation privée, c'est en principe vous (et votre assurance). Si le réseau public est saturé ou bouché, le service d'assainissement de la commune peut être concerné. Mon compte rendu indique où se situait le problème."),
         ("Comment éviter un nouveau refoulement ?", "Un clapet anti-retour sur la canalisation de sortie protège les pièces en sous-sol. Un curage préventif et une inspection caméra permettent aussi de supprimer les points faibles du réseau."),
     ]
     schemas = [business_schema(), breadcrumb_schema(crumbs),
-               service_schema("Intervention après refoulement d'égout", "Pompage, dégorgement et justificatifs pour l'assurance après un refoulement d'égout.", path, "Provence", None),
+               service_schema("Intervention après refoulement d'égout", "Pompage, dégorgement et justificatifs pour l'assurance après un refoulement d'égout.", path, "Var (83)", None),
                faq_schema(faq)]
     out = head("Refoulement d'égout et inondation — pompage, dégorgement, assurance",
                "Refoulement d'égout, débordement, sous-sol inondé : pompage, dégorgement et justificatifs pour votre assurance. 24h/24. ☎ 06 75 93 19 04",
                path, schemas)
     out += header(path)
-    out += page_hero(crumbs, "Refoulement d'égout ou inondation : on intervient et on vous aide pour l'assurance",
+    out += page_hero(crumbs, "Refoulement d'égout ou inondation : j'interviens et je vous aide pour l'assurance",
                      "Pompage, dégorgement, nettoyage, puis <b>facture détaillée et descriptif de la cause</b> : tout ce qu'il faut pour votre déclaration.",
                      ["Pompage 24h/24", "Cause identifiée", "Facture détaillée"], badge="Disponible 24h/24 · 7j/7",
                      image=ASSURANCE_PAGE["image"], image_alt=ASSURANCE_PAGE["image_alt"], quote_service="Refoulement / assurance")
@@ -1472,7 +1509,7 @@ def build_assurance():
     out += f"""<section>
   <div class="wrap layout">
     <article class="prose">
-      <h2>Ce que nous faisons pour vous</h2>
+      <h2>Ce que je fais pour vous</h2>
       <ol>
         <li><strong>Mise en sécurité</strong> : conseils pour couper l'électricité et limiter les dégâts.</li>
         <li><strong>Pompage</strong> des eaux usées ou de l'eau d'inondation (sous-sol, garage, vide sanitaire, regards).</li>
@@ -1487,7 +1524,7 @@ def build_assurance():
         <li>Transmettez la facture d'intervention et les devis de remise en état.</li>
         <li>En cas d'orage exceptionnel, surveillez la publication d'un <strong>arrêté de catastrophe naturelle</strong> pour votre commune.</li>
       </ul>
-      <p>Tout est détaillé dans notre guide : <a href="/conseils/refoulement-egout-assurance/">refoulement d'égout, les démarches pour être bien remboursé</a>.</p>
+      <p>Tout est détaillé dans mon guide : <a href="/conseils/refoulement-egout-assurance/">refoulement d'égout, les démarches pour être bien remboursé</a>.</p>
       <h2>Éviter que ça recommence</h2>
       <p>Un <strong>clapet anti-retour</strong> protège les pièces situées sous le niveau de la rue. Un <a href="/curage-canalisation-var/">curage préventif</a> et une <a href="/inspection-camera-canalisation-var/">inspection caméra</a> permettent de supprimer les points faibles de votre réseau.</p>
     </article>
@@ -1502,7 +1539,7 @@ def build_assurance():
     out += zones_section()
     out += faq_block(faq, "Refoulement d'égout et assurance : vos questions")
     out += other_services_section()
-    out += contact_section(path, "Un refoulement ou une inondation ? Contactez-nous", service="Refoulement / assurance")
+    out += contact_section(path, "Un refoulement ou une inondation ? Contactez-moi", service="Refoulement / assurance")
     out += footer()
     write_page(path, out, "0.9")
 
@@ -1514,14 +1551,14 @@ def build_zones():
                "Assainissement dans les 153 communes de la région (83), intervention 24h/24 : Toulon, La Seyne-sur-Mer, Hyères, Fréjus, Saint-Raphaël, Draguignan, Brignoles, Sainte-Maxime, Saint-Tropez, Le Muy, Le Luc et plus.",
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Nos zones d'intervention", "Nous intervenons 24h/24 dans 153 communes. Délais indicatifs hors trafic, confirmés au moment de l'appel.", ["Artisan local", "Délai annoncé à l'appel", "7j/7"])
+    out += page_hero(crumbs, "Mes zones d'intervention", "J'interviens 24h/24 dans 153 communes. Délais indicatifs hors trafic, confirmés au moment de l'appel.", ["Artisan local", "Délai annoncé à l'appel", "7j/7"])
     rows = ""
     for c in CITIES:
         links = " · ".join('<a href="%s">%s</a>' % (combo_path(s, c), esc(s["short"])) for s in SERVICES)
         rows += '<tr><td><a href="%s"><strong>Assainissement %s</strong></a></td><td>%s</td><td>%s</td><td>%s</td></tr>' % (city_path(c), esc(c["name"]), c["cp"], delay_label(c), links)
     out += f"""<section>
   <div class="wrap">
-    <div class="sec-head"><h2>Communes principales</h2><p>Nous y intervenons tous les jours de l'année, pour l'urgence comme pour les travaux.</p></div>
+    <div class="sec-head"><h2>Communes principales</h2><p>J'y interviens tous les jours de l'année, pour l'urgence comme pour les travaux.</p></div>
     {zone_cards(CORE_CITIES)}
     <div class="sec-head" style="margin-top:56px"><h2>Autres communes desservies</h2></div>
     {zone_cards([c for c in CITIES if not c["core"]])}
@@ -1531,9 +1568,9 @@ def build_zones():
 </section>
 <section class="alt">
   <div class="wrap">
-    <div class="sec-head"><h2>Toutes nos prestations, commune par commune</h2></div>
+    <div class="sec-head"><h2>Toutes mes prestations, commune par commune</h2></div>
     <div class="table-scroll"><table class="prices"><thead><tr><th>Commune</th><th>Code postal</th><th>Délai</th><th>Prestations</th></tr></thead><tbody>{rows}</tbody></table></div>
-    <p class="ins-note">Votre commune n'apparaît pas ? Nous couvrons notre secteur : appelez le {B.PHONE}, nous vous indiquons le délai.</p>
+    <p class="ins-note">Votre commune n'apparaît pas ? Je couvre mon secteur : appelez le {B.PHONE}, je vous indique le délai.</p>
   </div>
 </section>
 """
@@ -1546,9 +1583,9 @@ def build_tarifs():
     path = "/tarifs/"
     crumbs = [("Accueil", "/"), ("Tarifs", path)]
     faq = [
-        ("Le déplacement est-il payant ?", ("Non, le déplacement est inclus dans nos prix." if B.DEPLACEMENT is True else
-                                            "Le déplacement est facturé %s, annoncé au téléphone avant notre départ." % deplacement_txt() if B.DEPLACEMENT else
-                                            "Les éventuels frais de déplacement vous sont annoncés au téléphone, avant notre départ.") + " Rien ne s'ajoute sur la facture sans votre accord."),
+        ("Le déplacement est-il payant ?", ("Non, le déplacement est inclus dans mes prix." if B.DEPLACEMENT is True else
+                                            "Le déplacement est facturé %s, annoncé au téléphone avant mon départ." % deplacement_txt() if B.DEPLACEMENT else
+                                            "Les éventuels frais de déplacement vous sont annoncés au téléphone, avant mon départ.") + " Rien ne s'ajoute sur la facture sans votre accord."),
         ("Y a-t-il un supplément la nuit et le week-end ?", "Oui. " + majorations_sentence() + " La majoration vous est toujours communiquée avant le déplacement."),
         ("Le devis est-il gratuit ?", "Oui, le diagnostic téléphonique et le devis sur place sont gratuits et sans engagement."),
         ("Puis-je refuser le devis sur place ?", "Oui. Le prix est confirmé avant de commencer et vous restez libre de refuser."),
@@ -1557,7 +1594,7 @@ def build_tarifs():
                "Tarifs d'assainissement : " + prices_summary() + ". Devis gratuit, prix annoncé avant intervention, sans frais cachés.",
                path, [business_schema(), breadcrumb_schema(crumbs), faq_schema(faq)])
     out += header(path)
-    out += page_hero(crumbs, "Nos tarifs d'assainissement", "Des <b>prix clairs, annoncés avant le déplacement</b> et confirmés sur place avant les travaux. Pas de mauvaise surprise sur la facture.", ["Devis gratuit", "Sans frais cachés", "Facture détaillée"])
+    out += page_hero(crumbs, "Mes tarifs d'assainissement", "Des <b>prix clairs, annoncés avant le déplacement</b> et confirmés sur place avant les travaux. Pas de mauvaise surprise sur la facture.", ["Devis gratuit", "Sans frais cachés", "Facture détaillée"])
     def price_cells(price_min, label):
         if not price_min:
             return '<td colspan="3">%s</td>' % esc(label)
@@ -1582,10 +1619,10 @@ def build_tarifs():
         <li><strong>Les volumes</strong> : longueur de réseau à curer, volume de fosse ou de cuve à pomper.</li>
         <li><strong>L'horaire</strong> : nuit, week-end et jours fériés.</li>
       </ul>
-      <h2>Notre engagement prix</h2>
+      <h2>Mon engagement prix</h2>
       <ol>
-        <li>Au téléphone, vous décrivez le problème : nous annonçons une fourchette de prix.</li>
-        <li>Sur place, nous confirmons le prix avant de commencer. Vous validez, ou vous refusez.</li>
+        <li>Au téléphone, vous décrivez le problème : j'annonce une fourchette de prix.</li>
+        <li>Sur place, je confirme le prix avant de commencer. Vous validez, ou vous refusez.</li>
         <li>En fin d'intervention, la facture correspond au prix validé, détaillée poste par poste.</li>
       </ol>
       <div class="callout info">Conformément à l'arrêté du 24 janvier 2017 sur le dépannage, la réparation et l'entretien à domicile, un devis écrit détaillé vous est remis avant les travaux dont le montant estimé dépasse 150 € TTC.</div>
@@ -1599,7 +1636,7 @@ def build_tarifs():
 """
     out += insurers_section("alt")
     out += zones_section()
-    out += faq_block(faq, "Questions sur nos tarifs")
+    out += faq_block(faq, "Questions sur mes tarifs")
     out += contact_section(path, "Obtenez votre devis gratuit")
     out += footer()
     write_page(path, out, "0.8")
@@ -1609,18 +1646,18 @@ def build_about():
     path = "/a-propos/"
     crumbs = [("Accueil", "/"), ("À propos", path)]
     out = head("À propos de %s — assainissement depuis %d" % (B.NAME, B.SINCE),
-               "%s, entreprise d'assainissement indépendante présente depuis %d : notre histoire, nos engagements et notre charte de confiance." % (B.NAME, B.SINCE),
+               "%s, entreprise d'assainissement indépendante présente depuis %d : mon histoire, mes engagements et ma charte de confiance." % (B.NAME, B.SINCE),
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Une entreprise d'assainissement locale, des engagements tenus", "%s intervient en assainissement depuis %d</b>. Voici qui nous sommes et comment nous travaillons." % (B.NAME, B.SINCE), ["Plus de %s ans d'expérience" % B.YEARS.rstrip("+"), "Entreprise locale,", "Disponible 24h/24 et 7j/7"])
+    out += page_hero(crumbs, "Une entreprise d'assainissement locale, des engagements tenus", "%s intervient en assainissement depuis %d</b>. Voici qui je suis et comment je travaille." % (B.NAME, B.SINCE), ["Plus de %s ans d'expérience" % B.YEARS.rstrip("+"), "Entreprise locale,", "Disponible 24h/24 et 7j/7"])
     out += f"""<section>
   <div class="wrap text-block prose">
-    <h2>Notre histoire</h2>
-    <p>{B.NAME} est né d'une idée simple : proposer aux habitants et aux professionnels de la région une entreprise d'assainissement <strong>joignable, honnête et efficace</strong>. Depuis {B.SINCE}, nous intervenons au quotidien, du WC bouché au dégorgement de collecteur, de la vidange de fosse au raccordement au tout-à-l'égout.</p>
-    <p>Nous connaissons les réseaux du secteur : maisons de village aux évacuations anciennes, villas et mas en assainissement individuel, copropriétés du littoral aux colonnes communes, restaurants et campings très sollicités l'été, et réseaux saturés lors des orages d'automne.</p>
+    <h2>Mon histoire</h2>
+    <p>{B.NAME} est né d'une idée simple : proposer aux habitants et aux professionnels de la région une entreprise d'assainissement <strong>joignable, honnête et efficace</strong>. Depuis {B.SINCE}, j'interviens au quotidien, du WC bouché au dégorgement de collecteur, de la vidange de fosse au raccordement au tout-à-l'égout.</p>
+    <p>Je connais les réseaux du secteur : maisons de village aux évacuations anciennes, villas et mas en assainissement individuel, copropriétés du littoral aux colonnes communes, restaurants et campings très sollicités l'été, et réseaux saturés lors des orages d'automne.</p>
     <h2>Pourquoi un artisan local change tout</h2>
-    <p>Quand vous cherchez « débouchage urgence » sur internet, beaucoup de numéros mènent à des plateformes nationales qui revendent votre appel à un intervenant parfois éloigné, avec des prix difficiles à prévoir. Avec nous, vous appelez directement l'entreprise qui va intervenir, et le prix vous est annoncé avant le déplacement.</p>
-    <h2>Notre charte de confiance</h2>
+    <p>Quand vous cherchez « débouchage urgence » sur internet, beaucoup de numéros mènent à des plateformes nationales qui revendent votre appel à un intervenant parfois éloigné, avec des prix difficiles à prévoir. Avec moi, vous appelez directement l'entreprise qui va intervenir, et le prix vous est annoncé avant le déplacement.</p>
+    <h2>Mes engagements, noir sur blanc</h2>
   </div>
   <div class="wrap" style="margin-top:20px">{trust_list_html()}</div>
 </section>
@@ -1643,10 +1680,10 @@ def build_faq_page():
                "Toutes les réponses à vos questions d'assainissement : prix, délais, urgence de nuit, dégorgement, curage, fosse septique, assurance.",
                path, [business_schema(), breadcrumb_schema(crumbs), faq_schema(all_faq)])
     out += header(path)
-    out += page_hero(crumbs, "Questions fréquentes", "Prix, délais, urgences, assurance : les réponses aux questions qu'on nous pose le plus souvent.")
+    out += page_hero(crumbs, "Questions fréquentes", "Prix, délais, urgences, assurance : les réponses aux questions qu'on me pose le plus souvent.")
     for i, (name, faq) in enumerate(groups):
         out += faq_block(faq, name, cls="alt" if i % 2 else "", anchor="faq-%d" % i)
-    out += contact_section(path, "Votre question n'y est pas ? Écrivez-nous")
+    out += contact_section(path, "Votre question n'y est pas ? Écrivez-moi")
     out += footer()
     write_page(path, out, "0.6")
 
@@ -1654,22 +1691,22 @@ def build_faq_page():
 def build_contact():
     path = "/contact/"
     crumbs = [("Accueil", "/"), ("Contact", path)]
-    out = head("Contact & devis gratuit — assainissement " + B.NAME + ", notre secteur",
+    out = head("Contact & devis gratuit — assainissement " + B.NAME + ", mon secteur",
                "Contactez " + B.NAME + " : 06 75 93 19 04, 24h/24 et 7j/7, ou demandez un devis gratuit en ligne. Assainissement.",
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Contact et devis gratuit", "Urgence : appelez le <b>%s</b>, 24h/24. Pour un devis, remplissez le formulaire ci-dessous, nous vous rappelons rapidement." % B.PHONE)
+    out += page_hero(crumbs, "Contact et devis gratuit", "Urgence : appelez le <b>%s</b>, 24h/24. Pour un devis, remplissez le formulaire ci-dessous, je vous rappelle rapidement." % B.PHONE)
     out += contact_section(path, "Demandez votre devis gratuit")
     out += f"""<section>
   <div class="wrap text-block prose">
-    <h2>Comment nous joindre</h2>
+    <h2>Comment me joindre</h2>
     <ul>
       <li><strong>Téléphone (24h/24, 7j/7)</strong> : <a href="tel:{B.PHONE_TEL}">{B.PHONE}</a></li>
       <li><strong>E-mail</strong> : <a href="mailto:{B.EMAIL}">{B.EMAIL}</a></li>
-      <li><strong>Zone</strong> : notre secteur. <a href="/zones-intervention/">Voir nos zones</a></li>
+      <li><strong>Zone</strong> : mon secteur. <a href="/zones-intervention/">Voir mes zones</a></li>
     </ul>
     <h2>Pour un devis plus rapide</h2>
-    <p>Indiquez votre commune, le type de besoin et, si possible, envoyez quelques photos par e-mail (regard, fosse, accès pour le camion). Nous pourrons vous donner une estimation plus précise dès le premier échange.</p>
+    <p>Indiquez votre commune, le type de besoin et, si possible, envoyez quelques photos par e-mail (regard, fosse, accès pour le camion). Je pourrai vous donner une estimation plus précise dès le premier échange.</p>
   </div>
 </section>
 """
@@ -1684,8 +1721,8 @@ def build_guides():
                "Guides pratiques : canalisation bouchée, vidange de fosse septique, contrôle SPANC, raccordement au tout-à-l'égout, refoulement et assurance, lingettes, arnaques au débouchage.",
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Conseils en assainissement", "Nos guides pratiques pour réagir face à un bouchon, entretenir votre fosse et vos canalisations et éviter les mauvaises surprises.")
-    out += guides_teaser(GUIDES, "Tous nos guides")
+    out += page_hero(crumbs, "Conseils en assainissement", "Mes guides pratiques pour réagir face à un bouchon, entretenir votre fosse et vos canalisations et éviter les mauvaises surprises.")
+    out += guides_teaser(GUIDES, "Tous mes guides")
     out += zones_section(cls="alt")
     out += contact_section(path)
     out += footer()
@@ -1709,9 +1746,9 @@ def build_guides():
         out += f"""<section>
   <div class="wrap layout">
     <article class="prose">
-      <p class="meta-line">Par l'équipe {B.NAME}, assainissement · Mis à jour le {date.today().strftime("%d/%m/%Y")}</p>
+      <p class="meta-line">Par votre artisan {B.NAME}, assainissement · Mis à jour le {date.today().strftime("%d/%m/%Y")}</p>
       {g["body"]}
-      <div class="callout"><strong>Besoin d'une intervention ?</strong> Nous intervenons 24h/24 et 7j/7. Appelez le <a href="tel:{B.PHONE_TEL}">{B.PHONE}</a>.</div>
+      <div class="callout"><strong>Besoin d'une intervention ?</strong> J'interviens 24h/24 et 7j/7. Appelez le <a href="tel:{B.PHONE_TEL}">{B.PHONE}</a>.</div>
     </article>
     <aside class="side">
       {call_card(None)}
@@ -1733,19 +1770,19 @@ def build_merci():
     out += header(path)
     out += f"""<section class="page-hero"><div class="wrap merci">
   <div class="merci-icon">✓</div>
-  <h1>Merci, votre demande est bien envoyée</h1>
-  <p class="lead">Un technicien de {B.NAME} vous rappelle rapidement (sous 1 h en journée). <b>Pour une urgence, n'attendez pas : appelez directement le {B.PHONE}.</b></p>
+  <h1>Merci, j'ai bien reçu votre demande</h1>
+  <p class="lead">Je vous rappelle très vite, moi-même (en général dans l\'heure en journée). <b>Pour une urgence, n'attendez pas : appelez directement le {B.PHONE}.</b></p>
   <div class="actions"><a href="tel:{B.PHONE_TEL}" class="btn btn-orange">{phone_icon(18, True)} {B.PHONE}</a><a href="/" class="btn btn-ghost">Retour à l'accueil</a></div>
 </div></section>
 <section><div class="wrap text-block prose">
-  <h2>En attendant notre appel</h2>
+  <h2>En attendant mon appel</h2>
   <ul>
     <li><strong>Canalisation bouchée</strong> : n'utilisez plus l'eau et évitez les produits déboucheurs corrosifs.</li>
     <li><strong>Refoulement ou inondation</strong> : coupez l'électricité des pièces touchées et prenez des photos pour votre assurance.</li>
     <li><strong>Alarme de pompe de relevage</strong> : limitez l'utilisation de l'eau et vérifiez le disjoncteur de la pompe.</li>
     <li><strong>Fosse qui déborde</strong> : réduisez l'utilisation de l'eau et dégagez l'accès aux tampons.</li>
   </ul>
-  <p>Nos guides pratiques peuvent aussi vous aider : <a href="/conseils/">voir les conseils</a>.</p>
+  <p>Mes guides pratiques peuvent aussi vous aider : <a href="/conseils/">voir les conseils</a>.</p>
 </div></section>
 """
     out += footer("/contact/")
@@ -1757,11 +1794,11 @@ def build_realisations():
         return
     path = "/realisations/"
     crumbs = [("Accueil", "/"), ("Réalisations", path)]
-    out = head("Nos chantiers d'assainissement | %s" % B.NAME,
+    out = head("Mes chantiers d'assainissement | %s" % B.NAME,
                "Photos de chantiers d'assainissement réalisés : dégorgement, curage, pompage, fosses septiques, raccordements.",
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Nos chantiers en images", "Avant / après : quelques interventions réalisées par %s." % B.NAME)
+    out += page_hero(crumbs, "Mes chantiers en images", "Avant / après : quelques interventions réalisées par %s." % B.NAME)
     out += realisations_section(limit=len(B.REALISATIONS))
     out += contact_section(path)
     out += footer()
@@ -1852,7 +1889,7 @@ def build_legal():
   <h2>Hébergement</h2><p>Netlify, Inc. — 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis — <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></p>
   <h2>Propriété intellectuelle</h2><p>Les textes, illustrations et éléments graphiques de ce site sont la propriété de {B.LEGAL_NAME}, sauf mention contraire. Toute reproduction sans autorisation est interdite.</p>
   <h2>Médiation de la consommation</h2><p>{mediation}</p>
-  <h2>Données personnelles</h2><p>Voir notre <a href="/politique-confidentialite/">politique de confidentialité</a>.</p>
+  <h2>Données personnelles</h2><p>Voir ma <a href="/politique-confidentialite/">politique de confidentialité</a>.</p>
 </div></section>
 """
     out += footer("/contact/")
@@ -1862,9 +1899,9 @@ def build_legal():
     crumbs = [("Accueil", "/"), ("Politique de confidentialité", path)]
     out = head("Politique de confidentialité — %s" % B.NAME, "Politique de confidentialité et de cookies du site de %s." % B.NAME, path, [breadcrumb_schema(crumbs)], noindex=True)
     out += header(path)
-    out += page_hero(crumbs, "Politique de confidentialité", "Comment nous utilisons les informations que vous nous transmettez.")
+    out += page_hero(crumbs, "Politique de confidentialité", "Comment j'utilise les informations que vous me transmettez.")
     out += f"""<section><div class="wrap text-block prose">
-  <h2>Données collectées</h2><p>Via nos formulaires, nous collectons les informations que vous saisissez : nom, téléphone, e-mail, commune, type de besoin et message. Elles servent uniquement à vous recontacter et à traiter votre demande. Elles ne sont ni vendues ni cédées. Les messages des formulaires nous sont transmis par e-mail via le service FormSubmit (formsubmit.co).</p>
+  <h2>Données collectées</h2><p>Via mes formulaires, je collecte les informations que vous saisissez : nom, téléphone, e-mail, commune, type de besoin et message. Elles servent uniquement à vous recontacter et à traiter votre demande. Elles ne sont ni vendues ni cédées. Les messages des formulaires me sont transmis par e-mail via le service FormSubmit (formsubmit.co).</p>
   <h2>Durée de conservation</h2><p>Les demandes sans suite sont supprimées au plus tard 3 ans après le dernier contact. Les factures sont conservées pendant la durée légale.</p>
   <h2>Cookies et mode de consentement</h2>
   <p>Lors de votre première visite, un bandeau vous permet de <strong>tout accepter</strong>, <strong>tout refuser</strong> ou de <strong>personnaliser</strong> vos choix. Tant que vous n'avez pas choisi, aucun cookie publicitaire n'est déposé.</p>
@@ -1874,7 +1911,7 @@ def build_legal():
     <li><strong>Personnalisation des annonces</strong> : affichage d'annonces adaptées sur les services Google.</li>
   </ul>
   <p>Le site utilise le mode de consentement de Google (Consent Mode v2) : si vous refusez, la balise Google n'enregistre aucun cookie publicitaire et n'envoie que des signaux anonymes, sans identifiant. Votre choix est conservé 6 mois, puis vous est redemandé. Vous pouvez le modifier à tout moment via le lien « Cookies » en bas de chaque page.</p>
-  <h2>Vos droits</h2><p>Vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition sur vos données. Écrivez-nous à <a href="mailto:{B.EMAIL}">{B.EMAIL}</a>. Vous pouvez également saisir la CNIL (www.cnil.fr).</p>
+  <h2>Vos droits</h2><p>Vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition sur vos données. Écrivez-moi à <a href="mailto:{B.EMAIL}">{B.EMAIL}</a>. Vous pouvez également saisir la CNIL (www.cnil.fr).</p>
 </div></section>
 """
     out += footer("/contact/")
@@ -1888,7 +1925,7 @@ def build_404():
     out += f"""<section class="page-hero"><div class="wrap">
   <h1>Page introuvable</h1>
   <p class="lead">Cette page n'existe pas ou a été déplacée. Besoin d'une intervention ? Appelez le <b>{B.PHONE}</b>.</p>
-  <div class="actions"><a href="/" class="btn btn-orange">Retour à l'accueil</a><a href="/prestations/" class="btn btn-ghost">Nos prestations</a></div>
+  <div class="actions"><a href="/" class="btn btn-orange">Retour à l'accueil</a><a href="/prestations/" class="btn btn-ghost">Mes prestations</a></div>
 </div></section>
 """
     out += footer("/contact/")
@@ -1936,7 +1973,7 @@ def build_sitemap():
 
 
 def build_llms():
-    summary = ("%s est une entreprise d'assainissement indépendante, en activité depuis %d (siège à Vidauban). "
+    summary = ("%s est une entreprise d'assainissement indépendante, en activité depuis %d. "
                "Elle intervient 24h/24 et 7j/7 pour les urgences et les grosses interventions : dégorgement et débouchage de canalisations, hydrocurage, pompage, "
                "vidange de fosses septiques, inspection caméra, pompes de relevage, bacs à graisse et travaux d'assainissement. Téléphone : %s." % (B.NAME, B.SINCE, B.PHONE))
     lines = ["# %s — Assainissement" % B.NAME, "", "> " + summary, "",
@@ -1944,7 +1981,7 @@ def build_llms():
              "- Téléphone (24h/24, 7j/7) : %s" % B.PHONE,
              "- E-mail : %s" % B.EMAIL,
              "- Base : %s (%s), %s" % (B.BASE_CITY, B.BASE_CP, B.DEPARTEMENT),
-             "- Expérience : artisan depuis %d (siège à Vidauban)" % B.SINCE,
+             "- Expérience : artisan depuis %d" % B.SINCE,
              "- Tarifs TTC en journée : " + prices_summary() + ". Diagnostic téléphonique et devis gratuits. " + majorations_sentence(),
              "- Tarifs selon l'heure d'intervention (heure de Paris) : " + " ; ".join("%s %s : %s" % (label.lower(), rate_hours(pid), ", ".join("%s %s" % (sv["short"], rate_price(sv["price_min"], coef)) for sv in SERVICES if sv["price_min"] and sv.get("rate_card") is not False)) for pid, label, coef in B.RATE_PERIODS) + " (prix TTC à partir de). Dimanches et jours fériés : tarif de nuit. Déplacement : " + deplacement_txt() + "." + (" Main-d'œuvre : %s TTC de l'heure." % eur(B.TAUX_HORAIRE) if B.TAUX_HORAIRE else ""),
              "- Engagements : prix annoncé avant le déplacement, devis validé avant les travaux, facture détaillée, travaux garantis.",
@@ -2053,7 +2090,7 @@ def main():
         WARNINGS.append("Tarifs : TAUX_HORAIRE non renseigné")
     if B.RATE_SUNDAY_COEF != period_coef("nuit"):
         WARNINGS.append("Tarifs : RATE_SUNDAY_COEF différent du tarif de nuit, la carte de l'accueil affiche le tarif de nuit le dimanche")
-    WARNINGS.append("Délais estimés automatiquement (distance depuis Vidauban) pour %d communes : à vérifier dans src/data_communes_var.py" % len(EXTRA_CITIES))
+    WARNINGS.append("Délais estimés automatiquement pour %d communes : à vérifier dans src/data_communes_var.py" % len(EXTRA_CITIES))
     unconfirmed = [c["name"] for c in CITIES if c.get("delay_todo")]
     if unconfirmed:
         WARNINGS.append("Délais à confirmer : " + ", ".join(unconfirmed))
