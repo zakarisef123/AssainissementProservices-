@@ -1,6 +1,6 @@
 # PROSERVICE 83 — contenu complet du site
 
-> PROSERVICE 83 est une entreprise d'assainissement indépendante qui intervient dans tout le Var (83, France), en activité depuis 2013 (siège à Vidauban). Elle intervient 24h/24 et 7j/7 pour les urgences et les grosses interventions : dégorgement et débouchage de canalisations, hydrocurage, pompage, vidange de fosses septiques, inspection caméra, pompes de relevage, bacs à graisse et travaux d'assainissement. Téléphone : 06 75 93 19 04.
+> PROSERVICE 83 est une entreprise d'assainissement indépendante qui intervient dans le Var (83, France), en activité depuis 2013 (siège à Vidauban). Elle intervient 24h/24 et 7j/7 pour les urgences et les grosses interventions : dégorgement et débouchage de canalisations, hydrocurage, pompage, vidange de fosses septiques, inspection caméra, pompes de relevage, bacs à graisse et travaux d'assainissement. Téléphone : 06 75 93 19 04.
 
 Site : https://pro-service83assainissement.netlify.app/
 
@@ -20,7 +20,7 @@ Site : https://pro-service83assainissement.netlify.app/
 URL : https://pro-service83assainissement.netlify.app/degorgement-canalisation-var/
 Tarif : à partir de 99 €
 
-Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond jour et nuit, week-end et jours fériés compris, partout dans le Var (83).
+Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond jour et nuit, week-end et jours fériés compris, dans le Var (83).
 
 ### Dégorgement : quels réseaux traitons-nous ?
 
@@ -288,7 +288,7 @@ Q : Intervenez-vous la nuit, le week-end et les jours fériés ?
 R : Oui, nous sommes joignables 24h/24 et 7j/7 au 06 75 93 19 04, jours fériés compris. Prix TTC en journée (lun-sam, 8h – 18h), majorés de 25 % le soir (18h – 22h), de 50 % la nuit (22h – 8h) et de 50 % les dimanches et jours fériés. La majoration est toujours annoncée avant le déplacement.
 
 Q : Dans quelles communes intervenez-vous ?
-R : Dans tout le Var (83), sur les 153 communes du département. Voir toutes les communes.
+R : Dans le Var (83), sur les 153 communes du département. Voir toutes les communes.
 
 Q : Faites-vous les grosses interventions ?
 R : Oui : dégorgement de collecteurs, hydrocurage de réseaux, pompage de sous-sols inondés, de regards, de cuves et de séparateurs, pour les particuliers comme pour les copropriétés, les entreprises et les collectivités.
