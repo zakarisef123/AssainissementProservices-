@@ -1,6 +1,6 @@
 # PROSERVICE 83 — contenu complet du site
 
-> PROSERVICE 83 est une entreprise d'assainissement indépendante qui intervient dans le Var (83, France), en activité depuis 2013 (siège à Vidauban). Elle intervient 24h/24 et 7j/7 pour les urgences et les grosses interventions : dégorgement et débouchage de canalisations, hydrocurage, pompage, vidange de fosses septiques, inspection caméra, pompes de relevage, bacs à graisse et travaux d'assainissement. Téléphone : 06 75 93 19 04.
+> PROSERVICE 83 est une entreprise d'assainissement indépendante, en activité depuis 2013 (siège à Vidauban). Elle intervient 24h/24 et 7j/7 pour les urgences et les grosses interventions : dégorgement et débouchage de canalisations, hydrocurage, pompage, vidange de fosses septiques, inspection caméra, pompes de relevage, bacs à graisse et travaux d'assainissement. Téléphone : 06 75 93 19 04.
 
 Site : https://pro-service83assainissement.netlify.app/
 
@@ -10,17 +10,17 @@ Site : https://pro-service83assainissement.netlify.app/
 - Devis validé avant les travaux : Le prix est confirmé sur place et vous le validez avant que nous commencions. Vous restez libre de refuser.
 - Pas de travaux inutiles : Si une réparation suffit, nous ne remplaçons pas. Si l'intervention peut attendre, nous vous le disons.
 - Facture détaillée : Déplacement, main-d'œuvre et pièces détaillés : un document clair, accepté par les assureurs habitation.
-- Un artisan local, joignable en direct : Pas de plateforme ni de centre d'appel : vous parlez directement à un professionnel du Var.
+- Un artisan local, joignable en direct : Pas de plateforme ni de centre d'appel : vous parlez directement à un professionnel de la région.
 - Travaux garantis : Nos interventions sont garanties. En cas de souci, nous revenons.
 - Chantier propre : Protection des sols, nettoyage en fin d'intervention et évacuation des anciennes pièces.
 - Ponctualité et transparence : Un imprévu ? Nous vous prévenons à l'avance, avec un nouvel horaire.
 
-## Dégorgement et débouchage de canalisations 24h/24 dans le Var
+## Dégorgement et débouchage de canalisations 24h/24
 
 URL : https://pro-service83assainissement.netlify.app/degorgement-canalisation-var/
 Tarif : à partir de 99 €
 
-Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond jour et nuit, week-end et jours fériés compris, dans le Var (83).
+Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond jour et nuit, week-end et jours fériés compris,.
 
 ### Dégorgement : quels réseaux traitons-nous ?
 
@@ -48,7 +48,7 @@ R : Un bouchon récurrent signale souvent un défaut de la canalisation : contre
 Q : Qui paie le débouchage dans un immeuble ?
 R : Si le bouchon est dans les canalisations privatives d'un logement, c'est en principe l'occupant. S'il est dans une colonne commune, c'est la copropriété, via le syndic. Nous indiquons sur la facture où se trouvait le bouchon.
 
-## Curage et hydrocurage de canalisations dans le Var
+## Curage et hydrocurage de canalisations
 
 URL : https://pro-service83assainissement.netlify.app/curage-canalisation-var/
 Tarif : à partir de 190 €
@@ -81,7 +81,7 @@ R : Le prix dépend de la longueur du réseau, de son accessibilité et du nivea
 Q : Le curage élimine-t-il les racines ?
 R : Une buse spéciale coupe et évacue les racines fines. Si les racines ont cassé ou déboîté le tuyau, une réparation est nécessaire : l'inspection caméra permet de le vérifier.
 
-## Pompage, aspiration et nettoyage de cuves dans le Var
+## Pompage, aspiration et nettoyage de cuves
 
 URL : https://pro-service83assainissement.netlify.app/pompage-nettoyage-cuves-var/
 Tarif : à partir de 220 €
@@ -94,7 +94,7 @@ Sous-sols, garages et vides sanitaires inondés après un orage ou un refoulemen
 
 ### Après un épisode cévenol ou un orage
 
-Dans le Var, les fortes pluies d'automne saturent vite les réseaux. Nous pompons l'eau, nettoyons les regards et contrôlons les canalisations pour remettre l'installation en service, et nous vous remettons une facture détaillée pour votre assurance.
+Dans notre secteur, les fortes pluies d'automne saturent vite les réseaux. Nous pompons l'eau, nettoyons les regards et contrôlons les canalisations pour remettre l'installation en service, et nous vous remettons une facture détaillée pour votre assurance.
 
 ### Professionnels et collectivités
 
@@ -114,12 +114,12 @@ R : Il dépend du volume, de la nature des effluents, de l'accès pour le camion
 Q : Travaillez-vous pour les copropriétés et les communes ?
 R : Oui, nous intervenons pour les syndics, les gestionnaires de résidences, les entreprises et les collectivités, ponctuellement ou dans le cadre d'un entretien régulier.
 
-## Vidange de fosse septique, fosse toutes eaux et micro-station dans le Var
+## Vidange de fosse septique, fosse toutes eaux et micro-station
 
 URL : https://pro-service83assainissement.netlify.app/vidange-fosse-septique-var/
 Tarif : à partir de 230 €
 
-Dans les communes du Var non raccordées au tout-à-l'égout, la fosse doit être vidangée régulièrement. Nous intervenons pour la vidange, le nettoyage et l'entretien de votre installation d'assainissement individuel.
+Dans les communes de la région non raccordées au tout-à-l'égout, la fosse doit être vidangée régulièrement. Nous intervenons pour la vidange, le nettoyage et l'entretien de votre installation d'assainissement individuel.
 
 ### Quand faut-il vidanger sa fosse ?
 
@@ -147,7 +147,7 @@ R : Oui, une fosse doit être remise en eau après la vidange pour garder sa sta
 Q : Faut-il utiliser des activateurs biologiques ?
 R : Ils ne sont pas indispensables pour une fosse bien dimensionnée et bien utilisée. Le plus important est d'éviter les produits chimiques agressifs, les lingettes et les graisses.
 
-## Inspection caméra des canalisations dans le Var
+## Inspection caméra des canalisations
 
 URL : https://pro-service83assainissement.netlify.app/inspection-camera-canalisation-var/
 Tarif : à partir de 150 €
@@ -180,7 +180,7 @@ R : Le prix dépend de la longueur à inspecter, de l'accès et du besoin de com
 Q : Recevrai-je les images ?
 R : Oui, nous vous remettons un compte rendu avec les observations et des images des points importants.
 
-## Travaux d'assainissement et raccordement au tout-à-l'égout dans le Var
+## Travaux d'assainissement et raccordement au tout-à-l'égout
 
 URL : https://pro-service83assainissement.netlify.app/travaux-assainissement-var/
 Tarif : à partir de 390 €
@@ -213,7 +213,7 @@ R : Après une inspection caméra qui localise précisément le défaut, nous n'
 Q : Que faire de l'ancienne fosse après le raccordement ?
 R : Elle doit être vidangée, nettoyée, puis comblée ou retirée. Nous pouvons nous en charger lors du raccordement.
 
-## Dépannage et entretien de pompes de relevage dans le Var
+## Dépannage et entretien de pompes de relevage
 
 URL : https://pro-service83assainissement.netlify.app/pompe-de-relevage-var/
 Tarif : à partir de 120 €
@@ -246,7 +246,7 @@ R : Il dépend du modèle, du débit et de la hauteur de relevage nécessaires, 
 Q : Intervenez-vous pour les postes de relevage de copropriété ?
 R : Oui, pour les maisons comme pour les postes collectifs des copropriétés et des locaux professionnels.
 
-## Vidange et entretien de bacs à graisse dans le Var
+## Vidange et entretien de bacs à graisse
 
 URL : https://pro-service83assainissement.netlify.app/bac-a-graisse-var/
 Tarif : à partir de 150 €
@@ -263,7 +263,7 @@ Pompage des graisses et des boues. Nettoyage des parois et des cloisons du bac. 
 
 ### Quelle fréquence ?
 
-Elle dépend de la taille du bac et du nombre de couverts : souvent tous les 1 à 3 mois pour un restaurant, davantage en pleine saison touristique sur le littoral varois. Nous vous proposons un rythme adapté et un rappel avant chaque passage.
+Elle dépend de la taille du bac et du nombre de couverts : souvent tous les 1 à 3 mois pour un restaurant, davantage en pleine saison touristique sur le littoral provençal. Nous vous proposons un rythme adapté et un rappel avant chaque passage.
 
 ### Questions fréquentes
 
@@ -288,7 +288,7 @@ Q : Intervenez-vous la nuit, le week-end et les jours fériés ?
 R : Oui, nous sommes joignables 24h/24 et 7j/7 au 06 75 93 19 04, jours fériés compris. Prix TTC en journée (lun-sam, 8h – 18h), majorés de 25 % le soir (18h – 22h), de 50 % la nuit (22h – 8h) et de 50 % les dimanches et jours fériés. La majoration est toujours annoncée avant le déplacement.
 
 Q : Dans quelles communes intervenez-vous ?
-R : Dans le Var (83), sur les 153 communes du département. Voir toutes les communes.
+R : Dans notre secteur, sur les 153 communes du département. Voir toutes les communes.
 
 Q : Faites-vous les grosses interventions ?
 R : Oui : dégorgement de collecteurs, hydrocurage de réseaux, pompage de sous-sols inondés, de regards, de cuves et de séparateurs, pour les particuliers comme pour les copropriétés, les entreprises et les collectivités.
@@ -360,7 +360,7 @@ Comptez environ 25 minutes pour notre arrivée à Gonfaron, hors trafic. Le dél
 
 ### Assainissement Draguignan (83300)
 
-Draguignan, sous-préfecture du Var, fait partie de notre zone d'intervention, 24h/24 et 7j/7. Centre historique autour de la tour de l'Horloge, quartiers résidentiels, immeubles et maisons individuelles : nous y intervenons 7j/7.
+Draguignan, sous-préfecture de la région, fait partie de notre zone d'intervention, 24h/24 et 7j/7. Centre historique autour de la tour de l'Horloge, quartiers résidentiels, immeubles et maisons individuelles : nous y intervenons 7j/7.
 Dans le secteur de Draguignan, les canalisations enterrées des lotissements et des mas sont souvent envahies par les racines. Nous les curons à haute pression et les inspectons à la caméra avant toute réparation.
 Comptez environ 25 minutes pour notre arrivée à Draguignan, hors trafic. Le délai précis vous est donné au moment de l'appel.
 
@@ -450,7 +450,7 @@ Comptez environ 30 minutes pour notre arrivée à Pignans, hors trafic. Le déla
 
 ### Assainissement Toulon (83000)
 
-Toulon, préfecture du Var, fait partie de notre zone d'intervention, 24h/24 et 7j/7. Nous intervenons dans tous les quartiers : Le Mourillon, Le Cap Brun, Le Port et le centre-ville, Pont-du-Las, Saint-Jean-du-Var, La Rode, Les Routes et Valbertrand.
+Toulon, préfecture de la région, fait partie de notre zone d'intervention, 24h/24 et 7j/7. Nous intervenons dans tous les quartiers : Le Mourillon, Le Cap Brun, Le Port et le centre-ville, Pont-du-Las, Saint-Jean-du-Var, La Rode, Les Routes et Valbertrand.
 À Toulon, nous intervenons pour les particuliers, les syndics de copropriété et les professionnels : dégorgement, pompage, inspection caméra et réparation de canalisations.
 Comptez environ 50 minutes pour notre arrivée à Toulon, hors trafic. Le délai précis vous est donné au moment de l'appel.
 
@@ -500,7 +500,7 @@ Quand une canalisation se bouche, l'eau finit toujours par chercher une sortie :
 
 URL : https://pro-service83assainissement.netlify.app/conseils/vidange-fosse-septique-frequence/
 
-Dans de nombreuses communes du Var, surtout dans le Haut-Var et autour des villages, les maisons ne sont pas raccordées au tout-à-l'égout et disposent d'une fosse. Son entretien est obligatoire et conditionne son bon fonctionnement. La règle : vidanger à 50 % de boues La réglementation demande de vidanger la fosse lorsque la hauteur des boues atteint 50 % du volume utile. Pour une fosse toutes eaux de taille courante occupée par une famille, cela correspond souvent à une vidange tous les 4 ans environ. Une résidence secondaire peut attendre plus longtemps. Les signes d'alerte Des odeurs autour de la fosse ou dans la maison. Un écoulement lent de tous les appareils. Des regards qui débordent après une forte utilisation. Une zone d'herbe très verte ou humide au-dessus de l'épandage. Le bordereau de suivi La vidange doit être faite par une personne agréée par la préfecture, qui vous remet un bordereau de suivi des matières de vidange. Gardez-le : le SPANC peut le demander lors de son contrôle. Bien utiliser sa fosse Pas de lingettes, de serviettes hygiéniques ni de graisses dans les évacuations. Pas de produits chimiques agressifs en grande quantité (javel, déboucheurs). Raccorder les eaux de pluie ailleurs que dans la fosse. Garder les tampons accessibles pour l'entretien.
+Dans de nombreuses communes de la région, surtout dans l'arrière-pays et autour des villages, les maisons ne sont pas raccordées au tout-à-l'égout et disposent d'une fosse. Son entretien est obligatoire et conditionne son bon fonctionnement. La règle : vidanger à 50 % de boues La réglementation demande de vidanger la fosse lorsque la hauteur des boues atteint 50 % du volume utile. Pour une fosse toutes eaux de taille courante occupée par une famille, cela correspond souvent à une vidange tous les 4 ans environ. Une résidence secondaire peut attendre plus longtemps. Les signes d'alerte Des odeurs autour de la fosse ou dans la maison. Un écoulement lent de tous les appareils. Des regards qui débordent après une forte utilisation. Une zone d'herbe très verte ou humide au-dessus de l'épandage. Le bordereau de suivi La vidange doit être faite par une personne agréée par la préfecture, qui vous remet un bordereau de suivi des matières de vidange. Gardez-le : le SPANC peut le demander lors de son contrôle. Bien utiliser sa fosse Pas de lingettes, de serviettes hygiéniques ni de graisses dans les évacuations. Pas de produits chimiques agressifs en grande quantité (javel, déboucheurs). Raccorder les eaux de pluie ailleurs que dans la fosse. Garder les tampons accessibles pour l'entretien.
 
 ## Vendre une maison avec fosse : le contrôle SPANC expliqué
 

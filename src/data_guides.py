@@ -26,7 +26,7 @@ GUIDES = [
         "h1": "Vidange de fosse septique : quelle fréquence et quels signes d'alerte ?",
         "excerpt": "La règle des 50 %, les signes qui ne trompent pas et les gestes qui prolongent la vie de votre fosse.",
         "services": ["vidange-fosse-septique-var"],
-        "body": "<p>Dans de nombreuses communes du Var, surtout dans le Haut-Var et autour des villages, les maisons ne sont pas raccordées au tout-à-l'égout et disposent d'une fosse. Son entretien est obligatoire et conditionne son bon fonctionnement.</p>"
+        "body": "<p>Dans de nombreuses communes de la région, surtout dans l'arrière-pays et autour des villages, les maisons ne sont pas raccordées au tout-à-l'égout et disposent d'une fosse. Son entretien est obligatoire et conditionne son bon fonctionnement.</p>"
                 "<h2>La règle : vidanger à 50 % de boues</h2><p>La réglementation demande de vidanger la fosse lorsque la hauteur des boues atteint 50 % du volume utile. Pour une fosse toutes eaux de taille courante occupée par une famille, cela correspond souvent à une vidange tous les 4 ans environ. Une résidence secondaire peut attendre plus longtemps.</p>"
                 "<h2>Les signes d'alerte</h2><ul><li>Des odeurs autour de la fosse ou dans la maison.</li><li>Un écoulement lent de tous les appareils.</li><li>Des regards qui débordent après une forte utilisation.</li><li>Une zone d'herbe très verte ou humide au-dessus de l'épandage.</li></ul>"
                 "<h2>Le bordereau de suivi</h2><p>La vidange doit être faite par une personne agréée par la préfecture, qui vous remet un bordereau de suivi des matières de vidange. Gardez-le : le SPANC peut le demander lors de son contrôle.</p>"

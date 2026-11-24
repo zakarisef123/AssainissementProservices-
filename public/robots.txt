@@ -1,4 +1,4 @@
-# robots.txt — PROSERVICE 83, assainissement dans le Var (83)
+# robots.txt — PROSERVICE 83, assainissement
 # Tout le site est ouvert aux moteurs de recherche et aux assistants IA.
 
 User-agent: *
