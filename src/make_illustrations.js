@@ -1,4 +1,4 @@
-// Génère les visuels noir et jaune des prestations qui n'ont pas encore de photo réelle.
+// Génère le visuel des prestations qui n'ont pas encore de photo réelle (aujourd'hui : bac à graisse).
 // Usage : node src/make_illustrations.js   (nécessite Playwright + Chromium), puis python3 src/make_webp.py
 // Dès qu'une vraie photo de chantier existe, la déposer dans src/assets/img/ sous le même nom.
 const { chromium } = require('playwright');
@@ -13,12 +13,7 @@ const I = {
   truck: '<path d="M2 7h11v9H2zM13 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/>',
 };
 const items = [
-  ['fosse-septique', 'tank', 'Vidange de fosse septique', 'Fosse toutes eaux · micro-station · bac dégraisseur'],
-  ['inspection-camera', 'camera', 'Inspection caméra', 'Diagnostic des canalisations sans casse'],
   ['bac-a-graisse', 'grease', 'Bac à graisse', 'Restaurants · commerces · collectivités'],
-  ['pompe-relevage', 'pump', 'Pompe de relevage', 'Dépannage · nettoyage · remplacement'],
-  ['travaux-assainissement', 'wrench', "Travaux d'assainissement", "Réparation · raccordement au tout-à-l'égout"],
-  ['pompage', 'truck', 'Pompage & aspiration', 'Camion aspirateur · cuves · sous-sols inondés'],
 ];
 const html = (ic, t, sub) => `<html><head><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet"></head>
 <body style="margin:0;width:1200px;height:720px;background:radial-gradient(ellipse 700px 500px at 85% 10%,rgba(34,197,94,.16),transparent 60%),#111;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;font-family:'Space Grotesk',sans-serif;position:relative;overflow:hidden">

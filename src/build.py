@@ -1122,7 +1122,7 @@ def build_home():
     </div>
     </div>
     <div class="hero-media">
-      {picture("technicien-devis-client.jpg", "Technicien présentant le devis à un client avant l'intervention", 560, 560, "(max-width: 900px) 100vw, 560px", attrs=' fetchpriority="high"')}
+      {picture("camion-vidange.jpg", "Camion de vidange en intervention sur un regard", 452, 452, "(max-width: 900px) 100vw, 560px", attrs=' fetchpriority="high"')}
       <div class="hero-tag"><b>Sur place</b><span>Devis annoncé avant travaux</span></div>
     </div>
   </div>
@@ -1326,7 +1326,7 @@ def city_hero(c, crumbs):
     </div>
     </div>
     <div class="hero-media">
-      {picture("technicien-devis-client.jpg", "Technicien en assainissement " + c["a"] + " présentant le devis", 560, 560, "(max-width: 900px) 100vw, 560px", attrs=' fetchpriority="high"')}
+      {picture("camion-vidange.jpg", "Camion de vidange en intervention " + c["a"], 452, 452, "(max-width: 900px) 100vw, 560px", attrs=' fetchpriority="high"')}
       <div class="hero-tag"><b>{esc(c["name"])}</b><span>{esc(delay_label(c))} · prix annoncé avant travaux</span></div>
     </div>
   </div>
