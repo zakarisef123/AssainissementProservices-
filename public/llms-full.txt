@@ -51,7 +51,7 @@ R : Si le bouchon est dans les canalisations privatives d'un logement, c'est en 
 ## Curage et hydrocurage de canalisations dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/curage-canalisation-var/
-Tarif : sur devis
+Tarif : à partir de 190 €
 
 Graisses, calcaire, racines, sable, boues : notre hydrocureur haute pression nettoie l'intérieur des canalisations sur toute leur longueur et redonne un écoulement normal, durablement.
 
@@ -84,7 +84,7 @@ R : Une buse spéciale coupe et évacue les racines fines. Si les racines ont ca
 ## Pompage, aspiration et nettoyage de cuves dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/pompage-nettoyage-cuves-var/
-Tarif : sur devis
+Tarif : à partir de 220 €
 
 Sous-sol inondé, regard plein, puisard saturé, cuve à vider : nos grosses interventions de pompage sont réalisées avec un camion aspirateur, pour les particuliers, les copropriétés, les entreprises et les collectivités.
 
@@ -117,7 +117,7 @@ R : Oui, nous intervenons pour les syndics, les gestionnaires de résidences, le
 ## Vidange de fosse septique, fosse toutes eaux et micro-station dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/vidange-fosse-septique-var/
-Tarif : sur devis
+Tarif : à partir de 230 €
 
 Dans les communes du Var non raccordées au tout-à-l'égout, la fosse doit être vidangée régulièrement. Nous intervenons pour la vidange, le nettoyage et l'entretien de votre installation d'assainissement individuel.
 
@@ -150,7 +150,7 @@ R : Ils ne sont pas indispensables pour une fosse bien dimensionnée et bien uti
 ## Inspection caméra des canalisations dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/inspection-camera-canalisation-var/
-Tarif : sur devis
+Tarif : à partir de 150 €
 
 Une caméra introduite dans la canalisation montre son état réel, sans rien casser : bouchon, racines, tuyau écrasé, déboîté ou en contre-pente. Le bon diagnostic avant de décider des travaux.
 
@@ -183,7 +183,7 @@ R : Oui, nous vous remettons un compte rendu avec les observations et des images
 ## Travaux d'assainissement et raccordement au tout-à-l'égout dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/travaux-assainissement-var/
-Tarif : sur devis
+Tarif : à partir de 390 €
 
 Canalisation cassée ou envahie par les racines, raccordement au réseau public, fosse non conforme : nous réalisons les travaux d'assainissement après un diagnostic précis, avec un devis détaillé.
 
@@ -216,7 +216,7 @@ R : Elle doit être vidangée, nettoyée, puis comblée ou retirée. Nous pouvon
 ## Dépannage et entretien de pompes de relevage dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/pompe-de-relevage-var/
-Tarif : sur devis
+Tarif : à partir de 120 €
 
 Quand la maison ou le sous-sol est plus bas que l'égout, une pompe de relevage remonte les eaux usées. Si elle s'arrête, tout déborde : nous intervenons en urgence, et pour l'entretien qui évite les pannes.
 
@@ -249,7 +249,7 @@ R : Oui, pour les maisons comme pour les postes collectifs des copropriétés et
 ## Vidange et entretien de bacs à graisse dans le Var
 
 URL : https://pro-service83assainissement.netlify.app/bac-a-graisse-var/
-Tarif : sur devis
+Tarif : à partir de 150 €
 
 Restaurants, snacks, boulangeries, cuisines collectives : un bac à graisse bien entretenu évite les bouchons, les odeurs et les problèmes avec le service des eaux. Nous intervenons ponctuellement ou dans le cadre d'un entretien régulier.
 
@@ -282,13 +282,13 @@ R : Oui, nous intervenons en urgence 24h/24 et 7j/7, y compris le week-end.
 ## Questions générales
 
 Q : Combien coûte une intervention ?
-R : Un dégorgement simple démarre à 99 € TTC en journée. Les autres prestations (hydrocurage, pompage, vidange de fosse, inspection caméra, travaux) sont établies sur devis gratuit. Le prix est toujours annoncé au téléphone et confirmé sur place avant de commencer. Voir nos tarifs.
+R : Nos prix TTC en journée : dégorgement 24h/24 dès 99 €, curage haute pression dès 190 €, pompage & aspiration dès 220 €, vidange fosse septique dès 230 €, inspection caméra dès 150 €, travaux d'assainissement dès 390 €, pompe de relevage dès 120 €, bac à graisse dès 150 €. Le prix exact dépend de l'intervention et de l'horaire ; il est toujours annoncé au téléphone et confirmé sur place avant les travaux. Voir nos tarifs.
 
 Q : Intervenez-vous la nuit, le week-end et les jours fériés ?
 R : Oui, nous sommes joignables 24h/24 et 7j/7 au 06 75 93 19 04, jours fériés compris. Prix TTC en journée (lun-sam, 8h – 18h), majorés de 25 % le soir (18h – 22h), de 50 % la nuit (22h – 8h) et de 50 % les dimanches et jours fériés. La majoration est toujours annoncée avant le déplacement.
 
 Q : Dans quelles communes intervenez-vous ?
-R : Dans les 153 communes du Var (83) : Toulon et son agglomération, Fréjus, Saint-Raphaël, Draguignan, Hyères, Brignoles, le golfe de Saint-Tropez, le Haut-Var et le Verdon. Voir toutes les communes.
+R : Dans tout le Var (83), sur les 153 communes du département. Voir toutes les communes.
 
 Q : Faites-vous les grosses interventions ?
 R : Oui : dégorgement de collecteurs, hydrocurage de réseaux, pompage de sous-sols inondés, de regards, de cuves et de séparateurs, pour les particuliers comme pour les copropriétés, les entreprises et les collectivités.
@@ -300,7 +300,7 @@ Q : Quelle différence entre dégorgement et curage ?
 R : Le dégorgement supprime un bouchon pour rétablir l'écoulement. Le curage nettoie toute la paroi de la canalisation à haute pression pour retirer les dépôts et éviter que les bouchons reviennent.
 
 Q : En combien de temps arrivez-vous ?
-R : Selon votre commune, comptez environ 15 minutes pour Le Muy, Les Arcs-sur-Argens ou Le Cannet-des-Maures, 20 minutes pour Le Luc ou La Garde-Freinet, 25 minutes pour Gonfaron ou Draguignan, 35 minutes pour Fréjus, 40 minutes pour Saint-Raphaël, 45 minutes pour Hyères, 50 minutes pour Toulon, hors trafic. Ces délais sont indicatifs : le délai précis vous est donné au moment de l'appel, avant tout déplacement.
+R : Le délai dépend de votre commune et de l'heure de l'appel : il vous est annoncé au téléphone, avant le déplacement. Voir nos zones d'intervention.
 
 Q : Vidangez-vous les fosses septiques ?
 R : Oui, nous intervenons pour la vidange et l'entretien des fosses septiques, fosses toutes eaux, micro-stations et bacs dégraisseurs. En savoir plus.
