@@ -186,7 +186,7 @@ def svc_icon(key, size=24):
     return '<svg width="%d" height="%d" viewBox="0 0 24 24" fill="none" aria-hidden="true">%s</svg>' % (size, size, SERVICE_ICONS[key])
 
 
-LOGO_SVG = '<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#1fa2ff"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#111" stroke-width="2.2"/><g transform="translate(20 9.5)"><circle cx="12" cy="12" r="7.6" fill="#111"/><path d="M7.2 9.3h9.6M5.9 12h12.2M7.2 14.7h9.6" stroke="#1fa2ff" stroke-width="1.3"/></g><text x="32" y="47" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-weight="700" font-size="12.5" fill="#111">24/7</text></svg>'
+LOGO_SVG = '<svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#22c55e"/><circle cx="32" cy="32" r="24.5" fill="none" stroke="#111" stroke-width="2.2"/><g transform="translate(20 9.5)"><circle cx="12" cy="12" r="7.6" fill="#111"/><path d="M7.2 9.3h9.6M5.9 12h12.2M7.2 14.7h9.6" stroke="#22c55e" stroke-width="1.3"/></g><text x="32" y="47" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-weight="700" font-size="12.5" fill="#111">24/7</text></svg>'
 
 
 # ---------------------------------------------------------------- données structurées
@@ -212,7 +212,7 @@ def business_schema():
         "url": SITE + "/",
         "telephone": B.PHONE_TEL,
         "email": B.EMAIL,
-        "image": SITE + "/assets/og-image.png?v=3",
+        "image": SITE + "/assets/og-image.png?v=4",
         "logo": SITE + "/assets/logo-512.png",
         "priceRange": "€€",
         "currenciesAccepted": "EUR",
@@ -340,15 +340,15 @@ def head(title, desc, path, schemas, og_type="website", noindex=False):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{SITE}/assets/og-image.png?v=3">
+<meta property="og:image" content="{SITE}/assets/og-image.png?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#111111">
-<link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png?v=3" sizes="32x32" type="image/png">
-<link rel="shortcut icon" href="/favicon.ico?v=3">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=4" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico?v=4">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4">
 <link rel="manifest" href="/site.webmanifest">
 
 <!-- Google tag (gtag.js) + Consent Mode v2 -->
@@ -886,7 +886,7 @@ def insurers_section(cls=""):
   {logo_marquee(B.INSURERS, "assurances", "Assureurs habitation")}
   <div class="wrap">
     <p class="ins-count">{len(B.INSURERS)} assureurs, mutuelles et banques-assureurs, parmi d'autres</p>
-    <p class="ins-note">Nous remettons une facture détaillée et un descriptif de la cause du sinistre, les justificatifs demandés par les assureurs. Remboursement selon les garanties et franchises de votre contrat. <a href="/{ASSURANCE_PAGE['slug']}/" style="color:var(--purple-700);font-weight:600;text-decoration:underline">Dégât des eaux : comment ça marche ?</a></p>
+    <p class="ins-note">Nous remettons une facture détaillée et un descriptif de la cause du sinistre, les justificatifs demandés par les assureurs. Remboursement selon les garanties et franchises de votre contrat. <a href="/{ASSURANCE_PAGE['slug']}/" style="color:var(--purple-700);font-weight:600;text-decoration:underline">Refoulement d'égout : comment ça marche ?</a></p>
     <p class="logos-legal">Logos cités à titre d'information : notre facture détaillée est le justificatif demandé par les assureurs habitation, sans partenariat avec ces compagnies. Les marques appartiennent à leurs propriétaires respectifs.</p>
   </div>
 </section>
@@ -1136,7 +1136,7 @@ def build_home():
     <div class="sec-head">
       <div class="pill pill-purple sec-badge">{svc_icon("shield", 15)}Services professionnels</div>
       <h2>Nos services d'assainissement</h2>
-      <p>Du WC bouché au collecteur de copropriété, des interventions d'urgence aux gros chantiers, 24h/24 et 7j/7,.</p>
+      <p>Du WC bouché au collecteur de copropriété, des interventions d'urgence aux gros chantiers, 24h/24 et 7j/7.</p>
     </div>
     {services_grid()}
   </div>
@@ -1417,7 +1417,7 @@ def build_prestations():
                "Toutes nos prestations d'assainissement : dégorgement 24h/24, hydrocurage, pompage, vidange de fosse septique, inspection caméra, pompes de relevage, bacs à graisse, travaux.",
                path, [business_schema(), breadcrumb_schema(crumbs)])
     out += header(path)
-    out += page_hero(crumbs, "Nos prestations d'assainissement", "Du débouchage d'urgence aux <b>grosses interventions</b> (dégorgement de collecteurs, hydrocurage, pompage), une seule entreprise pour tout l'assainissement,.", ["Devis gratuit", "Prix annoncé à l'avance", "Particuliers et professionnels"], image="technicien-devis-client.jpg", image_alt="Technicien présentant le devis à un client")
+    out += page_hero(crumbs, "Nos prestations d'assainissement", "Du débouchage d'urgence aux <b>grosses interventions</b> (dégorgement de collecteurs, hydrocurage, pompage), une seule entreprise pour tout l'assainissement.", ["Devis gratuit", "Prix annoncé à l'avance", "Particuliers et professionnels"], image="technicien-devis-client.jpg", image_alt="Technicien présentant le devis à un client")
     out += trust_marquee()
     out += f"""<section><div class="wrap">{services_grid()}</div></section>
 <section class="alt"><div class="wrap text-block prose">
@@ -1682,7 +1682,7 @@ def build_guides():
             "@context": "https://schema.org", "@type": "Article",
             "headline": g["h1"], "description": g["meta"], "inLanguage": "fr-FR",
             "mainEntityOfPage": abs_url(gp), "datePublished": TODAY, "dateModified": TODAY,
-            "image": SITE + "/assets/og-image.png?v=3",
+            "image": SITE + "/assets/og-image.png?v=4",
             "author": {"@type": "Organization", "name": B.NAME, "url": SITE + "/"},
             "publisher": {"@id": SITE + "/#entreprise"},
         }

@@ -20,7 +20,7 @@ SERVICES = [
         "title": "Dégorgement et débouchage de canalisations 24h/24",
         "meta": "Dégorgement et débouchage de canalisations, égouts, colonnes et WC, 24h/24 et 7j/7. Furet, hydrocureur haute pression. Prix annoncé avant déplacement. ☎ 06 75 93 19 04",
         "h1": "Dégorgement et débouchage de canalisations 24h/24",
-        "lead": "Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond <b>jour et nuit, week-end et jours fériés compris</b>,.",
+        "lead": "Canalisation principale bouchée, égout qui refoule, colonne d'immeuble obstruée, WC bouché : nous dégorgeons tous les réseaux, du simple évier au collecteur. Un technicien vous répond <b>jour et nuit, week-end et jours fériés compris</b>.",
         "checks": ["Réponse immédiate au téléphone", "Prix annoncé avant de partir", "Matériel professionnel"],
         "card_desc": "Dégorgement de canalisations, égouts, colonnes et WC, jour et nuit, au furet ou à l'hydrocureur.",
         "card_checks": ["Disponible 7j/7", "Du WC au collecteur"],

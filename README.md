@@ -89,8 +89,8 @@ chacun avec le lien vers sa source (fiche Google, etc.).
 
 ## Design
 
-Thème « Noir & bleu » : anthracite + bleu vif (#1fa2ff), titres en Space Grotesk, texte en Inter.
-Le thème est en fin de `src/assets/style.css`. Logo : badge rond bleu « 24/7 » avec le symbole du métier
+Thème « Noir & vert » : anthracite + vert vif (#22c55e), titres en Space Grotesk, texte en Inter.
+Le thème est en fin de `src/assets/style.css`. Logo : badge rond vert « 24/7 » avec le symbole du métier
 (`LOGO_SVG` dans `src/build.py`, `src/assets/favicon.svg`) ; les PNG se régénèrent avec `node src/make_images.js`.
 
 ## Délais des 124 communes ajoutées
